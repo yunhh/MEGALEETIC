@@ -33,18 +33,6 @@ puts "User created!"
 
 
 
-# puts "Creating UserStep..."
-
-# puts "UserStep created!"
-
-
-
-# puts "Creating UserCourse..."
-
-# puts "UserCourse created!"
-
-
-
 puts "Creating Course..."
 
 carnac_course = Course.new(
@@ -55,6 +43,15 @@ carnac_course = Course.new(
   description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Carnac et ses momuments"
 )
 carnac_course.save!
+
+monteneuf_course = Course.new(
+  city: "Monteneuf",
+  name: "course découverte Monteneuf",
+  mobility_access: true ,
+  duration_in_minutes: 165,
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Monteneuf et ses momuments"
+)
+monteneuf_course.save!
 
 puts "Course created!"
 
@@ -82,7 +79,7 @@ geant_du_manio = Megalith.new(
   latitude: "47.6036",
   longitude:"-3.05598"
 )
-# geant_du_manio.photo.attach(io:File.open('db/fixtures/users/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
+geant_du_manio.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
 geant_du_manio.save!
 
 cairn_de_kercado = Megalith.new(
@@ -93,7 +90,7 @@ cairn_de_kercado = Megalith.new(
   latitude: "47.59577",
   longitude: "-3.05436"
 )
-# cairn_de_kercado.photo.attach(io:File.open('db/fixtures/users/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
+cairn_de_kercado.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
 cairn_de_kercado.save!
 
 
@@ -105,7 +102,7 @@ enceinte_du_menec = Megalith.new(
   latitude: "47.59161",
   longitude:"-3.08567"
 )
-# enceinte_du_menec.photo.attach(io:File.open('db/fixtures/users/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
+enceinte_du_menec.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
 enceinte_du_menec.save!
 
 tumulus_saint_michel = Megalith.new(
@@ -116,7 +113,7 @@ tumulus_saint_michel = Megalith.new(
   latitude: "47.588",
   longitude:"-3.0733"
 )
-# tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/users/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
 tumulus_saint_michel.save!
 
 puts "Megalith created!"
@@ -138,14 +135,123 @@ carnac_step_1 = Step.new(
 )
 carnac_step_1.save!
 
+carnac_step_2 = Step.new(
+  position: 2,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
+  course: carnac_course,
+  megalith: alignement_de_kerlescan
+)
+carnac_step_2.save!
+
+carnac_step_3 = Step.new(
+  position: 3,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
+  course: carnac_course,
+  megalith: alignement_de_kerlescan
+)
+carnac_step_3.save!
+
+carnac_step_4 = Step.new(
+  position: 4,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
+  course: carnac_course,
+  megalith: alignement_de_kerlescan
+)
+carnac_step_4.save!
+
+carnac_step_5 = Step.new(
+  position: 5,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
+  course: carnac_course,
+  megalith: alignement_de_kerlescan
+)
+carnac_step_5.save!
+
 puts "Step created!"
 
-puts "Finished!"
+puts "Creating UserCourse..."
 
-# crabe_photo = File.open(Rails.root.join('db/fixtures/pets/crabe_1.jpg'))
-# crabe.photo.attach(io:crabe_photo, filename: 'crabe_1.jpg', content_type: 'image/jpg')
-# crabe.save!
-# pierref = User.new( email: "pierref@mail.com", username: "Pierre", phone_number: "0659868756", address: "Brest", password: "azerty")
-# pierref.save!
-# reservation1 = Reservation.create(pet: cat, user: pierref, start_date: Date.new(2020,2,25), end_date: Date.new(2020,2,27), status: 'Terminée', total_price: 64)
+lomig_carnac = UserCourse.new(
+  course: carnac_course,
+  user: lomig,
+  done: false
+)
+lomig_carnac.save!
+
+lomig_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: lomig,
+  done: true
+)
+lomig_monteneuf.save!
+
+puts "UserCourse created!"
+
+
+
+puts "Creating UserStep..."
+
+lomig_carnac_step_1 = UserStep.new(
+  step: carnac_step_1,
+  user_course: lomig_carnac,
+  done: true,
+  quiz_answer: "L'Antiquité"
+)
+lomig_carnac_step_1.save!
+
+lomig_carnac_step_2 = UserStep.new(
+  step: carnac_step_2,
+  user_course: lomig_carnac,
+  done: false
+)
+lomig_carnac_step_2.save!
+
+lomig_carnac_step_3 = UserStep.new(
+  step: carnac_step_3,
+  user_course: lomig_carnac,
+  done: false
+)
+lomig_carnac_step_3.save!
+
+lomig_carnac_step_4 = UserStep.new(
+  step: carnac_step_4,
+  user_course: lomig_carnac,
+  done: false
+)
+lomig_carnac_step_4.save!
+
+lomig_carnac_step_5 = UserStep.new(
+  step: carnac_step_5,
+  user_course: lomig_carnac,
+  done: false
+)
+lomig_carnac_step_5.save!
+
+puts "UserStep created!"
+
+
+
+
+
+puts "Finished!"
 
