@@ -6,112 +6,146 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+require "open-uri"
+
 puts "Cleaning database..."
-Restaurant.destroy_all
+UserStep.destroy_all
+UserCourse.destroy_all
+Step.destroy_all
+Course.destroy_all
+User.destroy_all
+Megalith.destroy_all
 
-puts "Creating restaurants..."
-dishoom = { name: "Dishoom", address: "7 Boundary St, London E2 7JE", stars: 5 }
-pizza_east =  { name: "Pizza East", address: "56A Shoreditch High St, London E1 6PQ", stars: 4 }
 
-[ dishoom, pizza_east ].each do |attributes|
-  restaurant = Restaurant.create!(attributes)
-  puts "Created #{restaurant.name}"
-end
-
-pierref = User.new( email: "pierref@mail.com", username: "Pierre", phone_number: "0659868756", address: "Brest", password: "azerty")
-pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
+puts "Creating User..."
+pierref = User.new(email: "pierref@mail.com", password: "azerty")
+# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 pierref.save!
 
-lomig = User.new( email: "lomig@mail.com", username: "lomig", phone_number: "0659598756", address: "Rennes", password: "azerty")
-lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
+lomig = User.new(email: "lomig@mail.com", password: "azerty")
+# lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
 lomig.save!
 
-pierreg = User.new( email: "pierreg@mail.com", username: "Pierre G", phone_number: "0659598756", address: "brest", password: "azerty")
-pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
+pierreg = User.new(email: "pierreg@mail.com", password: "azerty")
+# pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
 pierreg.save!
-
-hugo = User.new( email: "hugo@mail.com", username: "hugo", phone_number: "0659598756", address: "brest", password: "azerty")
-hugo.photo.attach(io:File.open('db/fixtures/users/hugo.jpg'), filename: 'hugo.jpg', content_type: 'image/jpg')
-hugo.save!
-
-jj = User.new( email: "jj@mail.com", username: "jj", phone_number: "0659598756", address: "brest", password: "azerty")
-jj.photo.attach(io:File.open('db/fixtures/users/jj.jpg'), filename: 'jj.jpg', content_type: 'image/jpg')
-jj.save!
-
-remi = User.new( email: "remi@mail.com", username: "remi", phone_number: "0659598756", address: "brest", password: "azerty")
-remi.photo.attach(io:File.open('db/fixtures/users/remi.jpg'), filename: 'remi.jpg', content_type: 'image/jpg')
-remi.save!
+puts "User created!"
 
 
 
-cat = Pet.new( user: pierref, # ok
-               name: 'Minou',
-               address: "112 boulevard jacques Cartier, rennes",
-               species: 'Chat',
-               description: "Minou est un chat au pelage soyeux, et très câlin. Il saura vous relaxer avec ses ronronnements. Très obéissant, vous apprecierez vous balader avec lui.",
-               price_per_day: 82)
-cat_photo = File.open(Rails.root.join('db/fixtures/pets/cat_1.jpg'))
-cat.photo.attach(io:cat_photo, filename: 'cat_1.jpg', content_type: 'image/jpg')
-cat.save!
+# puts "Creating UserStep..."
 
-crabe = Pet.new( user: lomig,
-               name: 'Igor',
-               address: "56 boulevard de la republique, rennes",
-               species: 'Crabe',
-               description: "Igor est un crabe intelligent et sage, il adore qu'on lui nettoie les pinces après son brunch",
-               price_per_day: 47)
-crabe_photo = File.open(Rails.root.join('db/fixtures/pets/crabe_1.jpg'))
-crabe.photo.attach(io:crabe_photo, filename: 'crabe_1.jpg', content_type: 'image/jpg')
-crabe.save!
-
-
-dog = Pet.new( user: pierreg,
-                name:"Hector",
-                address: "36 avenue henri freville, rennes",
-                species: "chien",
-                description: "Hector sera votre meilleur ami. Très joueur, il appreciera sortir et courrir avec vous",
-                price_per_day: 82)
-dog_photo = File.open(Rails.root.join('db/fixtures/pets/dog_1.jpg'))
-dog.photo.attach(io:dog_photo, filename: 'dog_1.jpg', content_type: 'image/jpg')
-dog.save!
+# puts "UserStep created!"
 
 
 
-elephant = Pet.new( user: hugo,
-               name: 'Dumbo',
-               address: "10 rue du Vau Saint-germain, rennes",
-               species: 'Elephant',
-               description: "Ne vous fiez pas à sa taille, il sait se faire petit. Il adore se promener et s'amuser à l'exterieur. Dumbo est parfait pour jouer avec les enfants.",
-               price_per_day: 82)
-elephant_photo = File.open(Rails.root.join('db/fixtures/pets/elephant_1.jpg'))
-elephant.photo.attach(io:elephant_photo, filename: 'elephant_1.jpg', content_type: 'image/jpg')
-elephant.save!
+# puts "Creating UserCourse..."
 
-poulet = Pet.new( user: remi, #ok
-               name: 'Chuck',
-               address: '17 rue vasselot, rennes',
-               species: 'Poulet',
-               description: "Chuck est un poulet intelligent et sage, il adore qu'on lui nettoie les pattes après son lunch",
-               price_per_day: 16)
-poulet_photo = File.open(Rails.root.join('db/fixtures/pets/poulet_1.jpg'))
-poulet.photo.attach(io:poulet_photo, filename: 'poulet_1.jpg', content_type: 'image/jpg')
-poulet.save!
-
-
-panda = Pet.new( user: jj, # ok
-               name: 'Pandee',
-               address: '5 rue de la monnaie, rennes',
-               species: 'panda',
-               description: "Pandee est un petit panda de chine, il n'est pas très rapide et adore dormir. Il vous donnera du réconfort dans votre journée",
-               price_per_day: 48)
-panda_photo = File.open(Rails.root.join('db/fixtures/pets/panda_1.jpg'))
-panda.photo.attach(io:panda_photo, filename: 'panda_1.jpg', content_type: 'image/jpg')
-panda.save!
+# puts "UserCourse created!"
 
 
 
-reservation1 = Reservation.create(pet: cat, user: pierref, start_date: Date.new(2020,2,25), end_date: Date.new(2020,2,27), status: 'Terminée', total_price: 64)
-reservation2 = Reservation.create(pet: elephant, user: lomig, start_date: Date.new(2020,4,12), end_date: Date.new(2020,4,14), status: 'En attente de validation', total_price: 164)
+puts "Creating Course..."
 
+carnac_course = Course.new(
+  city: "Carnac",
+  name: "course découverte Carnac",
+  mobility_access: true ,
+  duration_in_minutes: 165,
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Carnac et ses momuments"
+)
+carnac_course.save!
+
+puts "Course created!"
+
+
+# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
+
+puts "Creating Megalith..."
+
+alignement_de_kerlescan = Megalith.new(
+  name: "Alignement de Kerlescan",
+  address: "Carnac",
+  category: "Menhir",
+  description: "L'alignement est composé de 555 pierres subsistantes, réparties sur 13 files. L'ensemble se déroule sur environ 350 m de longueur, pour 140 m de largeur dans sa partie la plus étroite, à l'est. L'alignement est globalement orienté selon un axe est-ouest, rompant l'orientation des alignements situées plus à l'est, dont l'orientation générale est nord-est - sud-ouest.Les files les plus méridionales sont disposées en éventail. Bien que ce ne soit pas le cas, les files septentrionales donnent cette même impression, du fait de la décroissance de leurs longueurs.",
+  latitude: "47.60373",
+  longitude: "-3.05048"
+)
+alignement_de_kerlescan.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan.jpg'), filename: 'alignement_de_kerlescan.jpg', content_type: 'image/jpg')
+alignement_de_kerlescan.save!
+
+geant_du_manio = Megalith.new(
+  name: "Géant du Manio",
+  address: "Carnac",
+  category: "Menhir",
+  description: "Le menhir est situé au nord de l'alignement du Manio, à environ 50 m au sud du quadrilatère du Manio, dont il constitue un menhir indicateur.Il s'agit d'une pierre dressée d'environ 6,5 m de haut, mais qui devait atteindre la hauteur de 23 m avant son érosion (foudre) pour une masse originelle estimée à 350 tonnes. De par ses proportions, il est estimé devoir sa position et sa place sur le site au travail coordonné de 1 800 hommes. Il constitue le plus grand menhir du site des alignements de Carnac.Il doit son nom à sa forme qui rappelle celle d'une tête.Il nous est apparent sous sa forme brisée par la foudre.",
+  latitude: "47.6036",
+  longitude:"-3.05598"
+)
+# geant_du_manio.photo.attach(io:File.open('db/fixtures/users/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
+geant_du_manio.save!
+
+cairn_de_kercado = Megalith.new(
+  name: "Cairn de Kercado",
+  address: "Carnac",
+  category: "Cairn",
+  description: "Le cairn de Kercado est un monument mégalithique se trouvant au sud de l'alignement de Kermario, sur la commune de Carnac, dans le Morbihan, en Bretagne. Circulaire, il abrite un dolmen remarquablement conservé, à couloir et à chambre simple, bien différenciée.Des datations hautes livrées par le carbone 14 (5200-4360 avant notre ère) ont fait un moment regarder le dolmen comme le plus ancien d'Europe. N'ayant pu recevoir confirmation, elles ne sont pas retenues par les archéologues. La diversité du mobilier traduit de nombreuses réutilisations du site, du Néolithique moyen au Campaniforme.",
+  latitude: "47.59577",
+  longitude: "-3.05436"
+)
+# cairn_de_kercado.photo.attach(io:File.open('db/fixtures/users/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
+cairn_de_kercado.save!
+
+
+enceinte_du_menec = Megalith.new(
+  name: "Enceinte du Ménec",
+  address: "Carnac",
+  category: "Menhir",
+  description: "L'alignement est composé de plus de 1 170 de menhirs, répartis en 11 rangées, sur une distance d'environ 950 m et une largeur d'environ 70 (à l'est) à 100 m (à l'ouest)3. Cet ensemble est globalement orienté suivant un axe sud-ouest - nord-est. Leur taille décroît, d'ouest — où certains atteignent les 4 m — en est.Ces 1 170 menhirs sont répartis en 70 dans un hémicycle occidental (menhirs jointifs, « en particulier derrière la crêperie dont le propriétaire est l'un des défenseurs d'une occupation litigieuse de cet espace mégalithique »), 1075 en 11 lignes de long et 150 m de large et 25 rescapés d'un hémicycle oriental. L'hémicycle occidental correspond à un cromlech.Cet ensemble mégalithique a longtemps été interprété comme un temple astronomique. L'hypothèse actuelle, selon Serge Cassen, directeur de recherche CNRS, repose sur une autre façon de regarder cet alignement et les pierres jointives du cromlech : « L'idée, très simple, est de dire que les espaces entre les pierres ont autant de sens que les pierres elles-mêmes. On serait là face à des aménagements de passage, des … pierres seuil qui matérialiseraient un passage. Et on traverse comme on traverse une frontière ».",
+  latitude: "47.59161",
+  longitude:"-3.08567"
+)
+# enceinte_du_menec.photo.attach(io:File.open('db/fixtures/users/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
+enceinte_du_menec.save!
+
+tumulus_saint_michel = Megalith.new(
+  name: "Tumulus Saint-Michel",
+  address: "Carnac",
+  category: "Tumulus",
+  description: "Le tumulus Saint-Michel est formé d'une butte de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique. Il fait l’objet d’un classement au titre des monuments historiques depuis 1889. La bataille du tumulus Saint-Michel se déroula pendant la Chouannerie, lors de l'expédition de Quiberon le 27 juin 1795 et se termina par une victoire des Chouans commandés par Vincent de Tinténiac sur les Républicains.",
+  latitude: "47.588",
+  longitude:"-3.0733"
+)
+# tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/users/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+tumulus_saint_michel.save!
+
+puts "Megalith created!"
+
+
+
+puts "Creating Step..."
+
+carnac_step_1 = Step.new(
+  position: 1,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
+  course_id: carnac_course[:id],
+  megalith_id: alignement_de_kerlescan[:id]
+)
+carnac_step_1.save!
+
+puts "Step created!"
 
 puts "Finished!"
+
+# crabe_photo = File.open(Rails.root.join('db/fixtures/pets/crabe_1.jpg'))
+# crabe.photo.attach(io:crabe_photo, filename: 'crabe_1.jpg', content_type: 'image/jpg')
+# crabe.save!
+# pierref = User.new( email: "pierref@mail.com", username: "Pierre", phone_number: "0659868756", address: "Brest", password: "azerty")
+# pierref.save!
+# reservation1 = Reservation.create(pet: cat, user: pierref, start_date: Date.new(2020,2,25), end_date: Date.new(2020,2,27), status: 'Terminée', total_price: 64)
+
