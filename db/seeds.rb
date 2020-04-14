@@ -9,11 +9,12 @@
 require "open-uri"
 
 puts "Cleaning database..."
-User.destroy_all
 UserStep.destroy_all
 UserCourse.destroy_all
-Megalith.destroy_all
 Step.destroy_all
+Course.destroy_all
+User.destroy_all
+Megalith.destroy_all
 
 
 puts "Creating User..."
@@ -51,13 +52,14 @@ carnac_course = Course.new(
   name: "course découverte Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
-  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Carnar et ses momuments"
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Carnac et ses momuments"
 )
 carnac_course.save!
 
 puts "Course created!"
 
 
+# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 
 puts "Creating Megalith..."
 
@@ -69,7 +71,7 @@ alignement_de_kerlescan = Megalith.new(
   latitude: "47.60373",
   longitude: "-3.05048"
 )
-alignement_de_kerlescan.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan.jpg'), filename:'alignement_de_kerlescan.jpg', content_type: 'image/jpg')
+alignement_de_kerlescan.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan.jpg'), filename: 'alignement_de_kerlescan.jpg', content_type: 'image/jpg')
 alignement_de_kerlescan.save!
 
 geant_du_manio = Megalith.new(
@@ -144,7 +146,6 @@ puts "Finished!"
 # crabe.photo.attach(io:crabe_photo, filename: 'crabe_1.jpg', content_type: 'image/jpg')
 # crabe.save!
 # pierref = User.new( email: "pierref@mail.com", username: "Pierre", phone_number: "0659868756", address: "Brest", password: "azerty")
-# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 # pierref.save!
 # reservation1 = Reservation.create(pet: cat, user: pierref, start_date: Date.new(2020,2,25), end_date: Date.new(2020,2,27), status: 'Terminée', total_price: 64)
 
