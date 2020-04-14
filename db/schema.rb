@@ -10,10 +10,68 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_152945) do
+ActiveRecord::Schema.define(version: 2020_04_14_094803) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "courses", force: :cascade do |t|
+    t.string "city"
+    t.string "name"
+    t.boolean "mobility_access"
+    t.integer "duration_in_minutes"
+    t.text "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "megaliths", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.string "category"
+    t.text "description"
+    t.float "latitude"
+    t.float "longitude"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "steps", force: :cascade do |t|
+    t.integer "position"
+    t.string "question"
+    t.string "answer_1"
+    t.string "answer_2"
+    t.string "answer_3"
+    t.string "answer_4"
+    t.string "correct_answer"
+    t.bigint "course_id", null: false
+    t.bigint "megalith_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_steps_on_course_id"
+    t.index ["megalith_id"], name: "index_steps_on_megalith_id"
+  end
+
+  create_table "user_courses", force: :cascade do |t|
+    t.boolean "done"
+    t.bigint "user_id", null: false
+    t.bigint "course_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["course_id"], name: "index_user_courses_on_course_id"
+    t.index ["user_id"], name: "index_user_courses_on_user_id"
+  end
+
+  create_table "user_steps", force: :cascade do |t|
+    t.boolean "done"
+    t.integer "quiz_answer"
+    t.bigint "user_course_id", null: false
+    t.bigint "step_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["step_id"], name: "index_user_steps_on_step_id"
+    t.index ["user_course_id"], name: "index_user_steps_on_user_course_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -27,4 +85,10 @@ ActiveRecord::Schema.define(version: 2020_04_13_152945) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "steps", "courses"
+  add_foreign_key "steps", "megaliths"
+  add_foreign_key "user_courses", "courses"
+  add_foreign_key "user_courses", "users"
+  add_foreign_key "user_steps", "steps"
+  add_foreign_key "user_steps", "user_courses"
 end
