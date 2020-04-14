@@ -17,23 +17,23 @@ User.destroy_all
 Megalith.destroy_all
 
 
-puts "Creating User..."
+puts "Creating Users..."
 pierref = User.new(email: "pierref@mail.com", password: "azerty")
-# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
+pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 pierref.save!
 
 lomig = User.new(email: "lomig@mail.com", password: "azerty")
-# lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
+lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
 lomig.save!
 
 pierreg = User.new(email: "pierreg@mail.com", password: "azerty")
-# pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
+pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
 pierreg.save!
-puts "User created!"
+puts "Users created!"
 
 
 
-puts "Creating Course..."
+puts "Creating Courses..."
 
 carnac_course = Course.new(
   city: "Carnac",
@@ -42,6 +42,7 @@ carnac_course = Course.new(
   duration_in_minutes: 165,
   description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Carnac et ses momuments"
 )
+carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
 carnac_course.save!
 
 monteneuf_course = Course.new(
@@ -51,20 +52,51 @@ monteneuf_course = Course.new(
   duration_in_minutes: 165,
   description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Monteneuf et ses momuments"
 )
+monteneuf_course.photo.attach(io:File.open('db/fixtures/courses/monteneuf_course.jpg'), filename: 'monteneuf_course.jpg', content_type: 'image/jpg')
 monteneuf_course.save!
 
-puts "Course created!"
+saint_just_course = Course.new(
+  city: "Saint-Just",
+  name: "course découverte Saint-Just",
+  mobility_access: true ,
+  duration_in_minutes: 165,
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Saint-Just et ses momuments"
+)
+saint_just_course.photo.attach(io:File.open('db/fixtures/courses/saint_just_course.jpg'), filename: 'saint_just_course.jpg', content_type: 'image/jpg')
+saint_just_course.save!
+
+locmariaquer_course = Course.new(
+  city: "Locmariaquer",
+  name: "course découverte Locmariaquer",
+  mobility_access: true ,
+  duration_in_minutes: 165,
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Locmariaquer et ses momuments"
+)
+locmariaquer_course.photo.attach(io:File.open('db/fixtures/courses/locmariaquer_course.jpg'), filename: 'locmariaquer_course.jpg', content_type: 'image/jpg')
+locmariaquer_course.save!
+
+erdeven_course = Course.new(
+  city: "Erdeven",
+  name: "course découverte Erdeven",
+  mobility_access: true ,
+  duration_in_minutes: 165,
+  description: "Parcours le plus populaire, permet une marche facile pour découvrir la région de Erdeven et ses momuments"
+)
+erdeven_course.photo.attach(io:File.open('db/fixtures/courses/erdeven_course.jpg'), filename: 'erdeven_course.jpg', content_type: 'image/jpg')
+erdeven_course.save!
+
+puts "Courses created!"
 
 
 # pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 
-puts "Creating Megalith..."
+puts "Creating Megaliths..."
 
 alignement_de_kerlescan = Megalith.new(
   name: "Alignement de Kerlescan",
   address: "Carnac",
   category: "Menhir",
-  description: "L'alignement est composé de 555 pierres subsistantes, réparties sur 13 files. L'ensemble se déroule sur environ 350 m de longueur, pour 140 m de largeur dans sa partie la plus étroite, à l'est. L'alignement est globalement orienté selon un axe est-ouest, rompant l'orientation des alignements situées plus à l'est, dont l'orientation générale est nord-est - sud-ouest.Les files les plus méridionales sont disposées en éventail. Bien que ce ne soit pas le cas, les files septentrionales donnent cette même impression, du fait de la décroissance de leurs longueurs.",
+  description: "En un coup d'oeil, découvrez comment sont construits les alignements de Carnac. Actuellement, 555 pierres se répartissent sur 13 files. Les menhirs sont disposés en éventail et en ordre croissant vers l'enceinte. Au nord de l'enceinte se trouve un tumulus discret long de 35 mètres. Un menhir en indique l'extrêmité",
   latitude: "47.60373",
   longitude: "-3.05048"
 )
@@ -75,7 +107,7 @@ geant_du_manio = Megalith.new(
   name: "Géant du Manio",
   address: "Carnac",
   category: "Menhir",
-  description: "Le menhir est situé au nord de l'alignement du Manio, à environ 50 m au sud du quadrilatère du Manio, dont il constitue un menhir indicateur.Il s'agit d'une pierre dressée d'environ 6,5 m de haut, mais qui devait atteindre la hauteur de 23 m avant son érosion (foudre) pour une masse originelle estimée à 350 tonnes. De par ses proportions, il est estimé devoir sa position et sa place sur le site au travail coordonné de 1 800 hommes. Il constitue le plus grand menhir du site des alignements de Carnac.Il doit son nom à sa forme qui rappelle celle d'une tête.Il nous est apparent sous sa forme brisée par la foudre.",
+  description: "Il s'agit d'une pierre dressée d'environ 6,5 m de haut Il constitue le plus grand menhir du site des alignements de Carnac. A quelques mètres se trouvent le quadrilatère du Manio. Ses pierres délimitaient à l'origine un tumulus, aujourd'hui disparu.",
   latitude: "47.6036",
   longitude:"-3.05598"
 )
@@ -86,7 +118,7 @@ cairn_de_kercado = Megalith.new(
   name: "Cairn de Kercado",
   address: "Carnac",
   category: "Cairn",
-  description: "Le cairn de Kercado est un monument mégalithique se trouvant au sud de l'alignement de Kermario, sur la commune de Carnac, dans le Morbihan, en Bretagne. Circulaire, il abrite un dolmen remarquablement conservé, à couloir et à chambre simple, bien différenciée.Des datations hautes livrées par le carbone 14 (5200-4360 avant notre ère) ont fait un moment regarder le dolmen comme le plus ancien d'Europe. N'ayant pu recevoir confirmation, elles ne sont pas retenues par les archéologues. La diversité du mobilier traduit de nombreuses réutilisations du site, du Néolithique moyen au Campaniforme.",
+  description: "Ce monument circulaire se trouve au sud de l'alignement de Kermario. C'est l'un des rares dolmens de Bretagne à avoir conservé son cairn d'origine. De nombreuses gravures d'époque (haches, arcs, bateaux, cétacé) sont visibles à l'aide d'une lumière rasante.",
   latitude: "47.59577",
   longitude: "-3.05436"
 )
@@ -98,7 +130,7 @@ enceinte_du_menec = Megalith.new(
   name: "Enceinte du Ménec",
   address: "Carnac",
   category: "Menhir",
-  description: "L'alignement est composé de plus de 1 170 de menhirs, répartis en 11 rangées, sur une distance d'environ 950 m et une largeur d'environ 70 (à l'est) à 100 m (à l'ouest)3. Cet ensemble est globalement orienté suivant un axe sud-ouest - nord-est. Leur taille décroît, d'ouest — où certains atteignent les 4 m — en est.Ces 1 170 menhirs sont répartis en 70 dans un hémicycle occidental (menhirs jointifs, « en particulier derrière la crêperie dont le propriétaire est l'un des défenseurs d'une occupation litigieuse de cet espace mégalithique »), 1075 en 11 lignes de long et 150 m de large et 25 rescapés d'un hémicycle oriental. L'hémicycle occidental correspond à un cromlech.Cet ensemble mégalithique a longtemps été interprété comme un temple astronomique. L'hypothèse actuelle, selon Serge Cassen, directeur de recherche CNRS, repose sur une autre façon de regarder cet alignement et les pierres jointives du cromlech : « L'idée, très simple, est de dire que les espaces entre les pierres ont autant de sens que les pierres elles-mêmes. On serait là face à des aménagements de passage, des … pierres seuil qui matérialiseraient un passage. Et on traverse comme on traverse une frontière ».",
+  description: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs). On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech. Ces enceintes jouaient un rôle important dans l'utilisation du lieu.",
   latitude: "47.59161",
   longitude:"-3.08567"
 )
@@ -109,18 +141,18 @@ tumulus_saint_michel = Megalith.new(
   name: "Tumulus Saint-Michel",
   address: "Carnac",
   category: "Tumulus",
-  description: "Le tumulus Saint-Michel est formé d'une butte de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique. Il fait l’objet d’un classement au titre des monuments historiques depuis 1889. La bataille du tumulus Saint-Michel se déroula pendant la Chouannerie, lors de l'expédition de Quiberon le 27 juin 1795 et se termina par une victoire des Chouans commandés par Vincent de Tinténiac sur les Républicains.",
+  description: "Le tumulus Saint-Michel est une butte artificielle de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
   latitude: "47.588",
   longitude:"-3.0733"
 )
 tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
 tumulus_saint_michel.save!
 
-puts "Megalith created!"
+puts "Megaliths created!"
 
 
 
-puts "Creating Step..."
+puts "Creating Steps..."
 
 carnac_step_1 = Step.new(
   position: 1,
@@ -137,59 +169,59 @@ carnac_step_1.save!
 
 carnac_step_2 = Step.new(
   position: 2,
-  question: "A quelle époque, les mégalithes ont-ils été créés ?",
-  answer_1: "L'époque gauloise",
-  answer_2: "Le Néolithique",
-  answer_3: "L'Antiquité",
-  answer_4: "L'ère mégalithique",
-  correct_answer: 2,
+  question: "Quelles traces les archéologues retrouvent-ils rarement dans les fouilles ?",
+  answer_1: "Des poteries",
+  answer_2: "Des outils en silex",
+  answer_3: "Des haches en pierres polies",
+  answer_4: "Les ossements",
+  correct_answer: 4,
   course: carnac_course,
-  megalith: alignement_de_kerlescan
+  megalith: geant_du_manio
 )
 carnac_step_2.save!
 
 carnac_step_3 = Step.new(
   position: 3,
-  question: "A quelle époque, les mégalithes ont-ils été créés ?",
-  answer_1: "L'époque gauloise",
-  answer_2: "Le Néolithique",
-  answer_3: "L'Antiquité",
-  answer_4: "L'ère mégalithique",
-  correct_answer: 2,
+  question: "Quelle étape de la fabrication d'un menhir n'est pas à sa place ?",
+  answer_1: "La préparation du bloc",
+  answer_2: "Le transport",
+  answer_3: "Le levage du menhir",
+  answer_4: "L'extraction",
+  correct_answer: 4,
   course: carnac_course,
-  megalith: alignement_de_kerlescan
+  megalith: cairn_de_kercado
 )
 carnac_step_3.save!
 
 carnac_step_4 = Step.new(
   position: 4,
-  question: "A quelle époque, les mégalithes ont-ils été créés ?",
-  answer_1: "L'époque gauloise",
-  answer_2: "Le Néolithique",
-  answer_3: "L'Antiquité",
-  answer_4: "L'ère mégalithique",
-  correct_answer: 2,
+  question: "Parmi les hypothèses suivantes, laquelle est la moins réaliste ?",
+  answer_1: "Des esclaves ont bâti les mégalithes",
+  answer_2: "Les mégalithes marquaient le territoire",
+  answer_3: "Les Hommes se rassemblaient autour des menhirs",
+  answer_4: "Cette civilisation était dirigée par des chefs",
+  correct_answer: 1,
   course: carnac_course,
-  megalith: alignement_de_kerlescan
+  megalith: enceinte_du_menec
 )
 carnac_step_4.save!
 
 carnac_step_5 = Step.new(
   position: 5,
-  question: "A quelle époque, les mégalithes ont-ils été créés ?",
-  answer_1: "L'époque gauloise",
-  answer_2: "Le Néolithique",
-  answer_3: "L'Antiquité",
-  answer_4: "L'ère mégalithique",
-  correct_answer: 2,
+  question: "Quelle activité pourrait être à l'origine de la naissance de la civilisation mégalithique ?",
+  answer_1: "L'agriculture",
+  answer_2: "La fabrication de hache en pierre polie",
+  answer_3: "La fabrication de sel",
+  answer_4: "L'élevage",
+  correct_answer: 3,
   course: carnac_course,
-  megalith: alignement_de_kerlescan
+  megalith: tumulus_saint_michel
 )
 carnac_step_5.save!
 
-puts "Step created!"
+puts "Steps created!"
 
-puts "Creating UserCourse..."
+puts "Creating UserCourses..."
 
 lomig_carnac = UserCourse.new(
   course: carnac_course,
@@ -205,31 +237,47 @@ lomig_monteneuf = UserCourse.new(
 )
 lomig_monteneuf.save!
 
-puts "UserCourse created!"
+lomig_saint_just = UserCourse.new(
+  course: saint_just_course,
+  user: lomig,
+  done: true
+)
+lomig_saint_just.save!
+
+lomig_erdeven = UserCourse.new(
+  course: erdeven_course,
+  user: lomig,
+  done: true
+)
+lomig_erdeven.save!
+
+puts "UserCourses created!"
 
 
 
-puts "Creating UserStep..."
+puts "Creating UserSteps..."
 
 lomig_carnac_step_1 = UserStep.new(
   step: carnac_step_1,
   user_course: lomig_carnac,
-  done: true,
-  quiz_answer: "L'Antiquité"
+  quiz_answer: "L'Antiquité",
+  done: true
 )
 lomig_carnac_step_1.save!
 
 lomig_carnac_step_2 = UserStep.new(
   step: carnac_step_2,
   user_course: lomig_carnac,
-  done: false
+  quiz_answer: "Les ossements",
+  done: true
 )
 lomig_carnac_step_2.save!
 
 lomig_carnac_step_3 = UserStep.new(
   step: carnac_step_3,
   user_course: lomig_carnac,
-  done: false
+  quiz_answer: "L'extraction",
+  done: true
 )
 lomig_carnac_step_3.save!
 
@@ -247,7 +295,7 @@ lomig_carnac_step_5 = UserStep.new(
 )
 lomig_carnac_step_5.save!
 
-puts "UserStep created!"
+puts "UserSteps created!"
 
 
 
