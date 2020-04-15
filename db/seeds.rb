@@ -6,6 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+
 require "open-uri"
 
 puts "Cleaning database..."
@@ -88,41 +90,69 @@ erdeven_course.save!
 puts "Courses created!"
 
 
-# pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 
 puts "Creating Megaliths..."
+
+puts "Creating Alignement de Kerlescan..."
 
 alignement_de_kerlescan = Megalith.new(
   name: "Alignement de Kerlescan",
   address: "Carnac",
   category: "Menhir",
-  description: "En un coup d'oeil, découvrez comment sont construits les alignements de Carnac. Actuellement, 555 pierres se répartissent sur 13 files. Les menhirs sont disposés en éventail et en ordre croissant vers l'enceinte. Au nord de l'enceinte se trouve un tumulus discret long de 35 mètres. Un menhir en indique l'extrêmité",
   latitude: "47.60373",
   longitude: "-3.05048"
 )
-alignement_de_kerlescan.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan.jpg'), filename: 'alignement_de_kerlescan.jpg', content_type: 'image/jpg')
+
+alignement_de_kerlescan_description_1 = Description.new(
+  position: 1,
+  megalith: alignement_de_kerlescan,
+  content: "En un coup d'oeil, découvrez comment sont construits les alignements de Carnac."
+)
+alignement_de_kerlescan_description_1.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_1.jpg'), filename: 'alignement_de_kerlescan_1.jpg', content_type: 'image/jpg')
+
+# alignement_de_kerlescan_description_2 = alignement_de_kerlescan.build(
+#   position: 2,
+#   content: "Actuellement, 555 pierres se répartissent sur 13 files."
+# )
+# alignement_de_kerlescan_description_2.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_2.jpg'), filename: 'alignement_de_kerlescan_2.jpg', content_type: 'image/jpg')
+
+# alignement_de_kerlescan_description_3 = alignement_de_kerlescan.build(
+#   position: 3,
+#   content: "Les menhirs sont disposés en éventail et en ordre croissant vers l'enceinte."
+# )
+# alignement_de_kerlescan_description_3.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_3.jpg'), filename: 'alignement_de_kerlescan_3.jpg', content_type: 'image/jpg')
+
+# alignement_de_kerlescan_description_4 = alignement_de_kerlescan.build(
+#   position: 4,
+#   content: "Au nord de l'enceinte se trouve un tumulus discret long de 35 mètres. Un menhir en indique l'extrêmité."
+# )
+# alignement_de_kerlescan_description_4.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_4.jpg'), filename: 'alignement_de_kerlescan_4.jpg', content_type: 'image/jpg')
+
+
 alignement_de_kerlescan.save!
 
+puts "Alignement de Kerlescan created!"
+
+  # description: "Il s'agit d'une pierre dressée d'environ 6,5 m de haut Il constitue le plus grand menhir du site des alignements de Carnac. A quelques mètres se trouvent le quadrilatère du Manio. Ses pierres délimitaient à l'origine un tumulus, aujourd'hui disparu.",
 geant_du_manio = Megalith.new(
   name: "Géant du Manio",
   address: "Carnac",
   category: "Menhir",
-  description: "Il s'agit d'une pierre dressée d'environ 6,5 m de haut Il constitue le plus grand menhir du site des alignements de Carnac. A quelques mètres se trouvent le quadrilatère du Manio. Ses pierres délimitaient à l'origine un tumulus, aujourd'hui disparu.",
   latitude: "47.6036",
   longitude:"-3.05598"
 )
-geant_du_manio.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
+# geant_du_manio.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
 geant_du_manio.save!
 
+  # description: "Ce monument circulaire se trouve au sud de l'alignement de Kermario. C'est l'un des rares dolmens de Bretagne à avoir conservé son cairn d'origine. De nombreuses gravures d'époque (haches, arcs, bateaux, cétacé) sont visibles à l'aide d'une lumière rasante.",
 cairn_de_kercado = Megalith.new(
   name: "Cairn de Kercado",
   address: "Carnac",
   category: "Cairn",
-  description: "Ce monument circulaire se trouve au sud de l'alignement de Kermario. C'est l'un des rares dolmens de Bretagne à avoir conservé son cairn d'origine. De nombreuses gravures d'époque (haches, arcs, bateaux, cétacé) sont visibles à l'aide d'une lumière rasante.",
   latitude: "47.59577",
   longitude: "-3.05436"
 )
-cairn_de_kercado.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
+# cairn_de_kercado.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
 cairn_de_kercado.save!
 
 
@@ -130,22 +160,22 @@ enceinte_du_menec = Megalith.new(
   name: "Enceinte du Ménec",
   address: "Carnac",
   category: "Menhir",
-  description: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs). On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech. Ces enceintes jouaient un rôle important dans l'utilisation du lieu.",
+  # description: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs). On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech. Ces enceintes jouaient un rôle important dans l'utilisation du lieu.",
   latitude: "47.59161",
   longitude:"-3.08567"
 )
-enceinte_du_menec.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
+# enceinte_du_menec.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
 enceinte_du_menec.save!
 
 tumulus_saint_michel = Megalith.new(
   name: "Tumulus Saint-Michel",
   address: "Carnac",
   category: "Tumulus",
-  description: "Le tumulus Saint-Michel est une butte artificielle de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
+  # description: "Le tumulus Saint-Michel est une butte artificielle de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
   latitude: "47.588",
   longitude:"-3.0733"
 )
-tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+# tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
 tumulus_saint_michel.save!
 
 puts "Megaliths created!"
@@ -162,8 +192,10 @@ carnac_step_1 = Step.new(
   answer_3: "L'Antiquité",
   answer_4: "L'ère mégalithique",
   correct_answer: 2,
-  course_id: carnac_course[:id],
-  megalith_id: alignement_de_kerlescan[:id]
+  course: carnac_course,
+  megalith: alignement_de_kerlescan,
+  access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
+  # access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs""
 )
 carnac_step_1.save!
 
@@ -176,7 +208,8 @@ carnac_step_2 = Step.new(
   answer_4: "Les ossements",
   correct_answer: 4,
   course: carnac_course,
-  megalith: geant_du_manio
+  megalith: geant_du_manio,
+  access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs"
 )
 carnac_step_2.save!
 
@@ -189,7 +222,8 @@ carnac_step_3 = Step.new(
   answer_4: "L'extraction",
   correct_answer: 4,
   course: carnac_course,
-  megalith: cairn_de_kercado
+  megalith: cairn_de_kercado,
+  access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km "
 )
 carnac_step_3.save!
 
@@ -202,7 +236,8 @@ carnac_step_4 = Step.new(
   answer_4: "Cette civilisation était dirigée par des chefs",
   correct_answer: 1,
   course: carnac_course,
-  megalith: enceinte_du_menec
+  megalith: enceinte_du_menec,
+  access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres"
 )
 carnac_step_4.save!
 
@@ -215,7 +250,8 @@ carnac_step_5 = Step.new(
   answer_4: "L'élevage",
   correct_answer: 3,
   course: carnac_course,
-  megalith: tumulus_saint_michel
+  megalith: tumulus_saint_michel,
+  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)"
 )
 carnac_step_5.save!
 
