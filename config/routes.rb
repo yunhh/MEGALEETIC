@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
 
+  get 'courses/index'
+  get 'courses/show'
   devise_for :users
   root to: 'pages#home'
 
