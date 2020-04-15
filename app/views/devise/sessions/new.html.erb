@@ -23,6 +23,6 @@
     <% end %>
 
     <%= render "devise/shared/links" %>
-
+    <%= link_to "Log out", destroy_user_session_path, method: :delete %>
   </div>
 </div>
