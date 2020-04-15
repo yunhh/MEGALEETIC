@@ -1,18 +1,24 @@
+body,html{
+  width: 100vw;
+}
+
 .card-category-index{
   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
   url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/France-Carnac-Alignement_de_Kermario.jpg/1280px-France-Carnac-Alignement_de_Kermario.jpg");
   height: 300px;
-  width: 200px;
+  width: 250px;
   border-radius: 15px;
+  flex-shrink: 0;
+  margin: 0 30px;
 }
 
 .mieux-note{
   display: flex;
-  margin: 5px 5px;
-  justify-content: space-evenly;
-  scroll-direction: horizontal;
-  width: 1200px;
   padding: 0;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  margin-top: 25px;
+  margin-bottom: 25px;
 }
 
 .card-course-etape{
@@ -29,16 +35,51 @@
   text-align: center;
   font-weight: bold;
   padding: 0;
+  font-family: 'Red Hat Text', sans-serif;
 }
 
 .card-course-description{
   color: white;
   text-align: center;
   padding: 0;
+  font-family: 'Red Hat Text', sans-serif;
 }
 
 .card-course-duration{
   color: white;
   padding-bottom: 3px;
   padding-right: 5px;
+}
+
+.title-index{
+  font-family: 'Red Hat Text', sans-serif;
+  text-align:center;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 22px;
+}
+
+.map{
+  height: 350px;
+  width: 100vw;
+  border: 1px solid black;
+}
+
+.populaire {
+  margin-top: 25px;
+  h3{
+  margin-left: 30px;
+  }
+}
+
+.next-to-you{
+    margin-top: 25px;
+  h2{
+    margin-left: 30px;
+  }
+}
+
+.search{
+  margin-left: 80px;
+  margin-top: 300px;
 }
