@@ -1,34 +1,49 @@
-  .background-home{
-    background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586879575/background_rpweju.jpg");
-    height: 100vh;
-    text-align: center;
-  }
+.background-home{
+  background-image: url("https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586879575/background_rpweju.jpg");
+  height: 100vh;
+  text-align: center;
+  background-repeat: no-repeat;
+}
 .title-home{
   text-align: center;
   padding-top: 60px;
 }
 .content-home{
-  padding-top: 60px;
+  padding-top: 50px;
+  font-family: 'Sorts Mill Goudy', serif;
+  font-family: 'Red Hat Text', sans-serif;
+  padding-right: 30px;
+  padding-left:30px;
+  font-size: 18px;
 }
 .button-home{
+  margin-top: 50px;
+  padding: 5px 50px;
   border-radius: 50px;
-  margin-top: 350px;
   background-color: #F96D6C;
   color: white;
-  width: 170px;
   font-weight: bold;
-  font-size: 20px;
-  border: none;
+  font-size: 22px;
+  &:hover{
+    border: 1px solid black;
+  }
 }
-.login-home{
-  color:white;
-  margin-top: 25px;
-  font-size: 20px;
-  margin-bottom: 0;
+.login{
+  margin-top:85%;
+  p{
+    color:white;
+    margin-top: 5px;
+    font-size: 20px;
+    margin-bottom: 0;
+  }
+  a{
+    text-decoration: none;
+    color: white;
+    font-weight:bold;
+    font-size:25px;
+  }
+
 }
-.link-login-home{
-  text-decoration: none;
-  color: white;
-  font-weight:bold;
-  font-size:25px;
-}
+ a:hover{
+    color: red;
+  }

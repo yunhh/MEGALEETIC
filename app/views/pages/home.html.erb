@@ -1,11 +1,12 @@
 
   <div class="background-home">
+    <div class="container">
        <h1 class="title-home">MEGALEETIC</h1>
-       <p class="container content-home">We add courses with cultural games to discover these Menhirs while having fun</p>
-
-      <button class="btn btn-primary button-home">C'est parti !</button>
-      <p class="login-home">Avez-vous déjà un compte ? </p>
-      <a href="" class="link-login-home">Se connecter</a>
-
+       <p class="content-home">We add courses with cultural games to discover these Menhirs while having fun</p>
+       <div class="login"> <%= link_to "C'est parti", courses_path, class:"button-home" %>
+         <p>Avez-vous déjà un compte ? </p>
+         <%= link_to "Se connecter", courses_path %>
+       </div>
+    </div>
   </div>
 
