@@ -9,11 +9,9 @@
       <%= f.input :email,
                   required: true,
                   autofocus: true,
-                  placeholder: "E-mail:",
                   input_html: { autocomplete: "email", class: 'case' }%>
       <%= f.input :password,
                   required: true,
-                  placeholder: "mot de passe:",
                   hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
                   input_html: { autocomplete: "nouveau-mot-de-passe", class: 'case'  } %>
       <%= f.input :password_confirmation,
