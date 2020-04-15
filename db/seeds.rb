@@ -11,6 +11,7 @@
 require "open-uri"
 
 puts "Cleaning database..."
+Description.destroy_all
 UserStep.destroy_all
 UserCourse.destroy_all
 Step.destroy_all
@@ -103,37 +104,38 @@ alignement_de_kerlescan = Megalith.new(
   longitude: "-3.05048"
 )
 
-alignement_de_kerlescan_description_1 = Description.new(
+alignement_de_kerlescan_description_1 = alignement_de_kerlescan.descriptions.build(
   position: 1,
-  megalith: alignement_de_kerlescan,
   content: "En un coup d'oeil, découvrez comment sont construits les alignements de Carnac."
 )
 alignement_de_kerlescan_description_1.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_1.jpg'), filename: 'alignement_de_kerlescan_1.jpg', content_type: 'image/jpg')
 
-# alignement_de_kerlescan_description_2 = alignement_de_kerlescan.build(
-#   position: 2,
-#   content: "Actuellement, 555 pierres se répartissent sur 13 files."
-# )
-# alignement_de_kerlescan_description_2.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_2.jpg'), filename: 'alignement_de_kerlescan_2.jpg', content_type: 'image/jpg')
+alignement_de_kerlescan_description_2 = alignement_de_kerlescan.descriptions.build(
+  position: 2,
+  content: "Actuellement, 555 pierres se répartissent sur 13 files."
+)
+alignement_de_kerlescan_description_2.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_2.jpg'), filename: 'alignement_de_kerlescan_2.jpg', content_type: 'image/jpg')
 
-# alignement_de_kerlescan_description_3 = alignement_de_kerlescan.build(
-#   position: 3,
-#   content: "Les menhirs sont disposés en éventail et en ordre croissant vers l'enceinte."
-# )
-# alignement_de_kerlescan_description_3.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_3.jpg'), filename: 'alignement_de_kerlescan_3.jpg', content_type: 'image/jpg')
+alignement_de_kerlescan_description_3 = alignement_de_kerlescan.descriptions.build(
+  position: 3,
+  content: "Les menhirs sont disposés en éventail et en ordre croissant vers l'enceinte."
+)
+alignement_de_kerlescan_description_3.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_3.jpg'), filename: 'alignement_de_kerlescan_3.jpg', content_type: 'image/jpg')
 
-# alignement_de_kerlescan_description_4 = alignement_de_kerlescan.build(
-#   position: 4,
-#   content: "Au nord de l'enceinte se trouve un tumulus discret long de 35 mètres. Un menhir en indique l'extrêmité."
-# )
-# alignement_de_kerlescan_description_4.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_4.jpg'), filename: 'alignement_de_kerlescan_4.jpg', content_type: 'image/jpg')
+alignement_de_kerlescan_description_4 = alignement_de_kerlescan.descriptions.build(
+  position: 4,
+  content: "Au nord de l'enceinte se trouve un tumulus discret long de 35 mètres. Un menhir en indique l'extrêmité."
+)
+alignement_de_kerlescan_description_4.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_4.jpg'), filename: 'alignement_de_kerlescan_4.jpg', content_type: 'image/jpg')
 
 
 alignement_de_kerlescan.save!
 
 puts "Alignement de Kerlescan created!"
 
-  # description: "Il s'agit d'une pierre dressée d'environ 6,5 m de haut Il constitue le plus grand menhir du site des alignements de Carnac. A quelques mètres se trouvent le quadrilatère du Manio. Ses pierres délimitaient à l'origine un tumulus, aujourd'hui disparu.",
+
+puts "Creating Géant du Manio..."
+
 geant_du_manio = Megalith.new(
   name: "Géant du Manio",
   address: "Carnac",
@@ -141,10 +143,40 @@ geant_du_manio = Megalith.new(
   latitude: "47.6036",
   longitude:"-3.05598"
 )
-# geant_du_manio.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio.jpg'), filename:'geant_du_manio.jpg', content_type: 'image/jpg')
+
+geant_du_manio_description_1 = geant_du_manio.descriptions.build(
+  position: 1,
+  content: "Il s'agit d'une pierre dressée d'environ 6,5 m de haut."
+)
+geant_du_manio_description_1.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_1.jpg'), filename: 'geant_du_manio_1.jpg', content_type: 'image/jpg')
+
+geant_du_manio_description_2 = geant_du_manio.descriptions.build(
+  position: 2,
+  content: "Il constitue le plus grand menhir du site des alignements de Carnac."
+)
+geant_du_manio_description_2.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_2.jpg'), filename: 'geant_du_manio_2.jpg', content_type: 'image/jpg')
+
+geant_du_manio_description_3 = geant_du_manio.descriptions.build(
+  position: 3,
+  content: "A quelques mètres se trouvent le quadrilatère du Manio."
+)
+geant_du_manio_description_3.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_3.jpg'), filename: 'geant_du_manio_3.jpg', content_type: 'image/jpg')
+
+geant_du_manio_description_4 = geant_du_manio.descriptions.build(
+  position: 4,
+  content: "Ses pierres délimitaient à l'origine un tumulus, aujourd'hui disparu."
+)
+geant_du_manio_description_4.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_4.jpg'), filename: 'geant_du_manio_4.jpg', content_type: 'image/jpg')
+
 geant_du_manio.save!
 
-  # description: "Ce monument circulaire se trouve au sud de l'alignement de Kermario. C'est l'un des rares dolmens de Bretagne à avoir conservé son cairn d'origine. De nombreuses gravures d'époque (haches, arcs, bateaux, cétacé) sont visibles à l'aide d'une lumière rasante.",
+puts "Géant du Manio created!"
+
+
+
+
+puts "Creating Cairn de Kercado..."
+
 cairn_de_kercado = Megalith.new(
   name: "Cairn de Kercado",
   address: "Carnac",
@@ -152,31 +184,117 @@ cairn_de_kercado = Megalith.new(
   latitude: "47.59577",
   longitude: "-3.05436"
 )
-# cairn_de_kercado.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_de_kercado.jpg'), filename:'tumulus_de_kercado.jpg', content_type: 'image/jpg')
+cairn_de_kercado_1 = cairn_de_kercado.descriptions.build(
+  position: 1,
+  content: "Ce monument circulaire se trouve au sud de l'alignement de Kermario."
+)
+cairn_de_kercado_1.photo.attach(io:File.open('db/fixtures/megaliths/cairn_de_kercado/cairn_de_kercado_1.jpg'), filename: 'cairn_de_kercado_1.jpg', content_type: 'image/jpg')
+
+cairn_de_kercado_2 = cairn_de_kercado.descriptions.build(
+  position: 2,
+  content: "C'est l'un des rares dolmens de Bretagne à avoir conservé son cairn d'origine."
+)
+cairn_de_kercado_2.photo.attach(io:File.open('db/fixtures/megaliths/cairn_de_kercado/cairn_de_kercado_2.jpg'), filename: 'cairn_de_kercado_2.jpg', content_type: 'image/jpg')
+
+cairn_de_kercado_3 = cairn_de_kercado.descriptions.build(
+  position: 3,
+  content: "De nombreuses gravures d'époque (haches, arcs, bateaux, cétacé) sont visibles à l'aide d'une lumière rasante."
+)
+cairn_de_kercado_3.photo.attach(io:File.open('db/fixtures/megaliths/cairn_de_kercado/cairn_de_kercado_3.jpg'), filename: 'cairn_de_kercado_3.jpg', content_type: 'image/jpg')
+
+cairn_de_kercado_4 = cairn_de_kercado.descriptions.build(
+  position: 4,
+  content: "Un cromlech entoure le cairn qui est aussi surmonté d'un menhir."
+)
+cairn_de_kercado_4.photo.attach(io:File.open('db/fixtures/megaliths/cairn_de_kercado/cairn_de_kercado_4.jpg'), filename: 'cairn_de_kercado_4.jpg', content_type: 'image/jpg')
+
+
 cairn_de_kercado.save!
 
+puts "Cairn de Kercado created!"
+
+
+
+puts "Creating Enceinte du Ménec..."
 
 enceinte_du_menec = Megalith.new(
   name: "Enceinte du Ménec",
   address: "Carnac",
   category: "Menhir",
-  # description: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs). On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech. Ces enceintes jouaient un rôle important dans l'utilisation du lieu.",
+  # description: "  ",
   latitude: "47.59161",
   longitude:"-3.08567"
 )
-# enceinte_du_menec.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec.jpg'), filename:'enceinte_du_menec.jpg', content_type: 'image/jpg')
+
+enceinte_du_menec_1 = enceinte_du_menec.descriptions.build(
+  position: 1,
+  content: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs)."
+)
+enceinte_du_menec_1.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_1.jpg'), filename: 'enceinte_du_menec_1.jpg', content_type: 'image/jpg')
+
+enceinte_du_menec_2 = enceinte_du_menec.descriptions.build(
+  position: 2,
+  content: "On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech."
+)
+enceinte_du_menec_2.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_2.jpg'), filename: 'enceinte_du_menec_2.jpg', content_type: 'image/jpg')
+
+enceinte_du_menec_3 = enceinte_du_menec.descriptions.build(
+  position: 3,
+  content: "Ces enceintes jouaient un rôle important dans l'utilisation du lieu."
+)
+enceinte_du_menec_3.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_3.jpg'), filename: 'enceinte_du_menec_3.jpg', content_type: 'image/jpg')
+
+enceinte_du_menec_4 = enceinte_du_menec.descriptions.build(
+  position: 4,
+  content: "La plupart des menhirs de l'enceinte a été relevée. Un petit carré fait de mortier de brique rouge les indique."
+)
+enceinte_du_menec_4.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_4.jpg'), filename: 'enceinte_du_menec_4.jpg', content_type: 'image/jpg')
+
 enceinte_du_menec.save!
+
+puts "Enceinte du Ménec created!"
+
+
+puts "Creating Tumulus Saint-Michel..."
 
 tumulus_saint_michel = Megalith.new(
   name: "Tumulus Saint-Michel",
   address: "Carnac",
   category: "Tumulus",
-  # description: "Le tumulus Saint-Michel est une butte artificielle de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur. Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite. Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
+  # description: "  Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
   latitude: "47.588",
   longitude:"-3.0733"
 )
-# tumulus_saint_michel.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel.jpg'), filename:'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+
+tumulus_saint_michel_1 = tumulus_saint_michel.descriptions.build(
+  position: 1,
+  content: "Le tumulus Saint-Michel est une butte artificielle de terre et de pierres de 125 mètres de long, 50 mètres de large et 10 mètres de hauteur."
+)
+tumulus_saint_michel_1.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel_1.jpg'), filename: 'tumulus_saint_michel_1.jpg', content_type: 'image/jpg')
+
+tumulus_saint_michel_2 = tumulus_saint_michel.descriptions.build(
+  position: 2,
+  content: "Exploré en 1862, les chercheurs y ont trouvé un caveau central renfermant un mobilier funéraire assez prestigieux : haches polies en jadéite et fibrolite, et un collier de perles et de pendeloques en variscite."
+)
+tumulus_saint_michel_2.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel_2.jpg'), filename: 'tumulus_saint_michel_2.jpg', content_type: 'image/jpg')
+
+tumulus_saint_michel_3 = tumulus_saint_michel.descriptions.build(
+  position: 3,
+  content: "Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel."
+)
+tumulus_saint_michel_3.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel_3.jpg'), filename: 'tumulus_saint_michel_3.jpg', content_type: 'image/jpg')
+
+tumulus_saint_michel_4 = tumulus_saint_michel.descriptions.build(
+  position: 4,
+  content: "Il découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique."
+)
+tumulus_saint_michel_4.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel_4.jpg'), filename: 'tumulus_saint_michel_4.jpg', content_type: 'image/jpg')
+
+enceinte_du_menec.save!
+
 tumulus_saint_michel.save!
+
+puts "Tumulus Saint-Michel created!"
 
 puts "Megaliths created!"
 
