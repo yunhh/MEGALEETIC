@@ -1,0 +1,70 @@
+.back-grey-show{
+  background-color: rgb(245,245,245);
+}
+.header-show{
+  font-family: 'Red Hat Text', sans-serif;
+  h2{
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size:18px;
+    padding-top:12px;
+  }
+  p {
+        font-weight:bold;
+        padding:0;
+        margin: 0 0 12px 12px;
+        color:grey;
+        font-size:14px;
+  }
+}
+.content-show{
+  margin-top:12px;
+  text-align:center;
+  font-family: 'Red Hat Text', sans-serif;
+  h3{
+    font-weight:bold;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size:16px;
+  }
+  p{
+    padding: 6px 20px 16px 20px;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size:12px;
+    margin-bottom: 0;
+  }
+}
+.cards-step{
+  margin-top: 8px;
+  padding: 0;
+  text-align: center;
+  display:flex;
+  flex-wrap: wrap;
+  justify-content:center;
+  overflow-y: scroll;
+  p{
+    font-family: 'Red Hat Text', sans-serif;
+  }
+}
+.card-step{
+  padding: 0;
+  margin: 10px 0;
+  width: 200px;
+  height: 200px;
+  border-radius: 10px;
+  text-align:center;
+  flex-shrink: 0;
+  p{
+    color: white;
+    font-family: 'Red Hat Text', sans-serif;
+    font-weight:bold;
+    padding: 0 10px;
+
+  }
+}
+.card-step:hover{
+
+
+  background-color: #000000;
+}
