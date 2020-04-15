@@ -30,20 +30,19 @@
 
           <input class="search" type="search" placeholder="Rechercher...">
         </div>
+
         <div class= "populaire">
-          <h2>Les mieux notés</h2>
+          <h3>Les mieux notés</h3>
             <div class= "mieux-note">
               <% @courses.each do |course|  %>
-              <div class="card-category-index" style="">
-              course.description
-            </div>
+                <div class="card-category-index" style="">
+                  <p class= "card-course-etape"><%= course.steps.count %> étapes </p>
+                  <p class= "card-course-name"><%= course.name %></p>
+                  <p class= "card-course-description"><%= course.description%></p>
+                  <p class= "card-course-duration"><%= course.duration_in_minutes %></p>
+                </div>
               <%end %>
-
-
             </div>
-
-
-
         </div>
 
           <div class= "next-to-you">
