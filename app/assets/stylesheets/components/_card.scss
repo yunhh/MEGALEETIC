@@ -1,0 +1,14 @@
+.card-category-index{
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)),
+  url("https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/France-Carnac-Alignement_de_Kermario.jpg/1280px-France-Carnac-Alignement_de_Kermario.jpg");
+  height: 300px;
+  width: 200px;
+  border-radius: 15px;
+}
+.mieux-note{
+  display: flex;
+  margin: 5px 5px;
+  justify-content: space-evenly;
+  scroll-direction: horizontal;
+}
+
