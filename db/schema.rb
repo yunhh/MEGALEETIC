@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_14_141635) do
+ActiveRecord::Schema.define(version: 2020_04_15_103426) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -46,11 +46,19 @@ ActiveRecord::Schema.define(version: 2020_04_14_141635) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "descriptions", force: :cascade do |t|
+    t.bigint "megalith_id", null: false
+    t.integer "position"
+    t.string "content"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["megalith_id"], name: "index_descriptions_on_megalith_id"
+  end
+
   create_table "megaliths", force: :cascade do |t|
     t.string "name"
     t.string "address"
     t.string "category"
-    t.text "description"
     t.float "latitude"
     t.float "longitude"
     t.datetime "created_at", precision: 6, null: false
@@ -69,6 +77,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_141635) do
     t.bigint "megalith_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "access_description"
     t.index ["course_id"], name: "index_steps_on_course_id"
     t.index ["megalith_id"], name: "index_steps_on_megalith_id"
   end
@@ -107,6 +116,7 @@ ActiveRecord::Schema.define(version: 2020_04_14_141635) do
   end
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "descriptions", "megaliths"
   add_foreign_key "steps", "courses"
   add_foreign_key "steps", "megaliths"
   add_foreign_key "user_courses", "courses"
