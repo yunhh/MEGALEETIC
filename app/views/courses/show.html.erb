@@ -14,18 +14,18 @@
   </div>
 </div>
 
-<div class="test">
-  <div class="cards-step">
-    <% @steps.each do |step| %>
+<div class="cards-step">
+  <% @steps.each do |step| %>
+  <div class="link-between-step"></div>
+   <p class="etape-number"> Etape <%= step.position %> </p>
+    <%= link_to(@course) do %>
 
+      <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
 
-      <%= link_to(@course) do %>
-        <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
-          <p> Etape <%= step.position %> </p>
-          <p> <%= step.megalith.name %> </p>
-        </div>
-      <% end %>
-
+        <p> <%= step.megalith.name %> </p>
+      </div>
     <% end %>
-  </div>
+
+  <% end %>
 </div>
+
