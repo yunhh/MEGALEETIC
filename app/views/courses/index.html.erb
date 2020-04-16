@@ -20,7 +20,7 @@
     <% @courses.each do |course| %>
       <%= link_to course_path(course) do %>
         <div class="card-category-index" style="">
-          <p class= "card-course-etape"><%= course.steps.count %>étapes</p>
+          <p class= "card-course-etape"><%= course.steps.count %> ETAPES</p>
           <p class= "card-course-name"><%= course.name %></p>
           <p class= "card-course-description"><%= course.description%></p>
           <p class= "card-course-duration"><%= course.duration_in_minutes %></p>
