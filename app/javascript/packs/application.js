@@ -16,19 +16,22 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-alert('test');
+
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
-import "menu_burger_index";
+import {burgerMenu} from "../components/menu_burger_index";
+
 // External imports
 import "bootstrap";
 
 // Internal imports, e.g:
+
 // import { initSelect2 } from '../components/init_select2';
 
 document.addEventListener('turbolinks:load', () => {
+  burgerMenu();
   // Call your functions here, e.g:
   // initSelect2();
 });
