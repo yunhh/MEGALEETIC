@@ -1,5 +1,6 @@
 // Import page-specific CSS files here.
 @import "home";
+@import "show";
 @import url('https://fonts.googleapis.com/css?family=Lato');
 
 body
@@ -102,10 +103,10 @@ a
   height:calc(100vh - 50px);
 }
 
-p
-{
-  padding:20px;
-}
+// p
+// {
+//   padding:20px;
+// }
 
 h1{
   text-align: center;
