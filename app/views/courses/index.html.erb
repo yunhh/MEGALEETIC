@@ -5,7 +5,7 @@
 
 </div>
 <div class="my-nav">
-  <a href="" class= "logo">Avatar</a>
+  <a href="" class="logo">Avatar</a>
   <a href="">Setting</a>
   <a href="">Sign out</a>
   <a href="">Mes courses</a>
@@ -14,48 +14,49 @@
 </div>
 
 
-<div class="map">
-
-  <input class="search" type="search" placeholder="Rechercher...">
-  <button type="button" class="btn-map"> <img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button>
+<div class="mapindex">
+  <div class="recherche">
+    <input class="search" type="search" placeholder="Rechercher...">
+    <button type="button" class="btn-map"> <img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button>
+  </div>
 </div>
 <div class= "populaire">
   <h3>Les mieux notés</h3>
   <div class= "mieux-note">
     <% @courses.each do |course| %>
       <%= link_to course_path(course) do %>
-        <div class="card-category-index" style="">
-          <p class= "card-course-etape"><%= course.steps.count %> ETAPES</p>
-          <p class= "card-course-name"><%= course.name %></p>
-          <p class= "card-course-description"><%= course.description%></p>
-          <p class= "card-course-duration"><%= course.duration_in_minutes %></p>
+        <div class="card-category-index" style="background-image: linear-gradient(rgba(36,36,36,0.4), rgba(36,36,36,0.4)), url(<%= cl_image_path course.photo.key, height: 300, width: 400, crop: :fill %>)">
+          <p class="card-course-etape"><%= course.steps.count %> étapes</p>
+          <p class="card-course-name pt-5"><%= course.name %></p>
+          <p class="card-course-description"><%= course.description%></p>
+          <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
         </div>
       <% end %>
     <% end %>
   </div>
 </div>
 
-  <div class= "next-to-you">
-    <h2>Près de chez vous</h2>
-    <div class= "card-course-index">
-      <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-Breakfast
-      </div>
-      <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-Breakfast
-      </div>
-      <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
-      </div>
+<div class= "next-to-you">
+  <h2>Près de chez vous</h2>
+  <div class= "card-course-index">
+    <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
+    </div>
+    <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
+    </div>
+    <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
+    </div>
 
-      <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
-      </div>
+    <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
+    </div>
 
-      <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
-        Breakfast
-      </div>
-
+    <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+      Breakfast
     </div>
 
   </div>
+
+</div>
