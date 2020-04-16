@@ -21,7 +21,23 @@
         font-size:14px;
   }
 }
-.content-show{
+#contentshow{
+  margin-top:12px;
+  text-align:center;
+  font-family: 'Red Hat Text', sans-serif;
+  h3{
+    font-weight:bold;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size:16px;
+  }
+  p{
+    padding: 6px 20px 16px 20px;
+    font-family: 'Red Hat Text', sans-serif;
+    font-size:12px;
+    margin-bottom: 0;
+  }
+}
+#contentshow2{
   margin-top:12px;
   text-align:center;
   font-family: 'Red Hat Text', sans-serif;
@@ -47,6 +63,7 @@
     font-family: 'Red Hat Text', sans-serif;
   }
 }
+
 .card-step{
   padding-top: 60px;
   margin: 20px auto;
@@ -64,9 +81,11 @@
   font-size: 20px;
 }
 
+
 .card-step:hover{
   background-color: #000000;
 }
+
 .link-between-step{
   margin: 0 auto;
   height:50px;

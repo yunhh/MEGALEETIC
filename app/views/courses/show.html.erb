@@ -8,19 +8,24 @@
        data-markers="<%= @markers.to_json %>"
        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
   </div>
-  <div class="content-show">
+  <div id="contentshow">
     <h3>Descriptif de l'etape</h3>
     <p><%= @course.description %> </p>
   </div>
+  <div id="contentshow2">
+    <h3>Itinéraire à suivre</h3>
+    <p>Depart a 15 min de la mairie de carnac</p>
+
+  </div>
 </div>
 
-<div class="cards-step">
-  <% @steps.each do |step| %>
+<div class="cards-step ">
+  <% @steps.each_with_index do |step, index| %>
   <div class="link-between-step"></div>
    <p class="etape-number pt-2"> étape <%= step.position %> </p>
     <%= link_to(@course) do %>
 
-      <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
+      <div class="card-step active" data-image="<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>" id="cardstep-<%= index %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
 
         <p> <%= step.megalith.name %> </p>
         <div class="infos pt-1">
