@@ -2,7 +2,7 @@
   <div class="siema">
     <% @descriptions.each do |description| %>
       <div class="slide" id="slide-<%= description.position %>">
-        <%= cl_image_tag description.photo.key %>
+        <%#= cl_image_tag description.photo.key %>
         <div class="step-title">
           <div class="current-step">
             <p>Etape <%= @step.position %></p>
