@@ -41,8 +41,6 @@
   margin-top: 360px;
   padding: 0;
   text-align: center;
-  // display:flex;
-  // flex-wrap: wrap;
   justify-content:center;
 
   p{
@@ -50,13 +48,22 @@
   }
 }
 .card-step{
-  padding: 0;
+  padding-top: 60px;
   margin: 20px auto;
-  width: 200px;
-  height: 200px;
+  width: 250px;
+  height: 180px;
   border-radius: 10px;
   text-align:center;
+  text-shadow: 2px 2px 4px #000000;
+
 }
+
+.card-step p {
+  font-weight: bold;
+  margin: 0 20px;
+  font-size: 20px;
+}
+
 .card-step:hover{
   background-color: #000000;
 }
@@ -68,7 +75,21 @@
 }
 
 .etape-number{
-  color:black;
+  color: #b8b8b8;
   font-family: 'Red Hat Text', sans-serif;
   font-weight:bold;
+  text-transform: uppercase;
+}
+
+.infos {
+  display: flex;
+  justify-content: space-around;
+  p {
+    font-size: 10px;
+    color: white;
+    display: inline-block;
+    text-align: center;
+
+
+  }
 }
