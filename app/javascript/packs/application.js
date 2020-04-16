@@ -21,15 +21,24 @@ require("channels")
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
+import {burgerMenu} from "../components/menu_burger_index";
 
 // External imports
 import "bootstrap";
 
 // Internal imports, e.g:
+import Siema from 'siema';
+
+
+
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
 
+
 document.addEventListener('turbolinks:load', () => {
+   burgerMenu();
   initMapbox();
+  new Siema();
+  // burgerMenu();
 });

@@ -1,0 +1,126 @@
+.step-container {
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  text-align:center;
+  color: white;
+}
+
+
+
+.step-title {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:35px;
+}
+.current-step {
+  font-size:10px;
+  font-weight:500;
+  letter-spacing: 0.15em;
+  text-transform:uppercase;
+}
+.current-step .letter {
+  display: inline-block;
+  line-height: 1em;
+}
+.step-name {
+  font-weight: 700;
+  font-size: 16px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-top:8px;
+  position: relative;
+}
+.content {
+  padding-top:60px;
+  width:80%;
+  font-size:24px;
+  line-height:1.4;
+  margin:0 auto;
+  font-family: 'Sorts Mill Goudy', serif;
+  animation : SlideLeft 1.3s cubic-bezier(.8,0,0,1);
+  opacity:0;
+  animation-delay: 2.2s;
+  animation-fill-mode: forwards;
+}
+.step-name:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  top:36px;
+  left: 0%;
+  position: absolute;
+  background: #E4A124;
+  animation: underline .5s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  animation-fill-mode: forwards;
+  animation-delay:1s;
+}
+
+@keyframes underline {
+  0% {
+   width: 0%;
+  left: 50%;
+
+  }
+  100% {
+    width: 50%;
+  left: 25%;
+  }
+}
+@keyframes SlideLeft {
+  0% {
+    transform: translateX(120px);
+  }
+  20% {
+    opacity:0;
+  }
+  100% {
+    opacity:1;
+    transform: translateX(0px);
+  }
+}
+
+.siema {
+  height:100vh;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  width:100vw;
+  height:100vh;
+  background-color:rgba(0,0,0,0.6);
+}
+
+.slide:after {
+  content:'';
+  background: url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/8/d/0/8d07f0469e_109583_menhir-megalithe-neolithique.jpg') no-repeat center center;
+  position: absolute;
+  top:0px;
+  left: 0px;
+  width:100%;
+  height:100%;
+  z-index:-1;
+  opacity: 1;
+}
+.controls {
+  display:flex;
+  margin-top: 24px;
+}
+
+.circle {
+  width:10px;
+  height:10px;
+  margin:8px;
+  border:1px solid white;
+  border-radius:50%;
+}
+
+

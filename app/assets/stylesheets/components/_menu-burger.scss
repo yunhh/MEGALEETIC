@@ -1,47 +1,63 @@
-_menu-burger.scss
-.menu
-{
-  background:#323a44;
-  color:#fff;
-  height:50px;
-  position:relative;
+.toggle-btn{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  float: right;
+  margin-right: 10px;
+  margin-top: -80px;
+  cursor: pointer;
 }
 
-.menu .title
-{
-  font-size:30px;
-  font-weight:bold;
-  line-height:50px;
-  padding:0 20px;
-  text-transform:uppercase;
+.toggle-btn span{
+  height: 3px;
+  background-color: #3e444b;
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
 }
 
-.menu .burger
-{
-  appearance:none;
-  -moz-appearance:none;
-  -webkit-appearance:none;
-  color:inherit;
-  cursor:pointer;
-  font-family:'Material Icons';
-  font-size:30px;
-  line-height:50px;
-  margin:0;
-  outline:0;
-  padding:0;
-  position:absolute;
-  text-align:center;
-  top:0;
-  right:10px;
-  width:50px;
+.toggle-btn span:before{
+  content: "";
+  height: 3px;
+  background-color: #3e444b;
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  left: 0;
 }
 
-.menu .burger:before
-{
-  content:'menu';
+.toggle-btn span:after{
+  content: "";
+  height: 3px;
+  background-color: #3e444b;
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
 }
 
-.menu .burger:checked:before
-{
-  content:'close';
+.my-nav {
+  height: 400px;
+  background-color:#3e444b;
+  width: 200px;
+  margin-left: -200px;
+  transition-duration: 0.2s;
+  position: absolute;
+}
+
+.my-nav a {
+  color: white;
+  font-family: 'Red Hat Text', sans-serif;
+  text-align: center;
+  display: block;
+  padding-top: 30px;
+  text-decoration: none;
+}
+
+
+.my-nav.open {
+  margin-left: 0;
+  transition-duration: 0.2s;
+
 }
