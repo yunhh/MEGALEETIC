@@ -2,6 +2,17 @@ class CoursesController < ApplicationController
   def index
 
     @courses = Course.all
+    # @courses = Course.geocoded
+
+   #   @markers = @courses.map do |course|
+
+   #    {
+   #      lat: course.latitude,
+   #      # lat: 47.5977,
+   #      lng: course.longitude
+   #      # lng: -3.0634
+   #    }
+   # end
 
 
   end
@@ -12,10 +23,6 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = Step.all
-
-
-
-
 
     @megaliths = Megalith.geocoded
     @markers = @megaliths.map do |megalith|
@@ -29,30 +36,13 @@ class CoursesController < ApplicationController
         icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/cairn_zngsdy.png'
       else
         icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/alignement_fe1kme.png'
-
-
       end
       {
         lat: megalith.latitude,
         lng: megalith.longitude,
         image_url: helpers.asset_url(icon)
-
       }
     end
 
   end
 end
-
-
-
-
-
-
-
-        # if megalith.category == "Menhir"
-        #   image_url: helpers.asset_url('https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586972535/dolmen_ynclza.svg')
-        # elsif megalith.category == "Cairn"
-        #   image_url: helpers.asset_url('https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586982392/marker_2_jm2nzv.svg')
-        # elsif megalith.category == "Tumulus"
-        #   image_url: helpers.asset_url('https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586972535/dolmen_ynclza.svg')
-        # end

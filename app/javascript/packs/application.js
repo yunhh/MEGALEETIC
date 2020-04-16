@@ -34,11 +34,13 @@ import Siema from 'siema';
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
+import { initMapboxIndex } from '../plugins/init_mapbox_index';
 
 
 document.addEventListener('turbolinks:load', () => {
-   burgerMenu();
-  initMapbox();
+     burgerMenu();
+    initMapbox();
+  initMapboxIndex();
   new Siema();
   // burgerMenu();
 });

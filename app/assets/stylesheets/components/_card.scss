@@ -78,21 +78,22 @@ body,html{
 }
 
 .title-index{
-  font-family: 'Red Hat Text', sans-serif;
-  text-align:center;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 22px;
+   font-family: 'Red Hat Text', sans-serif;
+    font-weight:bold;
+    text-transform: uppercase;
+    text-align: center;
+    font-size:18px;
+    padding-top:12px;
 }
 
-.map{
-  height: 350px;
-  width: 100vw;
-  border: 1px solid black;
-}
+
+// .map{
+//   height: 350px;
+//   width: 100vw;
+//   border: 1px solid black;
+// }
 
 .populaire {
-  margin-top: 25px;
   h3{
   margin-left: 30px;
   font-size: 20px;
@@ -107,28 +108,39 @@ body,html{
     font-weight: bold;
   }
 }
-
-.search{
-  width: 250px;
-  margin-left: 60px;
-  margin-top: 300px;
-}
-
-.recherche {
+.test{
   position: relative;
-  height: 350px;
-  width: 100vw;
-  object-fit: cover;
-  input {
-    position: absolute;
-  }
-  .btn-map {
-    height: 37px;
-    width: 40px;
-    position: absolute;
-    bottom: 19px;
-    right: 48px;
-    background-color: #F96D6C;
-  }
+
 }
+.recherche {
+  margin-left: 75px;
+  width: 70vw;
+  position:relative;
+  bottom: 50px;
+}
+.search{
+  border-radius: 15px;
+  padding-left: 20px;
+}
+.btn-map{
+  background-color: #F96D6C;
+  border:none;
+  width: 30px;
+  height:30px;
+  border-radius:50%;
+  position: relative;
+  right: 30px;
+  bottom: 5px;
+}
+.eye-map-btn{
+  width: 22px;
+  height:22px;
+  position:absolute;
+  bottom:4px;
+  left:5px;
+
+}
+
+
+
 
