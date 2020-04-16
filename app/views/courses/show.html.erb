@@ -20,7 +20,7 @@
    <p class="etape-number pt-2"> étape <%= step.position %> </p>
     <%= link_to(@course) do %>
 
-      <div class="card-step" style="background-image: linear-gradient(rgba(100,100,100,0.6), rgba(100,100,100,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
+      <div class="card-step" style="background-image: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
 
         <p> <%= step.megalith.name %> </p>
         <div class="infos pt-1">
