@@ -21,6 +21,13 @@ body,html{
   margin-bottom: 25px;
 }
 
+.mieux-note {
+  display:flex;
+  overflow-x: scroll;
+  -webkit-overflow-scrolling: touch;
+  flex-shrink: 0;
+}
+
 .card-course-etape{
   text-align: center;
   color: white;
