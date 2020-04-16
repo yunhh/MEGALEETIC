@@ -27,13 +27,17 @@ import {burgerMenu} from "../components/menu_burger_index";
 import "bootstrap";
 
 // Internal imports, e.g:
+import Siema from 'siema';
+
+
 
 // import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
 
-  // burgerMenu();
 
 document.addEventListener('turbolinks:load', () => {
   initMapbox();
+  new Siema();
+  // burgerMenu();
 });
