@@ -20,11 +20,17 @@ class CoursesController < ApplicationController
     @megaliths = Megalith.geocoded
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"
-      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586972535/dolmen_ynclza.svg'
+      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
       elsif megalith.category == "Cairn"
-        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586982392/marker_2_jm2nzv.svg'
+        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/cairn_zngsdy.png'
+      elsif megalith.category == "Dolmen"
+        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/dolmen_pklsdz.png'
       elsif megalith.category == "Tumulus"
-        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1586982148/marker-editor_matrpg.svg'
+        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/cairn_zngsdy.png'
+      else
+        icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038186/alignement_fe1kme.png'
+
+
       end
       {
         lat: megalith.latitude,
