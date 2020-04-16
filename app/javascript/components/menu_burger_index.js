@@ -5,8 +5,12 @@ const burgerMenu = () => {
   // btn.onclick = function (){
   //   nav.classList.toggle('nav_open');
   // }
-  btn.addEventListener('click', event => {
-    nav.classList.toggle('open');
-  });
+  if (btn){
+    btn.addEventListener('click', event => {
+
+      nav.classList.toggle('open');
+    });
+  }
 }
+
  export {burgerMenu}
