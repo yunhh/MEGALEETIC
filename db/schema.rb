@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_15_103426) do
+ActiveRecord::Schema.define(version: 2020_04_16_212658) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,13 +37,17 @@ ActiveRecord::Schema.define(version: 2020_04_15_103426) do
   end
 
   create_table "courses", force: :cascade do |t|
-    t.string "city"
+    t.string "address"
     t.string "name"
     t.boolean "mobility_access"
     t.integer "duration_in_minutes"
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "distance_in_kilometers"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "rating"
   end
 
   create_table "descriptions", force: :cascade do |t|
@@ -78,6 +82,8 @@ ActiveRecord::Schema.define(version: 2020_04_15_103426) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "access_description"
+    t.integer "distance_in_kilometers"
+    t.integer "duration_in_minutes"
     t.index ["course_id"], name: "index_steps_on_course_id"
     t.index ["megalith_id"], name: "index_steps_on_megalith_id"
   end
