@@ -3,7 +3,7 @@ import mapboxgl from 'mapbox-gl';
 function easing(t) {
 return t * (2 - t);
 }
-contentshow2.style.display = "none";
+// contentshow2.style.display = "none";
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
@@ -49,9 +49,6 @@ const initMapbox = () => {
          fitMapToMarkers(map, markers)
          contentshow.style.display = "block";
          contentshow2.style.display = "none";
-
-
-
        }
        if (yPos >= 1 && yPos <= 210) {
           contentshow.style.display = "none";
@@ -60,7 +57,6 @@ const initMapbox = () => {
 
           const cardstep0 = document.getElementById("cardstep-0")
           cardstep0.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep0.dataset.image}')`;
-
        }
        if (yPos >= 210 && yPos <= 540) {
          contentshow.style.display = "none";
@@ -102,8 +98,6 @@ const initMapbox = () => {
     });
      console.log(markers)
   };
-
-
 };
 
 

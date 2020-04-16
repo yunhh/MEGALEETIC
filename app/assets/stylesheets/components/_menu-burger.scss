@@ -44,6 +44,7 @@
   margin-left: -200px;
   transition-duration: 0.2s;
   position: absolute;
+  z-index:1;
 }
 
 .my-nav a {
@@ -173,7 +174,3 @@ h1{
   text-align: center;
 }
 
-.search {
-  border-radius: 15px;
-
-}
