@@ -4,15 +4,15 @@
   <div class="toggle-btn" >
       <span></span>
 
-  </div>
-  <div class="my-nav">
-    <a href="" class="logo">Avatar</a>
-    <a href="">Setting</a>
-    <a href="">Sign out</a>
-    <a href="">Mes courses</a>
-    <a href="">Explore</a>
-    <a href="">Send us feedback</a>
-  </div>
+</div>
+<div class="my-nav">
+  <%= cl_image_tag current_user.photo.key, class:'avatar'%>
+  <a href="">Paramètres</a>
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+  <a href="">Mes parcours</a>
+  <%= link_to "Les parcours", courses_path %>
+  <a href="">Envoyer nous vos retours</a>
+</div>
 
   <div class="test">
     <div id="map-index"
