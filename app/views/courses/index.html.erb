@@ -32,7 +32,7 @@
   <div class= "mieux-note">
     <% @courses.each do |course| %>
       <%= link_to course_path(course) do %>
-        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
+        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path course.photo.key %>)">
           <p class="card-course-etape"><%= course.steps.count %> étapes</p>
           <div class="card-course-main">
             <p class="card-course-name pt-5"><%= course.name %></p>
