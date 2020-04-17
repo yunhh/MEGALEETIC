@@ -1,32 +1,38 @@
 <div class="step-container">
   <div class="siema">
-    <% @descriptions.each do |description| %>
-      <div class="slide" id="slide-<%= description.position %>" style="  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path description.photo.key %>);
-">
-        <%#= cl_image_tag description.photo.key %>
-        <div class="step-title">
-          <div class="current-step">
-            <p>Etape <%= @step.position %></p>
+    <!-- <div> -->
+      <% @descriptions.each do |description| %>
+        <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
+          <%#= cl_image_tag description.photo.key %>
+          <div class="step-title">
+            <div class="current-step">
+              <p>Etape <%= @step.position %></p>
+            </div>
+            <div class="step-name">
+              <p><%= @megalith.name %></p>
+            </div>
           </div>
-          <div class="step-name">
-            <p><%= @megalith.name %></p>
+          <div class="content" >
+            <div>
+            </div>
+            <div>
+              <%= description.content %>
+            </div>
+          </div>
+          <div class="controls">
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
+            <div class="circle"></div>
           </div>
         </div>
-        <div class="content" >
-          <div>
-          </div>
-          <div>
-            <%= description.content %>
-          </div>
+      <% end %>
+        <div class="slide-quiz" id="slide-quiz">
+          <h1>Here is the quiz !</h1>
         </div>
-        <div class="controls">
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-          <div class="circle"></div>
-        </div>
-      </div>
-    <% end %>
+    <!-- </div> -->
+   <!--  <div class="slide" id="slide-quizz">
+    </div> -->
   <%#= link_to "Etape suivante", steps_show_path, class:"button-home" %>
   </div>
 </div>
