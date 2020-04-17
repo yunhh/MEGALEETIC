@@ -1,5 +1,6 @@
 <div class="step-container">
   <div class="siema">
+<<<<<<< HEAD
     <div>
       <% @descriptions.each do |description| %>
         <div class="slide" id="slide-<%= description.position %>">
@@ -11,6 +12,15 @@
             <div class="step-name">
               <p><%= @megalith.name %></p>
             </div>
+=======
+    <% @descriptions.each do |description| %>
+      <div class="slide" id="slide-<%= description.position %>" style="  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path description.photo.key %>);
+">
+        <%#= cl_image_tag description.photo.key %>
+        <div class="step-title">
+          <div class="current-step">
+            <p>Etape <%= @step.position %></p>
+>>>>>>> 1477ef158bc7d6fc237cc2d68e09dd76c0fb72df
           </div>
           <div class="content" >
             <div>
