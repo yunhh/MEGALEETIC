@@ -29,8 +29,8 @@
 
         <p> <%= step.megalith.name %> </p>
         <div class="infos pt-1">
-          <p>800 m</p>
-          <p>14 min</p>
+          <p><%= step.duration_in_minutes %> min</p>
+          <p><%= step.distance_in_kilometers %> km</p>
         </div>
       </div>
     <% end %>
