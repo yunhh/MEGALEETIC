@@ -4,11 +4,11 @@ import mapboxgl from 'mapbox-gl';
 // return t * (2 - t);
 // }
 
-// const fitMapToMarkers = (map, markers) => {
-//   const bounds = new mapboxgl.LngLatBounds();
-//   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
-//   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1000, pitch: 0 });
-// };
+const fitMapToMarkers = (map, markers) => {
+  const bounds = new mapboxgl.LngLatBounds();
+  markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1000, pitch: 0 });
+};
 
 // const fitMapToMarker = (map, marker) => {
 //   const bounds = new mapboxgl.LngLatBounds();
@@ -39,35 +39,35 @@ const initMapboxIndex = () => {
         .addTo(map);
     });
     fitMapToMarkers(map, markers)
-    window.addEventListener('scroll', function(e) {
-      let yPos = window.scrollY;
-      console.log(yPos);
-      if (yPos == 0) {
-       fitMapToMarkers(map, markers)
+    // window.addEventListener('scroll', function(e) {
+    //   let yPos = window.scrollY;
+    //   console.log(yPos);
+    //   if (yPos == 0) {
+    //    fitMapToMarkers(map, markers)
 
-      }
-      if (yPos >= 1 && yPos <= 210) {
-        fitMapToMarker(map, markers[0]);
+    //   }
+    //   if (yPos >= 1 && yPos <= 210) {
+    //     fitMapToMarker(map, markers[0]);
 
-      }
-      if (yPos >= 210 && yPos <= 540) {
-       fitMapToMarker(map, markers[1])
+    //   }
+    //   if (yPos >= 210 && yPos <= 540) {
+    //    fitMapToMarker(map, markers[1])
 
 
-      }
-      if (yPos >= 540 && yPos <= 850) {
-       fitMapToMarker(map, markers[2])
+    //   }
+    //   if (yPos >= 540 && yPos <= 850) {
+    //    fitMapToMarker(map, markers[2])
 
-      }
-      if (yPos >= 850 && yPos <= 1100) {
-       fitMapToMarker(map, markers[3])
+    //   }
+    //   if (yPos >= 850 && yPos <= 1100) {
+    //    fitMapToMarker(map, markers[3])
 
-      }
-      if (yPos >= 1100 && yPos <= 1265) {
-       fitMapToMarker(map, markers[4])
+    //   }
+    //   if (yPos >= 1100 && yPos <= 1265) {
+    //    fitMapToMarker(map, markers[4])
 
-      }
-    });
+    //   }
+    // });
   };
 };
 export { initMapboxIndex };

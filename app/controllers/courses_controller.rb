@@ -1,18 +1,18 @@
 class CoursesController < ApplicationController
   def index
 
-    @courses = Course.all
-    # @courses = Course.geocoded
+    # @courses = Course.all
+    @courses = Course.geocoded
 
-   #   @markers = @courses.map do |course|
+     @markers = @courses.map do |course|
 
-   #    {
-   #      lat: course.latitude,
-   #      # lat: 47.5977,
-   #      lng: course.longitude
-   #      # lng: -3.0634
-   #    }
-   # end
+      {
+        lat: course.latitude,
+        # lat: 47.5977,
+        lng: course.longitude
+        # lng: -3.0634
+      }
+   end
 
 
   end
