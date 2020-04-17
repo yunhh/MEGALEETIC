@@ -5,7 +5,7 @@ class CoursesController < ApplicationController
     @courses = Course.geocoded
 
     @markers = @courses.map do |course|
-      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587118374/markercourse_lbqn3u.png'
+      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587125690/indexok_kijb39.png'
       {
         lat: course.latitude,
         lng: course.longitude,
