@@ -43,7 +43,7 @@ carnac_course = Course.new(
   name: "Les mystères de Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
-  distance_in_kilometers: 5,
+  distance_in_kilometers: 6.7,
   rating: 5,
   description: "Découvrez les monuments légendaires de Carnac et leurs secrets."
 )
@@ -76,7 +76,7 @@ saint_just_course.save!
 
 locmariaquer_course = Course.new(
   address: "Locmariaquer",
-  name: "course découverte Locmariaquer",
+  name: "Locmariaquer Les grands travaux mégalithiques",
   mobility_access: true ,
   duration_in_minutes: 165,
   distance_in_kilometers: 3,
@@ -343,6 +343,8 @@ carnac_step_1 = Step.new(
   correct_answer: 2,
   course: carnac_course,
   megalith: alignement_de_kerlescan,
+  distance_in_kilometers: 0.2,
+  duration_in_minutes: 30,
   access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
   # access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs""
 )
@@ -358,6 +360,8 @@ carnac_step_2 = Step.new(
   correct_answer: 4,
   course: carnac_course,
   megalith: geant_du_manio,
+  distance_in_kilometers: 0.5,
+  duration_in_minutes: 30,
   access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs"
 )
 carnac_step_2.save!
@@ -372,6 +376,8 @@ carnac_step_3 = Step.new(
   correct_answer: 4,
   course: carnac_course,
   megalith: cairn_de_kercado,
+  distance_in_kilometers: 1.5,
+  duration_in_minutes: 30,
   access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km "
 )
 carnac_step_3.save!
@@ -386,6 +392,8 @@ carnac_step_4 = Step.new(
   correct_answer: 1,
   course: carnac_course,
   megalith: enceinte_du_menec,
+  distance_in_kilometers: 3,
+  duration_in_minutes: 45,
   access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres"
 )
 carnac_step_4.save!
@@ -400,6 +408,8 @@ carnac_step_5 = Step.new(
   correct_answer: 3,
   course: carnac_course,
   megalith: tumulus_saint_michel,
+  distance_in_kilometers: 1.5,
+  duration_in_minutes: 30,
   access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)"
 )
 carnac_step_5.save!
