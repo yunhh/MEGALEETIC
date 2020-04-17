@@ -1,11 +1,16 @@
 body,html{
   width: 100vw;
-}
 
+}
 
 .mieux-note {
   margin-left: 15px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
+
+
 
 .card-category-index{
   background-position: center;
