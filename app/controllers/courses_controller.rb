@@ -21,7 +21,7 @@ class CoursesController < ApplicationController
 
 
     @course = Course.find(params[:id])
-    @steps = Step.all
+    @steps = @course.steps.order(position: :asc)
 
     @megaliths = Megalith.geocoded
     @markers = @megaliths.map do |megalith|
