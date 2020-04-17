@@ -65,6 +65,12 @@
   }
 }
 
+.no-deco, .no-deco:hover, .no-deco:focus, .no-deco:active {
+    text-decoration: none;
+    outline: none;
+    color: white;
+}
+
 .card-step{
   padding-top: 60px;
   margin: 20px auto;
@@ -73,7 +79,6 @@
   border-radius: 10px;
   text-align:center;
   text-shadow: 2px 2px 4px #000000;
-
 }
 
 .card-step p {

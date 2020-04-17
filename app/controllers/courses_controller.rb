@@ -5,7 +5,9 @@ class CoursesController < ApplicationController
     @courses = Course.geocoded
 
     @markers = @courses.map do |course|
-      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587125690/indexok_kijb39.png'
+
+      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
+
       {
         lat: course.latitude,
         lng: course.longitude,
@@ -21,7 +23,7 @@ class CoursesController < ApplicationController
 
 
     @course = Course.find(params[:id])
-    @steps = Step.all
+    @steps = @course.steps.order(position: :asc)
 
     @megaliths = Megalith.geocoded
     @markers = @megaliths.map do |megalith|
