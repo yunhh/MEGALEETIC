@@ -29,6 +29,16 @@
       <% end %>
         <div class="slide-quiz" id="slide-quiz">
           <h1>Here is the quiz !</h1>
+          <%= simple_form_for @user,do |f| %>
+            <%= f.error_notification %>
+
+            <%= f.input :choises, as: :check_boxes, collection: User::CHOISES %>
+
+            <%= f.button :submit, class: "btn-primary" %>
+            <%= f.button :button, "Cancel", type: "reset", class: "btn-outline-secondary" %>
+          <% end %>
+
+          <%= link_to course_step_path(@course, step) %>
         </div>
     <!-- </div> -->
    <!--  <div class="slide" id="slide-quizz">
