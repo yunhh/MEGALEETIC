@@ -1,7 +1,8 @@
 <div class="step-container">
   <div class="siema">
     <% @descriptions.each do |description| %>
-      <div class="slide" id="slide-<%= description.position %>">
+      <div class="slide" id="slide-<%= description.position %>" style="  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= cl_image_path description.photo.key %>);
+">
         <%#= cl_image_tag description.photo.key %>
         <div class="step-title">
           <div class="current-step">

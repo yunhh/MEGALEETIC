@@ -96,12 +96,14 @@
   position: relative;
   width:100vw;
   height:100vh;
-  background-color:rgba(0,0,0,0.6);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-origin: center;
+  background-size: cover;
 }
 
 .slide:after {
   content:'';
-  background: url('https://cdn.futura-sciences.com/buildsv6/images/wide1920/8/d/0/8d07f0469e_109583_menhir-megalithe-neolithique.jpg') no-repeat center center;
   position: absolute;
   top:0px;
   left: 0px;
