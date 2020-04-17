@@ -39,8 +39,8 @@ puts "Users created!"
 puts "Creating Courses..."
 
 carnac_course = Course.new(
-  address: "Carnac",
-  name: "Les mystères de Carnac",
+  address: "LIeu-dit le Ménec, Carnac",
+  name: "LIeu-dit le Ménec, Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
   distance_in_kilometers: 5,
@@ -63,7 +63,7 @@ monteneuf_course.photo.attach(io:File.open('db/fixtures/courses/monteneuf_course
 monteneuf_course.save!
 
 saint_just_course = Course.new(
-  address: "Saint-Just",
+  address: "10 Allée des Cerisiers, Saint-Just",
   name: "Saint-Just : espace naturel mégalithique",
   mobility_access: true ,
   duration_in_minutes: 165,
@@ -108,8 +108,7 @@ puts "Creating Alignement de Kerlescan..."
 
 alignement_de_kerlescan = Megalith.new(
   name: "Alignement de Kerlescan",
-  address: "Carnac",
-  category: "Menhir",
+  category: "Alignement Menhir",
   latitude: "47.60373",
   longitude: "-3.05048"
 )
@@ -148,7 +147,6 @@ puts "Creating Géant du Manio..."
 
 geant_du_manio = Megalith.new(
   name: "Géant du Manio",
-  address: "Carnac",
   category: "Menhir",
   latitude: "47.6036",
   longitude:"-3.05598"
@@ -189,7 +187,6 @@ puts "Creating Cairn de Kercado..."
 
 cairn_de_kercado = Megalith.new(
   name: "Cairn de Kercado",
-  address: "Carnac",
   category: "Cairn",
   latitude: "47.59577",
   longitude: "-3.05436"
@@ -229,9 +226,7 @@ puts "Creating Enceinte du Ménec..."
 
 enceinte_du_menec = Megalith.new(
   name: "Enceinte du Ménec",
-  address: "Carnac",
-  category: "Menhir",
-  # description: "  ",
+  category: "Alignement Menhir",
   latitude: "47.59161",
   longitude:"-3.08567"
 )
@@ -269,9 +264,7 @@ puts "Creating Tumulus Saint-Michel..."
 
 tumulus_saint_michel = Megalith.new(
   name: "Tumulus Saint-Michel",
-  address: "Carnac",
   category: "Tumulus",
-  # description: "  Vers 1900, l'archéologue Zacharie Le Rouzic fouilla à nouveau le tumulus Saint-Michel et découvrit un second dolmen et une quinzaine de petits coffres de pierres, révélant ainsi la complexité de ce monument, sans doute réservé à une élite princière et édifié vers 5 000 av. J.-C. au Néolithique.",
   latitude: "47.588",
   longitude:"-3.0733"
 )

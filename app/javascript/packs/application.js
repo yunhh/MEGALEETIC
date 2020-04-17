@@ -38,9 +38,9 @@ import { initMapboxIndex } from '../plugins/init_mapbox_index';
 
 
 document.addEventListener('turbolinks:load', () => {
-     burgerMenu();
-    initMapbox();
-  initMapboxIndex();
+       burgerMenu();
+      initMapbox();
+    initMapboxIndex();
   new Siema();
   // burgerMenu();
 });
