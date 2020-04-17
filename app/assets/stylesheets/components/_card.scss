@@ -2,18 +2,24 @@ body,html{
   width: 100vw;
 }
 
-.mieux-note {
 
+.mieux-note {
+  margin-left: 15px;
 }
 
 .card-category-index{
-  height: 300px;
-  width: 250px;
-  border-radius: 15px;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  height: 340px;
+  width: 255px;
+  border-radius: 10px;
   flex-shrink: 0;
-  margin: 0 30px;
-  text-shadow: 2px 2px 4px #000000;
-  box-shadow: 0px 4px 20px rgba(0,0,0,0.1)
+  margin: 0 15px;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
+  box-shadow: 0px 4px 20px rgba(0,0,0,.4);
 }
 
 .card-course-index{
@@ -25,6 +31,10 @@ body,html{
   margin-bottom: 25px;
 }
 
+.card-course-main {
+  margin-top: -20px;
+}
+
 .mieux-note{
   display: flex;
   overflow-x: scroll;
@@ -34,9 +44,9 @@ body,html{
 
 .card-course-etape{
   padding-top: 16px;
-  letter-spacing: 1.5px;
+  letter-spacing: 2.4px;
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
   color: white;
   font-size: 10px;
   font-family: 'Red Hat Text', sans-serif;
@@ -47,8 +57,9 @@ body,html{
 
 .card-course-name{
   text-transform: uppercase;
-  font-size: 18px;
-  letter-spacing: 1px;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  line-height: 19px;
   color: white;
   text-align: center;
   font-weight: 700;
@@ -57,13 +68,13 @@ body,html{
 }
 
 .card-course-description{
-  width: 90%;
+  width: 85%;
   margin: 0 auto;
   color: white;
   font-size: 13px;
-  line-height: 16px;
+  line-height: 18px;
   letter-spacing: .5px;
-  opacity: 0.9;
+  opacity: 0.8;
   text-align: center;
   padding: 0;
   font-family: 'Red Hat Text', sans-serif;
@@ -97,7 +108,7 @@ body,html{
   h3{
   margin-left: 30px;
   font-size: 20px;
-  font-weight: bold;
+  font-weight: 700;
   }
 }
 
