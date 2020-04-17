@@ -3,6 +3,18 @@
     <h2><%= @course.name %> </h2>
     <p><%= (@course.duration_in_minutes) /60 %> h </p>
   </div>
+  <div class="toggle-btn" >
+    <span></span>
+
+  </div>
+  <div class="my-nav">
+      <%= cl_image_tag current_user.photo.key, class:'avatar'%>
+      <a href="">Paramètres</a>
+      <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+      <a href="">Mes parcours</a>
+      <%= link_to "Les parcours", courses_path %>
+      <a href="">Envoyer nous vos retours</a>
+  </div>
   <div id="map"
        style="width: 100vw; height: 35vh;"
        data-markers="<%= @markers.to_json %>"
@@ -12,18 +24,21 @@
     <h3>Descriptif de l'etape</h3>
     <p><%= @course.description %> </p>
   </div>
-  <div id="contentshow2">
-    <h3>Itinéraire à suivre</h3>
-    <p>Depart a 15 min de la mairie de carnac</p>
 
-  </div>
+    <div id="contentshow2">
+      <h3>Itinéraire à suivre</h3>
+      <p> Pour vous rendre ici, faites bouger vos jambes de manière asynchrone </p>
+    </div>
+
+
+
 </div>
 
 <div class="cards-step ">
   <% @steps.each_with_index do |step, index| %>
   <div class="link-between-step"></div>
    <p class="etape-number pt-2"> étape <%= step.position %> </p>
-    <%= link_to course_step_path(@course, step) do %>
+    <%= link_to course_step_path(@course, step), class: 'no-deco' do %>
 
       <div class="card-step active" data-image="<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>" id="cardstep-<%= index %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
 
@@ -34,7 +49,7 @@
         </div>
       </div>
     <% end %>
-
+    </div>
   <% end %>
 </div>
 

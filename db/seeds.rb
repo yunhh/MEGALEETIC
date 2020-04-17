@@ -40,7 +40,7 @@ puts "Creating Courses..."
 
 carnac_course = Course.new(
   address: "Carnac",
-  name: "LIeu-dit le Ménec, Carnac",
+  name: "Les mystères de Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
   distance_in_kilometers: 6.7,
