@@ -25,7 +25,7 @@ const initMapbox = () => {
     const map = new mapboxgl.Map({
       container: 'map',
       //style: 'mapbox://styles/mapbox/streets-v10'
-      style: 'mapbox://styles/naheul/ck8u5k02011o21iphzz0b816w'
+      style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop'
     });
   const markers = JSON.parse(mapElement.dataset.markers);
   markers.forEach((marker) => {
@@ -96,7 +96,7 @@ const initMapbox = () => {
          cardstep4.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep4.dataset.image}')`;
        }
     });
-     console.log(markers)
+
   };
 };
 
