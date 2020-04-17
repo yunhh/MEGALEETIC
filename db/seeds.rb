@@ -39,7 +39,7 @@ puts "Users created!"
 puts "Creating Courses..."
 
 carnac_course = Course.new(
-  address: "LIeu-dit le Ménec, Carnac",
+  address: "Carnac",
   name: "LIeu-dit le Ménec, Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
