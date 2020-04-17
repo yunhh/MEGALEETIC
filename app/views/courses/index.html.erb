@@ -27,47 +27,45 @@
   </div>
 
 
-
-  <div class= "populaire pt-3">
-    <h3>Les mieux notés</h3>
-    <div class= "mieux-note">
-      <% @courses.each do |course| %>
-        <%= link_to course_path(course) do %>
-          <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
-            <p class="card-course-etape"><%= course.steps.count %> étapes</p>
-            <div class="card-course-main">
-              <p class="card-course-name pt-5"><%= course.name %></p>
-              <p class="card-course-description"><%= course.description%></p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
-              <p class="card-course-duration ml-2"><%= course.distance_in_kilometers %> km</p>
-            </div>
+<div class= "populaire">
+  <h3>Les mieux notés</h3>
+  <div class= "mieux-note">
+    <% @courses.each do |course| %>
+      <%= link_to course_path(course) do %>
+        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
+          <p class="card-course-etape"><%= course.steps.count %> étapes</p>
+          <div class="card-course-main">
+            <p class="card-course-name pt-5"><%= course.name %></p>
+            <p class="card-course-description"><%= course.description%></p>
           </div>
-        <% end %>
+          <div class="d-flex justify-content-between">
+            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
+            <p class="card-course-duration ml-2"><%= course.distance_in_kilometers %> km</p>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
+</div>
 
-  <div class= "populaire pt-4">
-    <h3>Près de chez vous</h3>
-    <div class= "mieux-note">
-      <% @courses.each do |course| %>
-        <%= link_to course_path(course) do %>
-          <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
-            <p class="card-course-etape"><%= course.steps.count %> étapes</p>
-            <div class="card-course-main">
-              <p class="card-course-name pt-5"><%= course.name %></p>
-              <p class="card-course-description"><%= course.description%></p>
-            </div>
-            <div class="d-flex justify-content-between">
-              <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
-              <p class="card-course-duration ml-2"><%= course.distance_in_kilometers %> min</p>
-            </div>
+<div class= "populaire ">
+  <h3>Près de chez vous</h3>
+  <div class= "mieux-note">
+    <% @courses.each do |course| %>
+      <%= link_to course_path(course) do %>
+        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
+          <p class="card-course-etape"><%= course.steps.count %> étapes</p>
+          <div class="card-course-main">
+            <p class="card-course-name pt-5"><%= course.name %></p>
+            <p class="card-course-description"><%= course.description%></p>
           </div>
-        <% end %>
+          <div class="d-flex justify-content-between">
+            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
+            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
+          </div>
+        </div>
       <% end %>
-    </div>
+    <% end %>
   </div>
 </div>
 
