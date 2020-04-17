@@ -23,7 +23,7 @@
   <% @steps.each_with_index do |step, index| %>
   <div class="link-between-step"></div>
    <p class="etape-number pt-2"> étape <%= step.position %> </p>
-    <%= link_to(@course) do %>
+    <%= link_to course_step_path(@course, step) do %>
 
       <div class="card-step active" data-image="<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>" id="cardstep-<%= index %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
 
