@@ -29,6 +29,13 @@
       <% end %>
         <div class="slide-quiz" id="slide-quiz">
           <h1>Here is the quiz !</h1>
+          <%= @step.question %>
+          <%= simple_form_for @user_step do |f| %>
+            <%= f.input :quiz_answer, as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4]  %>
+            <%= f.button :submit, class: "btn-primary" %>
+
+          <% end %>
+          <%#= link_to course_step_path(@course, step) %>
         </div>
     <!-- </div> -->
    <!--  <div class="slide" id="slide-quizz">
