@@ -31,16 +31,11 @@
 
           <h4 class="ask" > <%= @step.question%> </h4>
           <%= simple_form_for @user_step do |f| %>
-            <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
+            <%= f.input :quiz_answer,label: "", autofocus: true, as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
 
               <%= f.button :submit, class: "btn-primary buttonquizz" %>
 
           <% end %>
-          <%#= link_to course_step_path(@course, step) %>
         </div>
-    <!-- </div> -->
-   <!--  <div class="slide" id="slide-quizz">
-    </div> -->
-  <%#= link_to "Etape suivante", steps_show_path, class:"button-home" %>
   </div>
 </div>
