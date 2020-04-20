@@ -28,7 +28,7 @@ import "bootstrap";
 
 // Internal imports, e.g:
 import Siema from 'siema';
-
+import {animateSlide} from "../components/step_slides";
 
 
 // import { initSelect2 } from '../components/init_select2';
@@ -38,9 +38,12 @@ import { initMapboxIndex } from '../plugins/init_mapbox_index';
 
 
 document.addEventListener('turbolinks:load', () => {
-       burgerMenu();
-      initMapbox();
-    initMapboxIndex();
-  new Siema();
-  // burgerMenu();
+  burgerMenu();
+  initMapbox();
+  initMapboxIndex();
+  new Siema({
+    onInit:animateSlide,
+    onChange:animateSlide
+  });
+  animateSlide();
 });

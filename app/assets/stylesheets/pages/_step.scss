@@ -7,21 +7,54 @@
   color: white;
 }
 
+.step-control-container {
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+}
 
+.title-step {
+  position:absolute;
+  top:30px;
+  margin:0 auto;
+  width:100%;
+  z-index:999;
+}
 
-.step-title {
+.title {
   display:flex;
   flex-direction:column;
   align-items:center;
-  padding-top:35px;
+  padding-top:16px;
 }
 .current-step {
   font-size:10px;
   font-weight:500;
   letter-spacing: 0.15em;
   text-transform:uppercase;
+  position: relative;
+  // animation-name: textLoad;
+  // animation-duration: 0.5s;
+  // animation-timing-function:ease;
+  // animation-play-state: running;
+  // animation-iteration-count:1;
+  // animation-direction:normal;
+  animation: textLoad .5s;
+  animation-delay:.5s;
+  opacity:0;
+  animation-fill-mode:forwards;
 }
-.current-step .letter {
+
+.current-step .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
+.current-step .letters {
   display: inline-block;
   line-height: 1em;
 }
@@ -31,19 +64,30 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding-top:8px;
+  padding-bottom:60px;
   position: relative;
+  animation: textLoad .5s;
+  animation-delay:1s;
+  opacity:0;
+  animation-fill-mode:forwards;
 }
-.content {
-  padding-top:60px;
+
+.animation-content{
+  animation : SlideLeft 1.3s cubic-bezier(.8,0,0,1);
+  opacity:0;
+  animation-delay: .5s;
+  animation-fill-mode: forwards;
+}
+
+.content{
+  opacity:0;
+  font-family: 'Sorts Mill Goudy', serif;
+  padding-top:260px;
+  // vertical-align:middle;
   width:80%;
   font-size:24px;
   line-height:1.4;
   margin:0 auto;
-  font-family: 'Sorts Mill Goudy', serif;
-  animation : SlideLeft 1.3s cubic-bezier(.8,0,0,1);
-  opacity:0;
-  animation-delay: 2.2s;
-  animation-fill-mode: forwards;
 }
 .step-name:after {
   background: none repeat scroll 0 0 transparent;
@@ -51,7 +95,7 @@
   content: "";
   display: block;
   height: 2px;
-  top:36px;
+  top:52px;
   left: 0%;
   position: absolute;
   background: #E4A124;
@@ -100,6 +144,7 @@
   background-position: center;
   background-origin: center;
   background-size: cover;
+  z-index:-1;
 }
 
 .slide:after {
@@ -113,8 +158,11 @@
   opacity: 1;
 }
 .controls {
+  position:absolute;
+  bottom:50px;
   display:flex;
   margin-top: 24px;
+  margin:0 auto;
 }
 
 .circle {
@@ -123,6 +171,11 @@
   margin:8px;
   border:1px solid white;
   border-radius:50%;
+  z-index: 99;
+}
+
+.dot-active {
+  background-color:white;
 }
 
 .slide-quiz {
@@ -164,4 +217,16 @@
 }
 .form-check-input{
   margin-top:57px;
+}
+
+
+@keyframes textLoad {
+  0% {
+    opacity: 0;
+    transform:translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform:translateY(0px);
+  }
 }
