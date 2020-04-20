@@ -50,6 +50,20 @@ carnac_course = Course.new(
 carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
 carnac_course.save!
 
+carnac_course_2 = Course.new(
+  address: "Carnac",
+  latitude: "47.6155",
+  longitude: "-3.085734",
+  name: "Les gravures de Mane Kerioned",
+  mobility_access: false ,
+  duration_in_minutes: 25,
+  distance_in_kilometers: 0.2,
+  rating: 4,
+  description: "Découvrez les monuments de Mane Kerioned."
+)
+carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
+carnac_course.save!
+
 monteneuf_course = Course.new(
   address: "Monteneuf",
   name: "Monteneuf Landes & Mégalithes",
@@ -302,25 +316,27 @@ puts "Tumulus Saint-Michel created!"
 puts "Carnac Megaliths created!"
 
 
-# puts "Creating Monteneuf Megaliths..."
+puts "Creating Monteneuf Megaliths... (fake)"
 
-# puts "Creating Alignement de Kerlescan..."
+puts "Creating Monteneuf 1 (fake)..."
 
-# alignement_de_kerlescan = Megalith.new(
-#   name: "Alignement de Kerlescan",
-#   address: "Carnac",
-#   category: "Menhir",
-#   latitude: "47.60373",
-#   longitude: "-3.05048"
-# )
+monteneuf_megalith_1 = Megalith.new(
+  name: "Mégalithe de Monteneuf 1",
+  address: "Monteneuf",
+  category: "Menhir",
+  latitude: "47.88221",
+  longitude: "-2.18440"
+)
 
-# alignement_de_kerlescan_description_1 = alignement_de_kerlescan.descriptions.build(
-#   position: 1,
-#   content: "En un coup d'oeil, découvrez comment sont construits les alignements de Carnac."
-# )
-# alignement_de_kerlescan_description_1.photo.attach(io:File.open('db/fixtures/megaliths/alignement_de_kerlescan/alignement_de_kerlescan_1.jpg'), filename: 'alignement_de_kerlescan_1.jpg', content_type: 'image/jpg')
+monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+  position: 1,
+  content: "Retrouvez prochainement les mégalithique de Monteneuf."
+)
+monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
 
-# puts "Monteneuf Megaliths created!"
+puts "Monteneuf 1 created (fake)!"
+
+puts "Monteneuf Megaliths created! (fake)"
 
 # puts "Creating Saint-Just Megaliths... Coming soon !"
 
@@ -353,8 +369,8 @@ carnac_step_1 = Step.new(
   megalith: alignement_de_kerlescan,
   distance_in_kilometers: 0.2,
   duration_in_minutes: 30,
-  access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
-  # access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs""
+  access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre Les menhirs.",
+  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
 )
 carnac_step_1.save!
 
@@ -370,7 +386,8 @@ carnac_step_2 = Step.new(
   megalith: geant_du_manio,
   distance_in_kilometers: 0.5,
   duration_in_minutes: 30,
-  access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs"
+  access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs",
+  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
 )
 carnac_step_2.save!
 
@@ -386,7 +403,8 @@ carnac_step_3 = Step.new(
   megalith: cairn_de_kercado,
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
-  access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km "
+  access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km ",
+  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
 )
 carnac_step_3.save!
 
@@ -402,7 +420,8 @@ carnac_step_4 = Step.new(
   megalith: enceinte_du_menec,
   distance_in_kilometers: 3,
   duration_in_minutes: 45,
-  access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres"
+  access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres",
+  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
 )
 carnac_step_4.save!
 
@@ -418,7 +437,8 @@ carnac_step_5 = Step.new(
   megalith: tumulus_saint_michel,
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
-  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)"
+  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
+  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
 )
 carnac_step_5.save!
 
@@ -428,83 +448,52 @@ puts "Creating Monteneuf Steps..."
 
 monteneuf_step_1 = Step.new(
   position: 1,
-  question: "A quelle époque, les mégalithes ont-ils été créés ?",
-  answer_1: "L'époque gauloise",
-  answer_2: "Le Néolithique",
-  answer_3: "L'Antiquité",
-  answer_4: "L'ère mégalithique",
-  correct_answer: 2,
   course: monteneuf_course,
-  megalith: alignement_de_kerlescan,
-  access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
-  # access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs""
+  megalith: monteneuf_megalith_1,
+  access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
 
 monteneuf_step_2 = Step.new(
   position: 2,
-  question: "Quelles traces les archéologues retrouvent-ils rarement dans les fouilles ?",
-  answer_1: "Des poteries",
-  answer_2: "Des outils en silex",
-  answer_3: "Des haches en pierres polies",
-  answer_4: "Les ossements",
-  correct_answer: 4,
   course: monteneuf_course,
-  megalith: geant_du_manio,
-  access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs"
+  megalith: monteneuf_megalith_1,
+  access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_2.save!
 
 monteneuf_step_3 = Step.new(
   position: 3,
-  question: "Quelle étape de la fabrication d'un menhir n'est pas à sa place ?",
-  answer_1: "La préparation du bloc",
-  answer_2: "Le transport",
-  answer_3: "Le levage du menhir",
-  answer_4: "L'extraction",
-  correct_answer: 4,
   course: monteneuf_course,
-  megalith: cairn_de_kercado,
-  access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km "
+  megalith: monteneuf_megalith_1,
+  access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_3.save!
 
 monteneuf_step_4 = Step.new(
   position: 4,
-  question: "Parmi les hypothèses suivantes, laquelle est la moins réaliste ?",
-  answer_1: "Des esclaves ont bâti les mégalithes",
-  answer_2: "Les mégalithes marquaient le territoire",
-  answer_3: "Les Hommes se rassemblaient autour des menhirs",
-  answer_4: "Cette civilisation était dirigée par des chefs",
-  correct_answer: 1,
   course: monteneuf_course,
-  megalith: enceinte_du_menec,
-  access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres"
+  megalith: monteneuf_megalith_1,
+  access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_4.save!
 
 monteneuf_step_5 = Step.new(
   position: 5,
-  question: "Quelle activité pourrait être à l'origine de la naissance de la civilisation mégalithique ?",
-  answer_1: "L'agriculture",
-  answer_2: "La fabrication de hache en pierre polie",
-  answer_3: "La fabrication de sel",
-  answer_4: "L'élevage",
-  correct_answer: 3,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
-  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)"
+  megalith: monteneuf_megalith_1,
+  access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_5.save!
 
 puts "Monteneuf Steps created!"
 
-puts "Creating Saint-Just Steps..."
+# puts "Creating Saint-Just Steps..."
 
-saint-just_step_1 = Step.new
-saint-just_step_1.save!
+# saint_just_step_1 = Step.new
+# saint_just_step_1.save!
 
-puts "Saint-Just Steps created!"
+# puts "Saint-Just Steps created!"
 
 
 

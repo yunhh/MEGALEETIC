@@ -1,10 +1,12 @@
 function animateSlide() {
 
   // console.log(`The index of current slide is: ${this.currentSlide}`);
-//   console.log(this);
+  if (!this) return
+  // console.log('this',this);
+  // console.log('current', this.currentSlide);
   let el = this.currentSlide;
-  let lastEl = el === 0 ? 5 : el - 1;
-
+  let lastEl = el === 0 ? 3 : el - 1;
+  // console.log('last', lastEl);
   let dots = document.querySelectorAll('.circle');
   [...dots].forEach((dot) => {
     dot.classList.remove("dot-active");
@@ -13,13 +15,15 @@ function animateSlide() {
   let activeDot = document.getElementById(`circle-${el}`);
   activeDot.classList.add("dot-active");
 
-  // let previousSlide = document.getElementById(`slide-${lastEl}`);
-  // previousSlide.firstElementChild.classList.remove("animation-content");
+  let previousSlide = document.querySelector(`#slide-${lastEl+1} .content`);
+  previousSlide.classList.remove("animation-content");
   // console.log(previousSlide);
 
-  let activeSlide = document.getElementById(`slide-${el+1}`);
-  activeSlide.firstElementChild.classList.add("animation-content");
-  console.log(activeSlide);
+  let activeSlide = document.querySelector(`#slide-${el+1} .content`);
+  if (activeSlide) {
+    activeSlide.classList.add("animation-content");
+  }
+  // console.log(activeSlide);
 
 }
 

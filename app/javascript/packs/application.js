@@ -25,6 +25,8 @@ import {burgerMenu} from "../components/menu_burger_index";
 
 import {animateHome} from "../components/animate_home";
 
+import {quizExplanations} from "../components/quiz_explanations";
+
 // External imports
 import "bootstrap";
 
@@ -43,6 +45,7 @@ document.addEventListener('turbolinks:load', () => {
   burgerMenu();
   initMapbox();
   initMapboxIndex();
+  quizExplanations();
   animateHome();
   new Siema({
     onInit:animateSlide,
