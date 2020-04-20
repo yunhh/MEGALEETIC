@@ -138,20 +138,24 @@ const initMapbox = () => {
     description3.style.display = "none";
     description4.style.display = "none";
 
-    if (yPos >= 0 && yPos <= 55 ) {
+    if (yPos >= 0 && yPos <= 54 ) {
         fitMapToMarkers(map, markers);
-        cardstep0.style. = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep0.dataset.image}')`;
+        cardstep0.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep0.dataset.image}')`;
+    }
 
-      }
-
-    if (yPos >= 55 && yPos <= 230) {
+    if (yPos >= 55 && yPos <= 210) {
       contentshow.style.display = "none";
       description0.style.display = "block";
       fitMapToMarker(map, markers[0]);
-      cardstep0.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep0.dataset.image}')`;
-      cardstep0.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep0.dataset.image}')`;       }
+      cardstep0.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep0.dataset.image}')`;
+    }
 
-    if (yPos >= 230 && yPos <= 540) {
+    if (yPos >= 211 && yPos <= 249 ) {
+        cardstep0.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep0.dataset.image}')`;
+        cardstep1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep1.dataset.image}')`;
+    }
+
+    if (yPos >= 250 && yPos <= 500) {
 
       contentshow.style.display = "none";
       description0.style.display = "none";
@@ -160,7 +164,13 @@ const initMapbox = () => {
       cardstep0.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep0.dataset.image}')`;
       cardstep1.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep1.dataset.image}')`;
     }
-    if (yPos >= 540 && yPos <= 850) {
+
+    if (yPos >= 500 && yPos <= 560 ) {
+        cardstep1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep1.dataset.image}')`;
+        cardstep2.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep2.dataset.image}')`;
+    }
+
+    if (yPos >= 561 && yPos <= 800) {
 
       contentshow.style.display = "none";
       description1.style.display = "none";
@@ -169,7 +179,13 @@ const initMapbox = () => {
       cardstep1.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep1.dataset.image}')`;
       cardstep2.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep2.dataset.image}')`;
     }
-    if (yPos >= 850 && yPos <= 1100) {
+
+    if (yPos >= 801 && yPos <= 839 ) {
+        cardstep2.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep2.dataset.image}')`;
+        cardstep3.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep3.dataset.image}')`;
+    }
+
+    if (yPos >= 840 && yPos <= 1100) {
 
       contentshow.style.display = "none";
       description2.style.display = "none";
@@ -178,7 +194,13 @@ const initMapbox = () => {
       cardstep2.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep2.dataset.image}')`;
       cardstep3.style.backgroundImage = `linear-gradient(rgba(249,174,30,0.7), rgba(249,174,30,0.7)), url('${cardstep3.dataset.image}')`;
     }
-    if (yPos >= 1100 && yPos <= 1265) {
+
+    if (yPos >= 1101 && yPos <= 1149 ) {
+        cardstep3.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep3.dataset.image}')`;
+        cardstep4.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep4.dataset.image}')`;
+    }
+
+    if (yPos >= 1149 && yPos <= 1265) {
 
       contentshow.style.display = "none";
       description3.style.display = "none";
