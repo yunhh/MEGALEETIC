@@ -215,11 +215,16 @@
   background-color: #F96D6C;
   border:none;
   margin-top: 32px;
+  z-index:999;
 }
 .form-check-input{
   margin-top:32px;
 }
 
+
+.hidden{
+  display:none;
+}
 
 @keyframes textLoad {
   0% {
