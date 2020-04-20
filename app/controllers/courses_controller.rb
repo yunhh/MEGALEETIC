@@ -2,7 +2,10 @@ class CoursesController < ApplicationController
   def index
 
     # @courses = Course.all
-    @courses = Course.geocoded
+    # @courses = Course.geocoded
+
+    @user_position = [47.598, -3.113]
+    @courses = Course.near(@user_position, 50)
 
     @markers = @courses.map do |course|
 
@@ -13,8 +16,9 @@ class CoursesController < ApplicationController
         lng: course.longitude,
         image_url: helpers.asset_url(icon)
       }
-   end
+    end
 
+    @top_courses = Course.all
 
   end
 
