@@ -26,7 +26,9 @@
         <input class="search" type="search" placeholder="Rechercher...">
         <button type="button" class="btn-map"><img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button>
     </div> -->
-    <div class= "search_form">
+
+  </div>
+      <div class= "search_form">
       <%= form_tag courses_path, method: :get do %>
         <%= text_field_tag :query,
           params[:query],
@@ -40,7 +42,6 @@
         </div>
       <% end %>
     </div>
-  </div>
 
 
 <div class= "populaire">
@@ -83,5 +84,6 @@
       <% end %>
     <% end %>
   </div>
+
 </div>
 
