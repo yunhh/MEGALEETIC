@@ -13,6 +13,14 @@
   flex-direction:column;
 }
 
+.title-step {
+  position:absolute;
+  top:30px;
+  margin:0 auto;
+  width:100%;
+  z-index:999;
+}
+
 .title {
   display:flex;
   flex-direction:column;
@@ -36,7 +44,7 @@
   overflow: hidden;
 }
 
-.current-step .letter {
+.current-step .letters {
   display: inline-block;
   line-height: 1em;
 }
@@ -49,7 +57,8 @@
   position: relative;
 }
 .content {
-  padding-top:60px;
+  padding-top:260px;
+  // vertical-align:middle;
   width:80%;
   font-size:24px;
   line-height:1.4;
@@ -115,6 +124,7 @@
   background-position: center;
   background-origin: center;
   background-size: cover;
+  z-index:-1;
 }
 
 .slide:after {
@@ -141,15 +151,10 @@
   margin:8px;
   border:1px solid white;
   border-radius:50%;
+  background-color:white;
+  z-index: 99;
 }
 
-.title-step {
-  position:absolute;
-  top:30px;
-  margin:0 auto;
-  width:100%;
-  z-index:999;
-}
 
 .slide-quiz {
   text-color: black;
