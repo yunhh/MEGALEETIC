@@ -28,12 +28,11 @@ import {animateHome} from "../components/animate_home";
 // External imports
 import "bootstrap";
 
+// import { scrollCardShow } from "../components/scroll_card_show";
+
 // Internal imports, e.g:
 import Siema from 'siema';
 import {animateSlide} from "../components/step_slides";
-
-
-// import { initSelect2 } from '../components/init_select2';
 
 import { initMapbox } from '../plugins/init_mapbox';
 import { initMapboxIndex } from '../plugins/init_mapbox_index';
@@ -44,6 +43,8 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxIndex();
   animateHome();
+  // scrollCardSHow();
+
   new Siema({
     onInit:animateSlide,
     onChange:animateSlide

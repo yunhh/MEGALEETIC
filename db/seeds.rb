@@ -353,8 +353,8 @@ carnac_step_1 = Step.new(
   megalith: alignement_de_kerlescan,
   distance_in_kilometers: 0.2,
   duration_in_minutes: 30,
-  access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
-  # access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs""
+  # access_description: "Pour vous rendre ici, faites bouger vos jambes de manière asynchrone."
+  access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre "Les menhirs"",
 )
 carnac_step_1.save!
 

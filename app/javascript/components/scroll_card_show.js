@@ -1,0 +1,6 @@
+
+const scrollCardShow = () => {
+
+};
+
+ export { scrollCardShow };

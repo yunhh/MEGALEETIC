@@ -25,10 +25,13 @@
     <p><%= @course.description %> </p>
   </div>
 
-    <div id="contentshow2">
-      <h3>Itinéraire à suivre</h3>
-      <p> Pour vous rendre ici, faites bouger vos jambes de manière asynchrone </p>
-    </div>
+
+    <% @steps.each_with_index do |step, index| %>
+      <div class="bla" id="description-step-<%= index %>">
+        <h3>Itinéraire à suivre</h3>
+        <p> <%= step.access_description %> </p>
+      </div>
+    <% end %>
 
 
 
