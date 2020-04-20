@@ -61,8 +61,8 @@ carnac_course_2 = Course.new(
   rating: 4,
   description: "Découvrez les monuments de Mane Kerioned."
 )
-carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
-carnac_course.save!
+carnac_course_2.photo.attach(io:File.open('db/fixtures/courses/carnac_course_2.jpg'), filename: 'carnac_course_2.jpg', content_type: 'image/jpg')
+carnac_course_2.save!
 
 monteneuf_course = Course.new(
   address: "Monteneuf",
