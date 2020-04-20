@@ -8,7 +8,6 @@ const fitMapToMarkers = (map, markers) => {
 };
 
 
-
 const initMapboxIndex = () => {
   const mapElement = document.getElementById('map-index');
 
@@ -32,10 +31,11 @@ const initMapboxIndex = () => {
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
     });
+    fitMapToMarkers(map, markers);
     new mapboxgl.Marker()
       .setLngLat([-3.113, 47.598])
       .addTo(map);
-    fitMapToMarkers(map, markers)
+
     // const element = document.createElement('div');
     // element.className = 'marker';
     // element.style.backgroundImage = `url('${marker.current_user.photo.key}')`;

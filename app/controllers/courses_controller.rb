@@ -2,16 +2,13 @@ class CoursesController < ApplicationController
   def index
 
     if params[:query].present?
-      sql_query = "name ILIKE :query OR city ILIKE :query OR latitude ILIKE :query OR longitude ILIKE :query"
-      @courses = Course.where(sql_query, query: "%{params[:query]}%")
+      @courses = Course.near(params[:query], 10)
     else
-      @courses = Course.all
+      @user_position = [47.598, -3.113]
+      @courses = Course.near(@user_position, 10)
     end
     # @courses = Course.all
     # @courses = Course.geocoded
-
-    @user_position = [47.598, -3.113]
-    @courses = Course.near(@user_position, 50)
 
     @markers = @courses.map do |course|
 
@@ -29,8 +26,6 @@ class CoursesController < ApplicationController
   end
 
   def show
-
-
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)

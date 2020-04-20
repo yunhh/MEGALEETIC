@@ -16,12 +16,13 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import {burgerMenu} from "../components/menu_burger_index";
+
 import {animateHome} from "../components/animate_home";
 
 import {quizExplanations} from "../components/quiz_explanations";
@@ -45,6 +46,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxIndex();
   quizExplanations();
+  animateHome();
   new Siema({
     onInit:animateSlide,
     onChange:animateSlide
