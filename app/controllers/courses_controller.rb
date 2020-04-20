@@ -1,8 +1,17 @@
 class CoursesController < ApplicationController
   def index
 
+    if params[:query].present?
+      sql_query = "name ILIKE :query OR city ILIKE :query OR latitude ILIKE :query OR longitude ILIKE :query"
+      @courses = Course.where(sql_query, query: "%{params[:query]}%")
+    else
+      @courses = Course.all
+    end
     # @courses = Course.all
-    @courses = Course.geocoded
+    # @courses = Course.geocoded
+
+    @user_position = [47.598, -3.113]
+    @courses = Course.near(@user_position, 50)
 
     @markers = @courses.map do |course|
 
@@ -13,8 +22,9 @@ class CoursesController < ApplicationController
         lng: course.longitude,
         image_url: helpers.asset_url(icon)
       }
-   end
+    end
 
+    @top_courses = Course.all
 
   end
 

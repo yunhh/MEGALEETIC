@@ -1,41 +1,47 @@
 <div class="step-container">
+
+
+  <div class="step-control-container">
+    <div class="title-step">
+    <div class="title">
+      <div class="current-step">
+      <span class="letters current-step">
+      Etape <%= @step.position %>
+      </span>
+      </div>
+      <div class="step-name">
+        <p><%= @megalith.name %></p>
+      </div>
+    </div>
+    </div>
+    <div class="controls">
+      <!-- pour chaque slide insérer un dot -->
+      <div class="circle" id="circle-0"></div>
+      <div class="circle" id="circle-1"></div>
+      <div class="circle" id="circle-2"></div>
+      <div class="circle" id="circle-3"></div>
+      <div class="circle" id="circle-4"></div>
+    </div>
+  </div>
+
+
   <div class="siema">
-    <!-- <div> -->
-      <% @descriptions.each do |description| %>
-        <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
-          <%#= cl_image_tag description.photo.key %>
-          <div class="step-title">
-            <div class="current-step">
-              <p>Etape <%= @step.position %></p>
-            </div>
-            <div class="step-name">
-              <p><%= @megalith.name %></p>
-            </div>
-          </div>
-          <div class="content" >
-            <div>
-            </div>
-            <div>
-              <%= description.content %>
-            </div>
-          </div>
-          <div class="controls">
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-            <div class="circle"></div>
-          </div>
-        </div>
+    <% @descriptions.each do |description| %>
+    <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
+      <div class="content">
+        <%= description.content %>
+      </div>
+
+    </div>
+    <% end %>
+    <div class="slide-quiz" id="slide-quiz">
+
+
+      <h4 class="ask" > <%= @step.question%> </h4>
+      <%= simple_form_for @user_step do |f| %>
+        <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
+        <%= f.button :submit, class: "btn-primary buttonquizz" %>
       <% end %>
-        <div class="slide-quiz" id="slide-quiz">
-
-          <h4 class="ask" > <%= @step.question%> </h4>
-          <%= simple_form_for @user_step do |f| %>
-            <%= f.input :quiz_answer,label: "", autofocus: true, as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-
-              <%= f.button :submit, class: "btn-primary buttonquizz" %>
-
-          <% end %>
-        </div>
+    </div>
   </div>
 </div>
