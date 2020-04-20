@@ -120,4 +120,17 @@
     text-align: center;
   }
 }
-
+.details-show{
+  display:flex;
+  justify-content: space-around;
+  p{
+    font-size:10px;
+  }
+}
+.card-course-duration-show{
+  color: white;
+  padding: 10px 16px 0 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
+}

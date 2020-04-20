@@ -1,7 +1,14 @@
 <div class="back-grey-show">
   <div class="header-show">
     <h2><%= @course.name %> </h2>
-    <p><%= (@course.duration_in_minutes) /60 %> h </p>
+    <div class="details-show">
+
+      <p class="card-course-duration-show ml-2"><i class="far fa-clock mb-1"></i><br><%= (@course.duration_in_minutes / 60) %>h<%= (@course.duration_in_minutes % 60) %></p>
+      <p class="card-course-duration-show ml-2"><i class="fas fa-walking mb-1"></i><br><%= @course.distance_in_kilometers %> km</p>
+
+    </div>
+
+
   </div>
   <div class="toggle-btn" >
     <span></span>

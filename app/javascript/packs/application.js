@@ -43,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapbox();
   initMapboxIndex();
   animateHome();
+
   // scrollCardSHow();
 
   new Siema({
