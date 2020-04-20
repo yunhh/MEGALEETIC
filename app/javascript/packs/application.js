@@ -22,6 +22,7 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import {burgerMenu} from "../components/menu_burger_index";
+import {animateHome} from "../components/animate_home";
 
 // External imports
 import "bootstrap";
