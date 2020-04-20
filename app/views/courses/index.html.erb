@@ -26,6 +26,20 @@
         <input class="search" type="search" placeholder="Rechercher...">
         <button type="button" class="btn-map"><img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button>
     </div> -->
+    <div class= "search_form">
+      <%= form_tag courses_path, method: :get do %>
+        <%= text_field_tag :query,
+          params[:query],
+          class: "search",
+        placeholder: "Rechercher par ville"
+        %>
+        <!--<button type="button" class="btn-map"><img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button> -->
+        <div class= "search_button" >
+          <%= submit_tag "", class:'button-map' %>
+          <img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png">
+        </div>
+      <% end %>
+    </div>
   </div>
 
 
