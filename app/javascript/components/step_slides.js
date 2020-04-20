@@ -13,11 +13,14 @@ function animateSlide() {
   let activeDot = document.getElementById(`circle-${el}`);
   activeDot.classList.add("dot-active");
 
-  let previousSlide = document.getElementById(`el-${lastEl}`);
-  previousSlide.firstElementChild.classList.remove("animation-content");
+  // let previousSlide = document.getElementById(`slide-${lastEl}`);
+  // previousSlide.firstElementChild.classList.remove("animation-content");
+  // console.log(previousSlide);
 
-  let activeSlide = document.getElementById(`el-${el}`);
+  let activeSlide = document.getElementById(`slide-${el+1}`);
   activeSlide.firstElementChild.classList.add("animation-content");
+  console.log(activeSlide);
+
 }
 
 
