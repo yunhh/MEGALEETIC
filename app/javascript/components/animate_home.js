@@ -1,10 +1,7 @@
-const animateHome =
+const animateHome = () => {
 
-$(document).ready(function(){
-            $(".animate").css('display', 'block').delay( 2000 ).fadeOut( 500 );
-            $(".testload").css('display', 'block').delay( 2000 ).fadeOut( 500 );
+            $(".animate").css('display', 'block').delay( 1000 ).fadeOut( 300 );
+            $(".testload").css('display', 'block').delay( 1000 ).fadeOut( 300 );
 
-    jQuery.dequeue( this )
-    });
-
+}
  export {animateHome}

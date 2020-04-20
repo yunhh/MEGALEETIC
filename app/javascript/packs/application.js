@@ -22,6 +22,7 @@ require("channels")
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import {burgerMenu} from "../components/menu_burger_index";
+
 import {animateHome} from "../components/animate_home";
 
 // External imports
@@ -42,6 +43,7 @@ document.addEventListener('turbolinks:load', () => {
   burgerMenu();
   initMapbox();
   initMapboxIndex();
+  animateHome();
   new Siema({
     onInit:animateSlide,
     onChange:animateSlide
