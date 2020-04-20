@@ -19,20 +19,29 @@ const initMapboxIndex = () => {
       //style: 'mapbox://styles/mapbox/streets-v10'
       style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop'
     });
-  const markers = JSON.parse(mapElement.dataset.markers);
-  markers.forEach((marker) => {
-  const element = document.createElement('div');
-  element.className = 'marker';
-  element.style.backgroundImage = `url('${marker.image_url}')`;
-  element.style.backgroundSize = 'contain';
-  element.style.width = '35px';
-  element.style.height = '35px';
-  // Pass the element as an argument to the new marker
-  new mapboxgl.Marker(element)
-    .setLngLat([marker.lng, marker.lat])
-    .addTo(map);
-  });
-  fitMapToMarkers(map, markers)
+    const markers = JSON.parse(mapElement.dataset.markers);
+    markers.forEach((marker) => {
+      const element = document.createElement('div');
+      element.className = 'marker';
+      element.style.backgroundImage = `url('${marker.image_url}')`;
+      element.style.backgroundSize = 'contain';
+      element.style.width = '35px';
+      element.style.height = '35px';
+      // Pass the element as an argument to the new marker
+      new mapboxgl.Marker(element)
+        .setLngLat([marker.lng, marker.lat])
+        .addTo(map);
+    });
+    new mapboxgl.Marker()
+      .setLngLat([-3.113, 47.598])
+      .addTo(map);
+    fitMapToMarkers(map, markers)
+    // const element = document.createElement('div');
+    // element.className = 'marker';
+    // element.style.backgroundImage = `url('${marker.current_user.photo.key}')`;
+    // element.style.backgroundSize = 'contain';
+    // element.style.width = '35px';
+    // element.style.height = '35px';
   }
 };
 

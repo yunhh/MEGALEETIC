@@ -4,7 +4,9 @@
   <div class="toggle-btn" >
       <span></span>
 
-</div>
+  </div>
+
+  <img class="logo" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
 <div class="my-nav">
   <%= cl_image_tag current_user.photo.key, class:'avatar'%>
   <a href="">Paramètres</a>
@@ -28,7 +30,7 @@
 
 
 <div class= "populaire">
-  <h3>Les mieux notés</h3>
+  <h3>Parcours près de chez vous</h3>
   <div class= "mieux-note">
     <% @courses.each do |course| %>
       <%= link_to course_path(course) do %>
@@ -39,8 +41,8 @@
             <p class="card-course-description"><%= course.description%></p>
           </div>
           <div class="d-flex justify-content-between">
-            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
-            <p class="card-course-duration ml-2"><%= course.distance_in_kilometers %> km</p>
+            <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (course.duration_in_minutes / 60) %>h<%= (course.duration_in_minutes % 60) %></p>
+            <p class="card-course-duration ml-2"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
           </div>
         </div>
       <% end %>
@@ -49,19 +51,19 @@
 </div>
 
 <div class= "populaire ">
-  <h3>Près de chez vous</h3>
+  <h3>Parcours les mieux notés</h3>
   <div class= "mieux-note">
-    <% @courses.each do |course| %>
+    <% @top_courses.each do |course| %>
       <%= link_to course_path(course) do %>
-        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path course.photo.key %>)">
+        <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path course.photo.key %>)">
           <p class="card-course-etape"><%= course.steps.count %> étapes</p>
           <div class="card-course-main">
             <p class="card-course-name pt-5"><%= course.name %></p>
             <p class="card-course-description"><%= course.description%></p>
           </div>
           <div class="d-flex justify-content-between">
-            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
-            <p class="card-course-duration ml-2"><%= course.duration_in_minutes %> min</p>
+            <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (course.duration_in_minutes / 60) %>h<%= (course.duration_in_minutes % 60) %></p>
+            <p class="card-course-duration ml-2"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
           </div>
         </div>
       <% end %>
