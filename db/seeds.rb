@@ -322,6 +322,21 @@ puts "Carnac Megaliths created!"
 
 # puts "Monteneuf Megaliths created!"
 
+# puts "Creating Saint-Just Megaliths... Coming soon !"
+
+# saint_just_megaliths = Megalith.new(
+#   name: "Les mégalithes de Saint-Just",
+#   category: "Menhir",
+#   latitude: "47.7649",
+#   longitude:"-1.9740"
+# )
+
+# saint_just_megaliths_1 = saint_just_megaliths.descriptions.build(
+#   position: 1,
+#   content: "Retrouvez prochainement le parcours des mégalithes de Saint-Just..."
+# )
+# saint_just_megaliths_1.photo.attach(io:File.open('db/fixtures/courses/saint_just_course.jpg'), filename: 'saint_just_course.jpg', content_type: 'image/jpg')
+
 
 
 puts "Creating Carnac Steps..."
@@ -483,6 +498,14 @@ monteneuf_step_5 = Step.new(
 monteneuf_step_5.save!
 
 puts "Monteneuf Steps created!"
+
+puts "Creating Saint-Just Steps..."
+
+saint-just_step_1 = Step.new
+saint-just_step_1.save!
+
+puts "Saint-Just Steps created!"
+
 
 
 puts "Creating UserCourses..."
