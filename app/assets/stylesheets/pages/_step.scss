@@ -33,6 +33,16 @@
   letter-spacing: 0.15em;
   text-transform:uppercase;
   position: relative;
+  // animation-name: textLoad;
+  // animation-duration: 0.5s;
+  // animation-timing-function:ease;
+  // animation-play-state: running;
+  // animation-iteration-count:1;
+  // animation-direction:normal;
+  animation: textLoad .5s;
+  animation-delay:.5s;
+  opacity:0;
+  animation-fill-mode:forwards;
 }
 
 .current-step .text-wrapper {
@@ -54,7 +64,12 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   padding-top:8px;
+  padding-bottom:60px;
   position: relative;
+  animation: textLoad .5s;
+  animation-delay:1s;
+  opacity:0;
+  animation-fill-mode:forwards;
 }
 .content {
   padding-top:260px;
@@ -75,7 +90,7 @@
   content: "";
   display: block;
   height: 2px;
-  top:36px;
+  top:52px;
   left: 0%;
   position: absolute;
   background: #E4A124;
@@ -195,4 +210,16 @@
 }
 .form-check-input{
   margin-top:57px;
+}
+
+
+@keyframes textLoad {
+  0% {
+    opacity: 0;
+    transform:translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform:translateY(0px);
+  }
 }
