@@ -7,9 +7,13 @@
   color: white;
 }
 
+.step-control-container {
+  display:flex;
+  align-items:center;
+  flex-direction:column;
+}
 
-
-.step-title {
+.title {
   display:flex;
   flex-direction:column;
   align-items:center;
@@ -20,7 +24,18 @@
   font-weight:500;
   letter-spacing: 0.15em;
   text-transform:uppercase;
+  position: relative;
 }
+
+.current-step .text-wrapper {
+  position: relative;
+  display: inline-block;
+  padding-top: 0.2em;
+  padding-right: 0.05em;
+  padding-bottom: 0.1em;
+  overflow: hidden;
+}
+
 .current-step .letter {
   display: inline-block;
   line-height: 1em;
@@ -113,8 +128,11 @@
   opacity: 1;
 }
 .controls {
+  position:absolute;
+  bottom:50px;
   display:flex;
   margin-top: 24px;
+  margin:0 auto;
 }
 
 .circle {
@@ -123,6 +141,14 @@
   margin:8px;
   border:1px solid white;
   border-radius:50%;
+}
+
+.title-step {
+  position:absolute;
+  top:30px;
+  margin:0 auto;
+  width:100%;
+  z-index:999;
 }
 
 .slide-quiz {
