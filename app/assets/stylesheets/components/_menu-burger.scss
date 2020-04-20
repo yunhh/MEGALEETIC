@@ -9,42 +9,42 @@
 }
 
 .toggle-btn span{
-  height: 3px;
+  height: 2px;
   background-color: rgb(170, 170, 170);
   width: 100%;
   position: absolute;
   top: 20px;
   left: 0;
-  opacity: 0.4;
+  opacity: 1;
 }
 
 .toggle-btn span:before{
   content: "";
-  height: 3px;
+  height: 2px;
   background-color: rgb(170, 170, 170);
   width: 100%;
   position: absolute;
   top: -10px;
   left: 0;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .toggle-btn span:after{
   content: "";
-  height: 3px;
+  height: 2px;
   background-color: rgb(170, 170, 170);
   width: 100%;
   position: absolute;
   top: 10px;
   left: 0;
-  opacity: 0.7;
+  opacity: 1;
 }
 
 .my-nav {
   height: 400px;
   background-color:#3e444b;
   width: 100vw;
-  margin-right: -150vw;
+  display: none;
   transition-duration: 0.2s;
   position: absolute;
   z-index:1;
@@ -67,9 +67,8 @@
 
 
 .my-nav.open {
-  margin-right: 0;
+  display: block;
   transition-duration: 0.2s;
-
 }
 
 .logo {
