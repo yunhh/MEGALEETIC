@@ -1,12 +1,3 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
-
-
 
 require "open-uri"
 
@@ -61,8 +52,8 @@ carnac_course_2 = Course.new(
   rating: 4,
   description: "Découvrez les monuments de Mane Kerioned."
 )
-carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
-carnac_course.save!
+carnac_course_2.photo.attach(io:File.open('db/fixtures/courses/carnac_course_2.jpg'), filename: 'carnac_course_2.jpg', content_type: 'image/jpg')
+carnac_course_2.save!
 
 monteneuf_course = Course.new(
   address: "Monteneuf",
