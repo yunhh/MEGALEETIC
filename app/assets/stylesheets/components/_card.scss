@@ -11,7 +11,12 @@ body,html{
   }
 }
 
+.global{
+  h1{
+    padding-top: 20px;
 
+  }
+}
 
 .card-category-index{
   background-position: center;
@@ -114,13 +119,6 @@ body,html{
     padding-top:12px;
 }
 
-
-// .map{
-//   height: 350px;
-//   width: 100vw;
-//   border: 1px solid black;
-// }
-
 .populaire {
   h3{
   margin-left: 30px;
@@ -134,12 +132,7 @@ body,html{
   }
 }
 
-
 .populaire { margin-top: 24px; }
-
-
-
-
 
 .next-to-you{
   h2{
@@ -170,10 +163,7 @@ body,html{
 
 .search_button{
   position:relative;
-
-
 }
-
 
 .button-map{
   background-color: #F96D6C;
@@ -184,9 +174,6 @@ body,html{
   position: absolute;
   top:-31px;
   right: 85px;
-
-
-
 }
 
 .eye-map-btn{
@@ -195,11 +182,46 @@ body,html{
   position:absolute;
   top: -28px;
   left:3px;
-
-
   margin-left: 261px;
 }
 
+.logo_user_index{
+ margin-top: -60px;
+ margin-left: 30px;
+}
 
+.title_user_index{
+  font-family: 'Red Hat Text', sans-serif;
+  font-weight:bold;
+  text-transform: uppercase;
+  text-align: center;
+  font-size:18px;
+  padding-top:12px;
+}
 
+.card-course-name-index{
+  margin-right: 10px;
+  text-transform: uppercase;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  line-height: 19px;
+  color: white;
+  text-align: center;
+  font-weight: 500;
+  padding: 0;
+  font-family: 'Red Hat Text', sans-serif;
+}
 
+.card-course-etape-index{
+  padding-top: 16px;
+  letter-spacing: 2.4px;
+  text-align: center;
+  font-weight: 400;
+  color: white;
+  font-size: 10px;
+  font-family: 'Red Hat Text', sans-serif;
+  text-decoration: none;
+  padding-bottom: 0;
+  text-transform: uppercase;
+  padding-right: 25px;
+}
