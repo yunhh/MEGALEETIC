@@ -53,4 +53,8 @@ class CoursesController < ApplicationController
     end
 
   end
+
+  def blank_stars
+    5 - rating.to_i
+  end
 end
