@@ -24,27 +24,25 @@
   </div>
 
 
+  <%= simple_form_for @user_step do |f| %>
   <div class="siema">
     <% @descriptions.sort_by{ |description| description.position }.each do |description| %>
     <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
       <div class="content">
         <%= description.content %>
       </div>
-
     </div>
     <% end %>
     <div class="slide-quiz" id="slide-quiz">
-
-
       <h4 class="ask" > <%= @step.question%> </h4>
-      <%= simple_form_for @user_step do |f| %>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-        <%= f.submit "Validez votre étape", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
-      <% end %>
-      <div class="hidden" id="explanations">
-        <p>This is quiz explanations !</p>
-      </div>
       <button class=" btn-primary buttonquizz" id="toggle-answer"> Voir la réponse </button>
     </div>
   </div>
+  <div class="hidden" id="explanations">
+    <p> <%= @step.explanations  %> </p>
+    <p>This is quiz explanations !</p>
+      <%= f.submit "Validez votre étape", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
+  </div>
+  <% end %>
 </div>
