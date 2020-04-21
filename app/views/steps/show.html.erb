@@ -33,19 +33,20 @@
       </div>
     </div>
     <% end %>
-    <div class="slide-quiz" id="slide-quiz">
+    <div class="slide-quiz step-name-slide" id="slide-quiz">
       <h4 class="ask" > <%= @step.question%> </h4>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
       <button class=" btn-primary buttonquizz" id="toggle-answer"> Voir la réponse </button>
     </div>
   </div>
   <div class="hidden" id="explanations">
-    <p>This is quiz explanations !</p>
+    <p>  </p>
+    <p>  </p>
+    <p>  </p>
 
     <div class="right-answer" data-answer="<%= @step["answer_#{@step.correct_answer}".to_sym] %>">
     </div>
 
-    <p> <%= @quiz_answer %> </p>
     <p> <%= @step.explanations %> </p>
       <%= f.submit "Validez votre étape", class: "buttonquizz hidden no-deco", id: "submit-quiz" %>
   </div>

@@ -63,7 +63,7 @@
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-top:8px;
+  padding-top:20px;
   padding-bottom:60px;
   position: relative;
   animation: textLoad .5s;
@@ -95,7 +95,7 @@
   content: "";
   display: block;
   height: 2px;
-  top:52px;
+  top:72px;
   left: 0%;
   position: absolute;
   background: #E4A124;
@@ -104,6 +104,7 @@
   animation-fill-mode: forwards;
   animation-delay:1s;
 }
+
 
 @keyframes underline {
   0% {
@@ -196,12 +197,12 @@
 
 .ask{
   display:top;
-  font-family: 'Red Hat Text', sans-serif;
-  margin-top: 150px;
+  font-family: 'Red Hat Text';
+  margin-top: 160px;
   margin-bottom: 24px;
   text-transform: uppercase;
   text-align: center;
-  font-size:18px;
+  font-size:16px;
   padding: 0 20px;
 }
 .collection_radio_buttons{
@@ -247,12 +248,28 @@
   width:100vw;
   height:100vh;
   p {
-        font-family: 'Sorts Mill Goudy', serif;
-        padding-top:28px;
-        margin: 28px;
-        color:black;
-        // font-size:16px;
+    font-family: 'Sorts Mill Goudy', serif;
+    padding-top:28px;
+    margin: 28px;
+    color:black;
+    // font-size:16px;
   }
+}
+
+#explanations:after {
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  top:135px;
+  left: 0%;
+  position: absolute;
+  background: black;
+  animation: underline .5s;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  animation-fill-mode: forwards;
+  animation-delay:1s;
 }
 
 @keyframes textLoad {
