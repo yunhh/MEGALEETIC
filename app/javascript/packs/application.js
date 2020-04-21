@@ -22,6 +22,8 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
 // ----------------------------------------------------
 import {burgerMenu} from "../components/menu_burger_index";
+import {burgerMenu_index} from "../components/menu_burger_index"
+
 
 import {animateHome} from "../components/animate_home";
 
@@ -42,6 +44,7 @@ import { initMapboxIndex } from '../plugins/init_mapbox_index';
 
 document.addEventListener('turbolinks:load', () => {
   burgerMenu();
+  burgerMenu_index();
   initMapbox();
   initMapboxIndex();
   quizExplanations();

@@ -191,3 +191,44 @@ h1{
   text-align: center;
 }
 
+.toggle-btn_user_index{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  float: right;
+  margin-right: 35px;
+  margin-top: -40px;
+  cursor: pointer;
+}
+
+.toggle-btn_user_index span{
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  opacity: 1;
+}
+
+.toggle-btn_user_index span:before{
+  content: "";
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  opacity: 1;
+}
+
+.toggle-btn_user_index span:after{
+  content: "";
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  opacity: 1;
+}
