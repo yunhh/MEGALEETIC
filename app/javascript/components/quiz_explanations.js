@@ -10,8 +10,8 @@ const quizExplanations = () => {
   const explain = document.getElementById('explanations');
   const sbmt = document.getElementById('submit-quiz');
   if (btn){
-    btn.addEventListener('click', () => {
-
+    btn.addEventListener('click', (event) => {
+      event.preventDefault();
       explain.style.display = "block";
       btn.style.display = "none";
       sbmt.classList.remove("hidden");

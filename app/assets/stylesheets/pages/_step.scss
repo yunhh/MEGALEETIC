@@ -226,6 +226,21 @@
   display:none;
 }
 
+#explanations{
+  background-color: #E4A124;
+  font-family: 'Sorts Mill Goudy', serif;
+  // #0E0000
+  position: fixed;
+  top:0;
+  left:0;
+  // padding:32px;
+  // margin:128px;
+  background-size: cover;
+  z-index:998;
+  width:100vw;
+  height:100vh;
+}
+
 @keyframes textLoad {
   0% {
     opacity: 0;
