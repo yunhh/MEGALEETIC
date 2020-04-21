@@ -53,5 +53,4 @@ document.addEventListener('turbolinks:load', () => {
     onInit:animateSlide,
     onChange:animateSlide
   });
-  animateSlide();
 });
