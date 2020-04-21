@@ -1,0 +1,18 @@
+
+{
+  "background_color": "white",
+  "description": "Megaleetic - Osez l'aventure, vous êtes guidés!",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "<%= image_path 'icons/apple-icon-180x180.png' %>",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {},
+    {}
+  ],
+  "name": "Megaleetic",
+  "short_name": "Megaleetic",
+  "start_url": "/"
+}
