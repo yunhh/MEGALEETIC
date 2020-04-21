@@ -40,8 +40,9 @@
     </div>
   </div>
   <div class="hidden" id="explanations">
-    <p> <%= @step.explanations  %> </p>
     <p>This is quiz explanations !</p>
+    <%#= @step_answer_"#{@step.correct_answer}"  %>
+    <p> <%= @step.explanations  %> </p>
       <%= f.submit "Validez votre étape", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
   </div>
   <% end %>
