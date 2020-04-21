@@ -360,8 +360,11 @@ carnac_step_1 = Step.new(
   megalith: alignement_de_kerlescan,
   distance_in_kilometers: 0.2,
   duration_in_minutes: 30,
+
+
   access_description: "Stationnez votre véhicule sur le parking suité en contrebas du centre équestre Les menhirs.",
   explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+
 )
 carnac_step_1.save!
 

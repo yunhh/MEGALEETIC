@@ -37,7 +37,7 @@
     margin-bottom: 0;
   }
 }
-#contentshow2{
+.bla{
   margin-top:12px;
   text-align:center;
   font-family: 'Red Hat Text', sans-serif;
@@ -55,7 +55,7 @@
   }
 }
 .cards-step{
-  margin-top: 360px;
+  margin-top: 420px;
   padding: 0;
   text-align: center;
   justify-content:center;
@@ -78,15 +78,16 @@
   height: 180px;
   border-radius: 10px;
   text-align:center;
-  text-shadow: 2px 2px 4px #000000;
+  text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
 }
 
 .card-step p {
-  font-weight: bold;
+  font-weight: 500;
   margin: 0 20px;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: .5px;
+  line-height: 23px;
 }
-
 
 .card-step:hover{
   background-color: #000000;
@@ -110,13 +111,26 @@
 
 .infos {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   p {
-    font-size: 12px;
+    font-size: 13px;
+    font-weight:700;
     color: white;
     display: inline-block;
     text-align: center;
-
-
   }
+}
+.details-show{
+  display:flex;
+  justify-content: space-around;
+  p{
+    font-size:10px;
+  }
+}
+.card-course-duration-show{
+  color: white;
+  padding: 10px 16px 0 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-align: center;
 }
