@@ -1,0 +1,43 @@
+<h1>Mes parcours</h1>
+
+<div class="toggle-btn" >
+      <span></span>
+
+</div>
+  <img class="logo" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
+<div class="my-nav">
+  <%= cl_image_tag current_user.photo.key, class:'avatar'%>
+  <%= link_to "Les parcours", courses_path %>
+  <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+  <%= link_to "Mes parcours",user_courses_path %>
+  <a href="">Envoyer nous vos retours</a>
+</div>
+
+<div class= "populaire">
+  <p><strong>Terminés</strong></p>
+  <div class= "mieux-note">
+    <% @courses_done.each do |user_course| %>
+          <div  class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
+          <div class="card-course-main">
+            <p class="card-course-name pt-5"><%= user_course.course.name %></p>
+          </div>
+          <p class="card-course-etape"><%= user_course.course.steps.count %> étapes</p>
+        </div>
+    <% end %>
+  </div>
+</div>
+
+
+<div class= "populaire">
+  <p><strong>En cours</strong></p>
+  <div class= "mieux-note">
+    <% @courses_ongoing.each do |user_course| %>
+          <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
+          <p class="card-course-etape"><%= user_course.course.steps.count %> étapes</p>
+          <div class="card-course-main">
+            <p class="card-course-name pt-5"><%= user_course.course.name %></p>
+          </div>
+        </div>
+    <% end %>
+  </div>
+</div>

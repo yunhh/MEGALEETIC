@@ -10,6 +10,7 @@ Rails.application.routes.draw do
     resources :user_courses, only: :create
   end
 
+  resources :user_courses, only: [:index, :show]
 
   resources :user_steps, only: [:update] do
     member do
