@@ -12,14 +12,17 @@ Megalith.destroy_all
 
 
 puts "Creating Users..."
+#new user
 pierref = User.new(email: "pierref@mail.com", password: "azerty")
 pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 pierref.save!
 
+#average user
 lomig = User.new(email: "lomig@mail.com", password: "azerty")
 lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
 lomig.save!
 
+#old user
 pierreg = User.new(email: "pierreg@mail.com", password: "azerty")
 pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
 pierreg.save!
@@ -657,16 +660,102 @@ monteneuf_step_5.save!
 
 puts "Monteneuf Steps created!"
 
-# puts "Creating Saint-Just Steps..."
+puts "Creating Fake Steps..."
 
-# saint_just_step_1 = Step.new
-# saint_just_step_1.save!
+saint_just_step_1 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_1.save!
 
-# puts "Saint-Just Steps created!"
+saint_just_step_2 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_2.save!
+
+saint_just_step_3 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_3.save!
+
+locmariaquer_step_1 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_1.save!
+
+locmariaquer_step_2 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_2.save!
+
+locmariaquer_step_3 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_3.save!
+
+erdeven_step_1 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_1.save!
+
+erdeven_step_2 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_2.save!
+
+erdeven_step_3 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_3.save!
+
+
+
+
+puts "Fake Steps created!"
 
 
 
 puts "Creating UserCourses..."
+
+puts "Creating Pierref : new user..."
+
+pierref_carnac = UserCourse.new(
+  course: carnac_course,
+  user: pierref,
+  done: false
+)
+pierref_carnac.save!
+
+pierref_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: pierref,
+  done: false
+)
+pierref_monteneuf.save!
+
+pierref_saint_just = UserCourse.new(
+  course: saint_just_course,
+  user: pierref,
+  done: false
+)
+pierref_saint_just.save!
+
+pierref_erdeven = UserCourse.new(
+  course: erdeven_course,
+  user: pierref,
+  done: false
+)
+pierref_erdeven.save!
+
+puts "Creating Lomig : average user..."
 
 lomig_carnac = UserCourse.new(
   course: carnac_course,
@@ -678,14 +767,14 @@ lomig_carnac.save!
 lomig_monteneuf = UserCourse.new(
   course: monteneuf_course,
   user: lomig,
-  done: true
+  done: false
 )
 lomig_monteneuf.save!
 
 lomig_saint_just = UserCourse.new(
   course: saint_just_course,
   user: lomig,
-  done: true
+  done: false
 )
 lomig_saint_just.save!
 
@@ -696,11 +785,45 @@ lomig_erdeven = UserCourse.new(
 )
 lomig_erdeven.save!
 
+puts "Creating Pierreg : old user..."
+
+pierreg_carnac = UserCourse.new(
+  course: carnac_course,
+  user: pierreg,
+  done: true
+)
+pierreg_carnac.save!
+
+pierreg_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: pierreg,
+  done: true
+)
+pierreg_monteneuf.save!
+
+pierreg_saint_just = UserCourse.new(
+  course: saint_just_course,
+  user: pierreg,
+  done: true
+)
+pierreg_saint_just.save!
+
+pierreg_erdeven = UserCourse.new(
+  course: erdeven_course,
+  user: pierreg,
+  done: true
+)
+pierreg_erdeven.save!
+
 puts "UserCourses created!"
 
 
 
 puts "Creating UserSteps..."
+
+puts "PierreF No UserStep"
+
+puts "Lomig UserStep - Erdeven complete - Carnac in progress"
 
 lomig_carnac_step_1 = UserStep.new(
   step: carnac_step_1,
@@ -739,6 +862,131 @@ lomig_carnac_step_5 = UserStep.new(
   done: false
 )
 lomig_carnac_step_5.save!
+
+lomig_erdeven_step_1 = UserStep.new(
+  step: erdeven_step_1,
+  user_course: lomig_erdeven,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+lomig_erdeven_step_1.save!
+
+lomig_erdeven_step_2 = UserStep.new(
+  step: erdeven_step_2,
+  user_course: lomig_erdeven,
+  quiz_answer: "Les ossements",
+  done: true
+)
+lomig_erdeven_step_2.save!
+
+lomig_erdeven_step_3 = UserStep.new(
+  step: erdeven_step_3,
+  user_course: lomig_erdeven,
+  quiz_answer: "L'extraction",
+  done: true
+)
+lomig_erdeven_step_3.save!
+
+puts "PierreG UserStep - Erdeven Carnac Saint-Just Monteneuf complete"
+
+pierreg_erdeven_step_1 = UserStep.new(
+  step: erdeven_step_1,
+  user_course: pierreg_erdeven,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_erdeven_step_1.save!
+
+pierreg_erdeven_step_2 = UserStep.new(
+  step: erdeven_step_2,
+  user_course: pierreg_erdeven,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_erdeven_step_2.save!
+
+pierreg_erdeven_step_3 = UserStep.new(
+  step: erdeven_step_3,
+  user_course: pierreg_erdeven,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_erdeven_step_3.save!
+
+
+pierreg_carnac_step_1 = UserStep.new(
+  step: carnac_step_1,
+  user_course: pierreg_carnac,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_carnac_step_1.save!
+
+pierreg_carnac_step_2 = UserStep.new(
+  step: carnac_step_2,
+  user_course: pierreg_carnac,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_carnac_step_2.save!
+
+pierreg_carnac_step_3 = UserStep.new(
+  step: carnac_step_3,
+  user_course: pierreg_carnac,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_carnac_step_3.save!
+
+
+pierreg_monteneuf_step_1 = UserStep.new(
+  step: monteneuf_step_1,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_monteneuf_step_1.save!
+
+pierreg_monteneuf_step_2 = UserStep.new(
+  step: monteneuf_step_2,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_monteneuf_step_2.save!
+
+pierreg_monteneuf_step_3 = UserStep.new(
+  step: monteneuf_step_3,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_monteneuf_step_3.save!
+
+
+pierreg_saint_just_step_1 = UserStep.new(
+  step: saint_just_step_1,
+  user_course: pierreg_saint_just,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_saint_just_step_1.save!
+
+pierreg_saint_just_step_2 = UserStep.new(
+  step: saint_just_step_2,
+  user_course: pierreg_saint_just,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_saint_just_step_2.save!
+
+pierreg_saint_just_step_3 = UserStep.new(
+  step: saint_just_step_3,
+  user_course: pierreg_saint_just,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_saint_just_step_3.save!
 
 puts "UserSteps created!"
 
