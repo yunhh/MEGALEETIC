@@ -25,7 +25,7 @@
 
 
   <div class="siema">
-    <% @descriptions.each do |description| %>
+    <% @descriptions.sort_by{ |description| description.position }.each do |description| %>
     <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
       <div class="content">
         <%= description.content %>
@@ -39,7 +39,7 @@
       <h4 class="ask" > <%= @step.question%> </h4>
       <%= simple_form_for @user_step do |f| %>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-        <%= f.submit "Validez votre réponse", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
+        <%= f.submit "Validez votre étape", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
       <% end %>
       <div class="hidden" id="explanations">
         <p>This is quiz explanations !</p>

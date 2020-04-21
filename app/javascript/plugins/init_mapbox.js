@@ -17,6 +17,8 @@ const fitMapToMarker = (map, marker) => {
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
+  if (!mapElement) {return}
+
   if (mapElement) {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({

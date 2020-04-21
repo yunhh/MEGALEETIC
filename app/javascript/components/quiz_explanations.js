@@ -14,7 +14,7 @@ const quizExplanations = () => {
 
       explain.style.display = "block";
       btn.style.display = "none";
-      sbmt.classList.remove = "hidden";
+      sbmt.classList.remove("hidden");
     });
   }
 }

@@ -1,7 +1,6 @@
 function animateSlide() {
 
   // console.log(`The index of current slide is: ${this.currentSlide}`);
-  if (!this) return
   // console.log('this',this);
   // console.log('current', this.currentSlide);
   let el = this.currentSlide;
