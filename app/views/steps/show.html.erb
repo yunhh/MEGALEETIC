@@ -41,8 +41,15 @@
   </div>
   <div class="hidden" id="explanations">
     <p>This is quiz explanations !</p>
+    <!-- If step.quiz_answer = @step.correct_answer  -->
+      <!-- Return "Félicitations c'est la bonne réponse !" -->
+        <!-- Else  -->
+        <!-- Hélas la bonne réponse était @step.correct_answer -->
+        <!-- end -->
     <%#= @step_answer_"#{@step.correct_answer}"  %>
-    <p> <%= @step.explanations  %> </p>
+    <p> <%= @quiz_answer %> </p>
+        <p> <%= @step.correct_answer %> </p>
+    <p> <%= @step.explanations %> </p>
       <%= f.submit "Validez votre étape", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
   </div>
   <% end %>
