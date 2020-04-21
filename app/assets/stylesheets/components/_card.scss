@@ -39,6 +39,9 @@ body,html{
 
 .card-course-main {
   margin-top: -20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .mieux-note{
@@ -85,6 +88,11 @@ body,html{
   text-align: center;
   padding: 0;
   font-family: 'Red Hat Text', sans-serif;
+}
+
+.card-course-rating {
+  color: #F9AE1E;
+  margin: -8px auto;
 }
 
 .card-course-duration{
