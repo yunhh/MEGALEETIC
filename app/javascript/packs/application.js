@@ -24,6 +24,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 import {burgerMenu} from "../components/menu_burger_index";
 
 import {animateHome} from "../components/animate_home";
+import {activeReviews} from "../components/active_reviews";
 
 import {quizExplanations} from "../components/quiz_explanations";
 
@@ -46,6 +47,7 @@ document.addEventListener('turbolinks:load', () => {
   initMapboxIndex();
   quizExplanations();
   animateHome();
+  activeReviews();
 
   // scrollCardSHow();
 
