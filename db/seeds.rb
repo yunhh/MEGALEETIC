@@ -12,14 +12,17 @@ Megalith.destroy_all
 
 
 puts "Creating Users..."
+#new user
 pierref = User.new(email: "pierref@mail.com", password: "azerty")
 pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pierre.jpg', content_type: 'image/jpg')
 pierref.save!
 
+#average user
 lomig = User.new(email: "lomig@mail.com", password: "azerty")
 lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
 lomig.save!
 
+#old user
 pierreg = User.new(email: "pierreg@mail.com", password: "azerty")
 pierreg.photo.attach(io:File.open('db/fixtures/users/pierreg.jpg'), filename: 'pierreg.jpg', content_type: 'image/jpg')
 pierreg.save!
@@ -30,7 +33,7 @@ puts "Users created!"
 puts "Creating Courses..."
 
 carnac_course = Course.new(
-  address: "Carnac",
+  address: "Le Manio 56340 Carnac",
   name: "Les mystères de Carnac",
   mobility_access: true ,
   duration_in_minutes: 165,
@@ -42,18 +45,193 @@ carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg')
 carnac_course.save!
 
 carnac_course_2 = Course.new(
-  address: "Carnac",
+  address: "Keriaval 56340 Carnac",
   latitude: "47.6155",
   longitude: "-3.085734",
   name: "Les gravures de Mane Kerioned",
   mobility_access: false ,
-  duration_in_minutes: 25,
+  duration_in_minutes: 45,
   distance_in_kilometers: 0.2,
   rating: 4,
   description: "Découvrez les monuments de Mane Kerioned."
 )
 carnac_course_2.photo.attach(io:File.open('db/fixtures/courses/carnac_course_2.jpg'), filename: 'carnac_course_2.jpg', content_type: 'image/jpg')
 carnac_course_2.save!
+
+carnac_course_3 = Course.new(
+  address: "Rue de Kerentrech 5340 Plouharnel",
+  latitude: "47.60876",
+  longitude: "-3.133230",
+  name: "Les alignements de Sainte-Barbe",
+  mobility_access: false ,
+  duration_in_minutes: 35,
+  distance_in_kilometers: 1.2,
+  rating: 3,
+  description: "Découvrez les alignements de Sainte-Barbe."
+)
+carnac_course_3.photo.attach(io:File.open('db/fixtures/courses/carnac_course_3.jpg'), filename: 'carnac_course_3.jpg', content_type: 'image/jpg')
+carnac_course_3.save!
+
+carnac_course_4 = Course.new(
+  address: "13, Rue Eric Tabarly 5340 Plouharnel",
+  latitude: "47.615329",
+  longitude: "-3.083248",
+  name: "Les alignements de Keriaval",
+  mobility_access: true ,
+  duration_in_minutes: 30,
+  distance_in_kilometers: 0.8,
+  rating: 3,
+  description: "Découvrez les alignements de Keriaval."
+)
+carnac_course_4.photo.attach(io:File.open('db/fixtures/courses/carnac_course_4.jpg'), filename: 'carnac_course_4.jpg', content_type: 'image/jpg')
+carnac_course_4.save!
+
+carnac_course_5 = Course.new(
+  address: "Belz",
+  name: "Les mégalithes de Belz",
+  mobility_access: false ,
+  duration_in_minutes: 245,
+  distance_in_kilometers: 12,
+  rating: 3,
+  description: "Découvrez les mégalithes de Belz."
+)
+carnac_course_5.photo.attach(io:File.open('db/fixtures/courses/carnac_course_5.jpg'), filename: 'carnac_course_5.jpg', content_type: 'image/jpg')
+carnac_course_5.save!
+
+carnac_course_6 = Course.new(
+  address: "Crac'h",
+  name: "Les mégalithes de Crac'h",
+  mobility_access: false ,
+  duration_in_minutes: 245,
+  distance_in_kilometers: 12,
+  rating: 3,
+  description: "Découvrez les mégalithes de Crac'h."
+)
+carnac_course_6.photo.attach(io:File.open('db/fixtures/courses/carnac_course_6.jpg'), filename: 'carnac_course_6.jpg', content_type: 'image/jpg')
+carnac_course_6.save!
+
+carnac_course_7 = Course.new(
+  address: "La Trinité sur Mer",
+  name: "Les mégalithes de la Trinité sur Mer",
+  mobility_access: true ,
+  duration_in_minutes: 225,
+  distance_in_kilometers: 8,
+  rating: 3,
+  description: "Découvrez les mégalithes de la Trinité sur Mer."
+)
+carnac_course_7.photo.attach(io:File.open('db/fixtures/courses/carnac_course_7.jpg'), filename: 'carnac_course_7.jpg', content_type: 'image/jpg')
+carnac_course_7.save!
+
+carnac_course_8 = Course.new(
+  address: "Le Bono",
+  name: "Les mégalithes du Bono",
+  mobility_access: true ,
+  duration_in_minutes: 225,
+  distance_in_kilometers: 8,
+  rating: 3,
+  description: "Découvrez les mégalithes du Bono."
+)
+carnac_course_8.photo.attach(io:File.open('db/fixtures/courses/carnac_course_8.jpg'), filename: 'carnac_course_8.jpg', content_type: 'image/jpg')
+carnac_course_8.save!
+
+carnac_course_9 = Course.new(
+  address: "Larmor-Baden",
+  name: "Gavrinis ou la chapelle Sixtine du Néolithique",
+  mobility_access: false ,
+  duration_in_minutes: 120,
+  distance_in_kilometers: 7,
+  rating: 5,
+  description: "Découvrez la beauté des gravures de Gavrinis."
+)
+carnac_course_9.photo.attach(io:File.open('db/fixtures/courses/carnac_course_9.jpg'), filename: 'carnac_course_9.jpg', content_type: 'image/jpg')
+carnac_course_9.save!
+
+carnac_course_10 = Course.new(
+  address: "Arzon",
+  name: "La presqu'île de Rhuys",
+  mobility_access: false ,
+  duration_in_minutes: 190,
+  distance_in_kilometers: 20,
+  rating: 4,
+  description: "Découvrez les mégalithes de la presqu'île de Rhuys."
+)
+carnac_course_10.photo.attach(io:File.open('db/fixtures/courses/carnac_course_10.jpg'), filename: 'carnac_course_10.jpg', content_type: 'image/jpg')
+carnac_course_10.save!
+
+carnac_course_11 = Course.new(
+  address: "Saint-Pierre-Quiberon",
+  name: "La presqu'île de Quiberon",
+  mobility_access: false ,
+  duration_in_minutes: 145,
+  distance_in_kilometers: 23,
+  rating: 3,
+  description: "Découvrez les mégalithes de la presqu'île de Quiberon."
+)
+carnac_course_11.photo.attach(io:File.open('db/fixtures/courses/carnac_course_11.jpg'), filename: 'carnac_course_11.jpg', content_type: 'image/jpg')
+carnac_course_11.save!
+
+carnac_course_12 = Course.new(
+  address: "Rue Jean-Pierre Calloch 5340 Plouharnel",
+  name: "Voyage à Rondossec",
+  mobility_access: false ,
+  duration_in_minutes: 35,
+  distance_in_kilometers: 1.2,
+  rating: 3,
+  description: "Découvrez le tumulus de Rondossec et ses environs."
+)
+carnac_course_12.photo.attach(io:File.open('db/fixtures/courses/carnac_course_12.jpg'), filename: 'carnac_course_12.jpg', content_type: 'image/jpg')
+carnac_course_12.save!
+
+carnac_course_13 = Course.new(
+  address: "34 Crucuny 5340 Carnac",
+  name: "Dolmens à Carnac - partie I",
+  mobility_access: false ,
+  duration_in_minutes: 45,
+  distance_in_kilometers: 2.5,
+  rating: 3,
+  description: "Découvrez quelques uns des plus beaux dolmens de Carnac."
+)
+carnac_course_13.photo.attach(io:File.open('db/fixtures/courses/carnac_course_13.jpg'), filename: 'carnac_course_13.jpg', content_type: 'image/jpg')
+carnac_course_13.save!
+
+carnac_course_14 = Course.new(
+  address: "88 Route du Moustoir 56340 Carnac",
+   name: "Dolmens à Carnac - partie II",
+  mobility_access: false ,
+  duration_in_minutes: 55,
+  distance_in_kilometers: 3.5,
+  rating: 4,
+  description: "Découvrez quelques uns des plus beaux dolmens de Carnac."
+)
+carnac_course_14.photo.attach(io:File.open('db/fixtures/courses/carnac_course_14.jpg'), filename: 'carnac_course_14.jpg', content_type: 'image/jpg')
+carnac_course_14.save!
+
+carnac_course_15 = Course.new(
+  address: "Crucuno 56340 Erdeven",
+  name: "Dolmens à Erdeven - partie II",
+  mobility_access: false ,
+  duration_in_minutes: 55,
+  distance_in_kilometers: 3.5,
+  rating: 4,
+  description: "Découvrez quelques uns des plus beaux dolmens de Erdeven."
+)
+carnac_course_15.photo.attach(io:File.open('db/fixtures/courses/carnac_course_15.jpg'), filename: 'carnac_course_15.jpg', content_type: 'image/jpg')
+carnac_course_15.save!
+
+carnac_course_16 = Course.new(
+ address: "Varquès 56340 Erdeven",
+  name: "Dolmens à Erdeven - partie II",
+  mobility_access: false ,
+  duration_in_minutes: 55,
+  distance_in_kilometers: 3.5,
+  rating: 4,
+  description: "Découvrez quelques uns des plus beaux dolmens de Erdeven."
+)
+carnac_course_16.photo.attach(io:File.open('db/fixtures/courses/carnac_course_16.jpg'), filename: 'carnac_course_16.jpg', content_type: 'image/jpg')
+carnac_course_16.save!
+
+
+
 
 monteneuf_course = Course.new(
   address: "Monteneuf",
@@ -482,16 +660,102 @@ monteneuf_step_5.save!
 
 puts "Monteneuf Steps created!"
 
-# puts "Creating Saint-Just Steps..."
+puts "Creating Fake Steps..."
 
-# saint_just_step_1 = Step.new
-# saint_just_step_1.save!
+saint_just_step_1 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_1.save!
 
-# puts "Saint-Just Steps created!"
+saint_just_step_2 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_2.save!
+
+saint_just_step_3 = Step.new(
+  course: saint_just_course,
+  megalith:monteneuf_megalith_1
+)
+saint_just_step_3.save!
+
+locmariaquer_step_1 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_1.save!
+
+locmariaquer_step_2 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_2.save!
+
+locmariaquer_step_3 = Step.new(
+  course: locmariaquer_course,
+  megalith:monteneuf_megalith_1
+)
+locmariaquer_step_3.save!
+
+erdeven_step_1 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_1.save!
+
+erdeven_step_2 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_2.save!
+
+erdeven_step_3 = Step.new(
+  course: erdeven_course,
+  megalith:monteneuf_megalith_1
+)
+erdeven_step_3.save!
+
+
+
+
+puts "Fake Steps created!"
 
 
 
 puts "Creating UserCourses..."
+
+puts "Creating Pierref : new user..."
+
+pierref_carnac = UserCourse.new(
+  course: carnac_course,
+  user: pierref,
+  done: false
+)
+pierref_carnac.save!
+
+pierref_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: pierref,
+  done: false
+)
+pierref_monteneuf.save!
+
+pierref_saint_just = UserCourse.new(
+  course: saint_just_course,
+  user: pierref,
+  done: false
+)
+pierref_saint_just.save!
+
+pierref_erdeven = UserCourse.new(
+  course: erdeven_course,
+  user: pierref,
+  done: false
+)
+pierref_erdeven.save!
+
+puts "Creating Lomig : average user..."
 
 lomig_carnac = UserCourse.new(
   course: carnac_course,
@@ -503,14 +767,14 @@ lomig_carnac.save!
 lomig_monteneuf = UserCourse.new(
   course: monteneuf_course,
   user: lomig,
-  done: true
+  done: false
 )
 lomig_monteneuf.save!
 
 lomig_saint_just = UserCourse.new(
   course: saint_just_course,
   user: lomig,
-  done: true
+  done: false
 )
 lomig_saint_just.save!
 
@@ -521,11 +785,45 @@ lomig_erdeven = UserCourse.new(
 )
 lomig_erdeven.save!
 
+puts "Creating Pierreg : old user..."
+
+pierreg_carnac = UserCourse.new(
+  course: carnac_course,
+  user: pierreg,
+  done: true
+)
+pierreg_carnac.save!
+
+pierreg_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: pierreg,
+  done: true
+)
+pierreg_monteneuf.save!
+
+pierreg_saint_just = UserCourse.new(
+  course: saint_just_course,
+  user: pierreg,
+  done: true
+)
+pierreg_saint_just.save!
+
+pierreg_erdeven = UserCourse.new(
+  course: erdeven_course,
+  user: pierreg,
+  done: true
+)
+pierreg_erdeven.save!
+
 puts "UserCourses created!"
 
 
 
 puts "Creating UserSteps..."
+
+puts "PierreF No UserStep"
+
+puts "Lomig UserStep - Erdeven complete - Carnac in progress"
 
 lomig_carnac_step_1 = UserStep.new(
   step: carnac_step_1,
@@ -564,6 +862,131 @@ lomig_carnac_step_5 = UserStep.new(
   done: false
 )
 lomig_carnac_step_5.save!
+
+lomig_erdeven_step_1 = UserStep.new(
+  step: erdeven_step_1,
+  user_course: lomig_erdeven,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+lomig_erdeven_step_1.save!
+
+lomig_erdeven_step_2 = UserStep.new(
+  step: erdeven_step_2,
+  user_course: lomig_erdeven,
+  quiz_answer: "Les ossements",
+  done: true
+)
+lomig_erdeven_step_2.save!
+
+lomig_erdeven_step_3 = UserStep.new(
+  step: erdeven_step_3,
+  user_course: lomig_erdeven,
+  quiz_answer: "L'extraction",
+  done: true
+)
+lomig_erdeven_step_3.save!
+
+puts "PierreG UserStep - Erdeven Carnac Saint-Just Monteneuf complete"
+
+pierreg_erdeven_step_1 = UserStep.new(
+  step: erdeven_step_1,
+  user_course: pierreg_erdeven,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_erdeven_step_1.save!
+
+pierreg_erdeven_step_2 = UserStep.new(
+  step: erdeven_step_2,
+  user_course: pierreg_erdeven,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_erdeven_step_2.save!
+
+pierreg_erdeven_step_3 = UserStep.new(
+  step: erdeven_step_3,
+  user_course: pierreg_erdeven,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_erdeven_step_3.save!
+
+
+pierreg_carnac_step_1 = UserStep.new(
+  step: carnac_step_1,
+  user_course: pierreg_carnac,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_carnac_step_1.save!
+
+pierreg_carnac_step_2 = UserStep.new(
+  step: carnac_step_2,
+  user_course: pierreg_carnac,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_carnac_step_2.save!
+
+pierreg_carnac_step_3 = UserStep.new(
+  step: carnac_step_3,
+  user_course: pierreg_carnac,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_carnac_step_3.save!
+
+
+pierreg_monteneuf_step_1 = UserStep.new(
+  step: monteneuf_step_1,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_monteneuf_step_1.save!
+
+pierreg_monteneuf_step_2 = UserStep.new(
+  step: monteneuf_step_2,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_monteneuf_step_2.save!
+
+pierreg_monteneuf_step_3 = UserStep.new(
+  step: monteneuf_step_3,
+  user_course: pierreg_monteneuf,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_monteneuf_step_3.save!
+
+
+pierreg_saint_just_step_1 = UserStep.new(
+  step: saint_just_step_1,
+  user_course: pierreg_saint_just,
+  quiz_answer: "L'Antiquité",
+  done: true
+)
+pierreg_saint_just_step_1.save!
+
+pierreg_saint_just_step_2 = UserStep.new(
+  step: saint_just_step_2,
+  user_course: pierreg_saint_just,
+  quiz_answer: "Les ossements",
+  done: true
+)
+pierreg_saint_just_step_2.save!
+
+pierreg_saint_just_step_3 = UserStep.new(
+  step: saint_just_step_3,
+  user_course: pierreg_saint_just,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_saint_just_step_3.save!
 
 puts "UserSteps created!"
 
