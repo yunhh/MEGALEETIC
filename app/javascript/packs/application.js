@@ -16,7 +16,7 @@ require("channels")
 // const images = require.context('../images', true)
 // const imagePath = (name) => images(name, true)
 
-
+import 'mapbox-gl/dist/mapbox-gl.css';
 // ----------------------------------------------------
 // Note(lewagon): ABOVE IS RAILS DEFAULT CONFIGURATION
 // WRITE YOUR OWN JS STARTING FROM HERE 👇
@@ -24,6 +24,8 @@ require("channels")
 import {burgerMenu} from "../components/menu_burger_index";
 
 import {animateHome} from "../components/animate_home";
+
+import {quizExplanations} from "../components/quiz_explanations";
 
 // External imports
 import "bootstrap";
@@ -42,6 +44,7 @@ document.addEventListener('turbolinks:load', () => {
   burgerMenu();
   initMapbox();
   initMapboxIndex();
+  quizExplanations();
   animateHome();
 
   // scrollCardSHow();

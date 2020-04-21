@@ -1,6 +1,5 @@
 <div class="step-container">
 
-
   <div class="step-control-container">
     <div class="title-step">
     <div class="title">
@@ -15,7 +14,7 @@
     </div>
     </div>
     <div class="controls">
-      <!-- pour chaque slide insérer un dot -->
+      <!-- à faire : pour chaque slide insérer un dot -->
       <div class="circle" id="circle-0"></div>
       <div class="circle" id="circle-1"></div>
       <div class="circle" id="circle-2"></div>
@@ -36,11 +35,16 @@
     <% end %>
     <div class="slide-quiz" id="slide-quiz">
 
+
       <h4 class="ask" > <%= @step.question%> </h4>
       <%= simple_form_for @user_step do |f| %>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-        <%= f.button :submit, class: "btn-primary buttonquizz" %>
+        <%= f.submit "Validez votre réponse", class: "btn-primary buttonquizz hidden", id: "submit-quiz" %>
       <% end %>
+      <div class="hidden" id="explanations">
+        <p>This is quiz explanations !</p>
+      </div>
+      <button class=" btn-primary buttonquizz" id="toggle-answer"> Voir la réponse </button>
     </div>
   </div>
 </div>
