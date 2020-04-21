@@ -1,10 +1,12 @@
 class CoursesController < ApplicationController
   def index
-
+    @user_position = [47.598, -3.113]
     if params[:query].present?
+      @user_search = Geocoder.search(params[:query]).first.coordinates
       @courses = Course.near(params[:query], 10)
     else
-      @user_position = [47.598, -3.113]
+
+      @user_search = @user_position
       @courses = Course.near(@user_position, 10)
     end
     # @courses = Course.all
@@ -20,6 +22,12 @@ class CoursesController < ApplicationController
         image_url: helpers.asset_url(icon)
       }
     end
+
+    @markers << {lat: @user_position.first, lng: @user_position.last, image_url: helpers.cl_image_path(current_user.photo.key, :transformation=>[
+      {:width=>400, :height=>400, :radius=>"max", :crop=>"pad", :fetch_format=>:png},
+      {:width=>200, :crop=>"scale"}
+      ])}
+    @markers << {lat: @user_search.first, lng: @user_search.last}
 
     @top_courses = Course.all
 

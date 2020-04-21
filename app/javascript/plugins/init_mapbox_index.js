@@ -3,7 +3,9 @@ import mapboxgl from 'mapbox-gl';
 
 const fitMapToMarkers = (map, markers) => {
   const bounds = new mapboxgl.LngLatBounds();
+  console.log(bounds);
   markers.forEach(marker => bounds.extend([ marker.lng, marker.lat ]));
+  console.log(bounds);
   map.fitBounds(bounds, { padding: 70, maxZoom: 15, duration: 1000, pitch: 0 });
 };
 
@@ -13,10 +15,12 @@ const initMapboxIndex = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
     const map = new mapboxgl.Map({
       container: 'map-index',
       //style: 'mapbox://styles/mapbox/streets-v10'
-      style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop'
+      style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop',
+      center: [parseFloat(mapElement.dataset.longitude), parseFloat(mapElement.dataset.latitude)]
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -31,17 +35,13 @@ const initMapboxIndex = () => {
         .setLngLat([marker.lng, marker.lat])
         .addTo(map);
     });
+    console.log(markers);
+    // new mapboxgl.Marker()
+    //   .setLngLat([-3.113, 47.598])
+    //   .addTo(map);
     fitMapToMarkers(map, markers);
-    new mapboxgl.Marker()
-      .setLngLat([-3.113, 47.598])
-      .addTo(map);
 
-    // const element = document.createElement('div');
-    // element.className = 'marker';
-    // element.style.backgroundImage = `url('${marker.current_user.photo.key}')`;
-    // element.style.backgroundSize = 'contain';
-    // element.style.width = '35px';
-    // element.style.height = '35px';
+
   }
 };
 

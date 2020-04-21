@@ -17,7 +17,10 @@
     <div id="map-index"
            style="width: 100vw; height: 50vh;"
            data-markers="<%= @markers.to_json %>"
-           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+           data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+           data-longitude="<%= @user_search.last %>"
+           data-latitude="<%= @user_search.first %>"
+           >
     </div>
     <!-- <div class="recherche">
         <input class="search" type="search" placeholder="Rechercher...">
