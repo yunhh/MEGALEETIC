@@ -25,14 +25,18 @@
 }
 
 .step-name_quiz:after{
-    bottom: 0;
+    bottom: 50px;
     content: "";
     display: block;
     height: 2px;
-    top: 72px;
+    // top: 72px;
     left: 0%;
-    position: absolute;
+    // position: absolute;
     background: #E4A124;
+    width: 200px;
+    text-align: center;
+    margin-left: 90px;
+    margin-top: 10px;
 }
 
 .wrong_answer{
