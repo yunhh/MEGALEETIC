@@ -34,8 +34,7 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
-    @megaliths = Megalith.geocoded
-
+    @megaliths = @course.megaliths.geocoded
 
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"
@@ -58,9 +57,17 @@ class CoursesController < ApplicationController
       }
     end
 
+    unless @user_course = UserCourse.find_by(user: current_user, course: @course)
+      @user_course = UserCourse.create(user: current_user, course: @course, done: false)
+      @course.steps.each do |step|
+        @user_course.user_steps.create(step: step, done: false)
+      end
+    end
+
+
   end
 
 
-
-
 end
+
+

@@ -10,11 +10,7 @@ class UserCoursesController < ApplicationController
 
   end
 
-  def create
-    @user_courses = UserCourse.new()
-    @user_courses.user = current_user
-    @user_courses.course = @course
-    @user_courses.done = false
 
-    if @user_courses
+
+
 end
