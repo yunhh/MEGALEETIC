@@ -30,12 +30,11 @@
 
   </div>
   <div class="my-nav">
-      <%= cl_image_tag current_user.photo.key, class:'avatar'%>
-      <a href="">Paramètres</a>
-      <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
-      <a href="">Mes parcours</a>
-      <%= link_to "Les parcours", user_courses_path %>
-      <a href="">Envoyer nous vos retours</a>
+    <%= cl_image_tag current_user.photo.key, class:'avatar'%>
+    <%= link_to "Les parcours", courses_path %>
+    <%= link_to "Mes parcours", user_courses_path %>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+    <a href="">Envoyer nous vos retours</a>
   </div>
   <div id="map"
        style="width: 100vw; height: 35vh;"
