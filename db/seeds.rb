@@ -487,18 +487,18 @@ puts "Creating Monteneuf Megaliths... (fake)"
 
 puts "Creating Monteneuf 1 (fake)..."
 
-# monteneuf_megalith_1 = Megalith.new(
+# tumulus_saint_michel = Megalith.new(
 #   name: "Mégalithe de Monteneuf 1",
 #   category: "Menhir",
 #   latitude: "47.88221",
 #   longitude: "-2.18440"
 # )
 
-# monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+# tumulus_saint_michel_description_1 = tumulus_saint_michel.descriptions.build(
 #   position: 1,
 #   content: "Retrouvez prochainement les mégalithique de Monteneuf."
 # )
-# monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
+# tumulus_saint_michel_description_1.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel.jpg'), filename: 'tumulus_saint_michel.jpg', content_type: 'image/jpg')
 
 puts "Monteneuf 1 created (fake)!"
 
@@ -618,7 +618,7 @@ puts "Creating Monteneuf Steps..."
 monteneuf_step_1 = Step.new(
   position: 1,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
@@ -626,7 +626,7 @@ monteneuf_step_1.save!
 monteneuf_step_2 = Step.new(
   position: 2,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_2.save!
@@ -634,7 +634,7 @@ monteneuf_step_2.save!
 monteneuf_step_3 = Step.new(
   position: 3,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_3.save!
@@ -642,7 +642,7 @@ monteneuf_step_3.save!
 monteneuf_step_4 = Step.new(
   position: 4,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_4.save!
@@ -650,7 +650,7 @@ monteneuf_step_4.save!
 monteneuf_step_5 = Step.new(
   position: 5,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_5.save!
@@ -661,55 +661,55 @@ puts "Creating Fake Steps..."
 
 saint_just_step_1 = Step.new(
   course: saint_just_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 saint_just_step_1.save!
 
 saint_just_step_2 = Step.new(
   course: saint_just_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 saint_just_step_2.save!
 
 saint_just_step_3 = Step.new(
   course: saint_just_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 saint_just_step_3.save!
 
 locmariaquer_step_1 = Step.new(
   course: locmariaquer_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 locmariaquer_step_1.save!
 
 locmariaquer_step_2 = Step.new(
   course: locmariaquer_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 locmariaquer_step_2.save!
 
 locmariaquer_step_3 = Step.new(
   course: locmariaquer_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 locmariaquer_step_3.save!
 
 erdeven_step_1 = Step.new(
   course: erdeven_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 erdeven_step_1.save!
 
 erdeven_step_2 = Step.new(
   course: erdeven_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 erdeven_step_2.save!
 
 erdeven_step_3 = Step.new(
   course: erdeven_course,
-  megalith:monteneuf_megalith_1
+  megalith:tumulus_saint_michel
 )
 erdeven_step_3.save!
 
@@ -722,35 +722,35 @@ puts "Fake Steps created!"
 
 puts "Creating UserCourses..."
 
-puts "Creating Pierref : new user..."
+# puts "Creating Pierref : new user..."
 
-pierref_carnac = UserCourse.new(
-  course: carnac_course,
-  user: pierref,
-  done: false
-)
-pierref_carnac.save!
+# pierref_carnac = UserCourse.new(
+#   course: carnac_course,
+#   user: pierref,
+#   done: false
+# )
+# pierref_carnac.save!
 
-pierref_monteneuf = UserCourse.new(
-  course: monteneuf_course,
-  user: pierref,
-  done: false
-)
-pierref_monteneuf.save!
+# pierref_monteneuf = UserCourse.new(
+#   course: monteneuf_course,
+#   user: pierref,
+#   done: false
+# )
+# pierref_monteneuf.save!
 
-pierref_saint_just = UserCourse.new(
-  course: saint_just_course,
-  user: pierref,
-  done: false
-)
-pierref_saint_just.save!
+# pierref_saint_just = UserCourse.new(
+#   course: saint_just_course,
+#   user: pierref,
+#   done: false
+# )
+# pierref_saint_just.save!
 
-pierref_erdeven = UserCourse.new(
-  course: erdeven_course,
-  user: pierref,
-  done: false
-)
-pierref_erdeven.save!
+# pierref_erdeven = UserCourse.new(
+#   course: erdeven_course,
+#   user: pierref,
+#   done: false
+# )
+# pierref_erdeven.save!
 
 puts "Creating Lomig : average user..."
 
@@ -761,26 +761,27 @@ lomig_carnac = UserCourse.new(
 )
 lomig_carnac.save!
 
-lomig_monteneuf = UserCourse.new(
-  course: monteneuf_course,
-  user: lomig,
-  done: false
-)
-lomig_monteneuf.save!
-
-lomig_saint_just = UserCourse.new(
-  course: saint_just_course,
-  user: lomig,
-  done: false
-)
-lomig_saint_just.save!
-
 lomig_erdeven = UserCourse.new(
   course: erdeven_course,
   user: lomig,
   done: true
 )
 lomig_erdeven.save!
+
+# lomig_monteneuf = UserCourse.new(
+#   course: monteneuf_course,
+#   user: lomig,
+#   done: false
+# )
+# lomig_monteneuf.save!
+
+# lomig_saint_just = UserCourse.new(
+#   course: saint_just_course,
+#   user: lomig,
+#   done: false
+# )
+# lomig_saint_just.save!
+
 
 puts "Creating Pierreg : old user..."
 
@@ -863,7 +864,6 @@ lomig_carnac_step_5.save!
 lomig_erdeven_step_1 = UserStep.new(
   step: erdeven_step_1,
   user_course: lomig_erdeven,
-  quiz_answer: "L'Antiquité",
   done: true
 )
 lomig_erdeven_step_1.save!
@@ -871,7 +871,6 @@ lomig_erdeven_step_1.save!
 lomig_erdeven_step_2 = UserStep.new(
   step: erdeven_step_2,
   user_course: lomig_erdeven,
-  quiz_answer: "Les ossements",
   done: true
 )
 lomig_erdeven_step_2.save!
@@ -879,7 +878,6 @@ lomig_erdeven_step_2.save!
 lomig_erdeven_step_3 = UserStep.new(
   step: erdeven_step_3,
   user_course: lomig_erdeven,
-  quiz_answer: "L'extraction",
   done: true
 )
 lomig_erdeven_step_3.save!
@@ -889,7 +887,6 @@ puts "PierreG UserStep - Erdeven Carnac Saint-Just Monteneuf complete"
 pierreg_erdeven_step_1 = UserStep.new(
   step: erdeven_step_1,
   user_course: pierreg_erdeven,
-  quiz_answer: "L'Antiquité",
   done: true
 )
 pierreg_erdeven_step_1.save!
@@ -897,7 +894,6 @@ pierreg_erdeven_step_1.save!
 pierreg_erdeven_step_2 = UserStep.new(
   step: erdeven_step_2,
   user_course: pierreg_erdeven,
-  quiz_answer: "Les ossements",
   done: true
 )
 pierreg_erdeven_step_2.save!
@@ -905,7 +901,6 @@ pierreg_erdeven_step_2.save!
 pierreg_erdeven_step_3 = UserStep.new(
   step: erdeven_step_3,
   user_course: pierreg_erdeven,
-  quiz_answer: "L'extraction",
   done: true
 )
 pierreg_erdeven_step_3.save!
@@ -935,11 +930,25 @@ pierreg_carnac_step_3 = UserStep.new(
 )
 pierreg_carnac_step_3.save!
 
+pierreg_carnac_step_4 = UserStep.new(
+  step: carnac_step_4,
+  user_course: pierreg_carnac,
+  quiz_answer: "Les Hommes se rassemblaient autour des menhirs",
+  done: true
+)
+pierreg_carnac_step_4.save!
+
+pierreg_carnac_step_5 = UserStep.new(
+  step: carnac_step_5,
+  user_course: pierreg_carnac,
+  quiz_answer: "L'extraction",
+  done: true
+)
+pierreg_carnac_step_5.save!
 
 pierreg_monteneuf_step_1 = UserStep.new(
   step: monteneuf_step_1,
   user_course: pierreg_monteneuf,
-  quiz_answer: "L'Antiquité",
   done: true
 )
 pierreg_monteneuf_step_1.save!
@@ -947,7 +956,6 @@ pierreg_monteneuf_step_1.save!
 pierreg_monteneuf_step_2 = UserStep.new(
   step: monteneuf_step_2,
   user_course: pierreg_monteneuf,
-  quiz_answer: "Les ossements",
   done: true
 )
 pierreg_monteneuf_step_2.save!
@@ -955,16 +963,27 @@ pierreg_monteneuf_step_2.save!
 pierreg_monteneuf_step_3 = UserStep.new(
   step: monteneuf_step_3,
   user_course: pierreg_monteneuf,
-  quiz_answer: "L'extraction",
   done: true
 )
 pierreg_monteneuf_step_3.save!
 
+pierreg_monteneuf_step_4 = UserStep.new(
+  step: monteneuf_step_4,
+  user_course: pierreg_monteneuf,
+  done: true
+)
+pierreg_monteneuf_step_4.save!
+
+pierreg_monteneuf_step_5 = UserStep.new(
+  step: monteneuf_step_5,
+  user_course: pierreg_monteneuf,
+  done: true
+)
+pierreg_monteneuf_step_5.save!
 
 pierreg_saint_just_step_1 = UserStep.new(
   step: saint_just_step_1,
   user_course: pierreg_saint_just,
-  quiz_answer: "L'Antiquité",
   done: true
 )
 pierreg_saint_just_step_1.save!
@@ -972,7 +991,6 @@ pierreg_saint_just_step_1.save!
 pierreg_saint_just_step_2 = UserStep.new(
   step: saint_just_step_2,
   user_course: pierreg_saint_just,
-  quiz_answer: "Les ossements",
   done: true
 )
 pierreg_saint_just_step_2.save!
@@ -980,7 +998,6 @@ pierreg_saint_just_step_2.save!
 pierreg_saint_just_step_3 = UserStep.new(
   step: saint_just_step_3,
   user_course: pierreg_saint_just,
-  quiz_answer: "L'extraction",
   done: true
 )
 pierreg_saint_just_step_3.save!
