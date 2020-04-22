@@ -29,30 +29,29 @@
 
   </div>
       <div class= "search_form">
-        <%= form_tag courses_path, method: :get do %>
+        <%= form_tag courses_path, method: :get, :class => 'form-group' do %>
           <%= text_field_tag :query,
             params[:query],
-            class: "search",
+            class: "search form-control",
           placeholder: "Rechercher par ville"
           %>
-          <!--<button type="button" class="btn-map"><img class="eye-map-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"></button> -->
-          <div class= "search_button" >
             <%= submit_tag "", class:'button-map' %>
+          <div class= "search_button" >
             <i class="fas fa-search"></i>
           </div>
         <% end %>
       </div>
 
 
-<div class= "populaire">
+<div class= "populaire mt-5">
   <h3>Parcours près de chez vous</h3>
   <div class= "mieux-note">
     <% @courses.each do |course| %>
       <%= link_to course_path(course) do %>
         <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path course.photo.key %>)">
-          <p class="card-course-etape"><%= course.steps.count %> étapes</p>
+          <p class="card-course-etape ml-2"><%= course.steps.count %> étapes</p>
           <div class="card-course-main">
-            <p class="card-course-name pt-5"><%= course.name %></p>
+            <p class="card-course-name mr-2 pt-5"><%= course.name %></p>
             <div class="card-course-rating">
               <p><% course.rating.to_i.times do %>
                  <i class="fas fa-star"></i>
@@ -66,7 +65,7 @@
           </div>
           <div class="d-flex justify-content-between">
             <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (course.duration_in_minutes.round(0) / 60) %>h<%= (course.duration_in_minutes.round(0) % 60) %></p>
-            <p class="card-course-duration mr-2"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
+            <p class="card-course-duration mr-1"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
           </div>
         </div>
       <% end %>
@@ -80,9 +79,9 @@
     <% @top_courses.each do |course| %>
       <%= link_to course_path(course) do %>
         <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path course.photo.key %>)">
-          <p class="card-course-etape"><%= course.steps.count %> étapes</p>
+          <p class="card-course-etape ml-2"><%= course.steps.count %> étapes</p>
           <div class="card-course-main">
-            <p class="card-course-name pt-5"><%= course.name %></p>
+            <p class="card-course-name mr-2 pt-5"><%= course.name %></p>
             <div class="card-course-rating">
               <p><% course.rating.to_i.times do %>
                  <i class="fas fa-star"></i>
@@ -96,7 +95,7 @@
           </div>
           <div class="d-flex justify-content-between">
             <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (course.duration_in_minutes.round(0) / 60) %>h<%= (course.duration_in_minutes.round(0) % 60) %></p>
-            <p class="card-course-duration mr-2"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
+            <p class="card-course-duration mr-1"><i class="fas fa-walking mb-2"></i><br><%= course.distance_in_kilometers %> km</p>
           </div>
         </div>
       <% end %>
