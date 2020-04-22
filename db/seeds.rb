@@ -290,7 +290,7 @@ puts "Creating Carnac Megaliths..."
 puts "Creating Alignement de Kerlescan..."
 
 alignement_de_kerlescan = Megalith.new(
-  name: "Alignement de Kerlescan",
+  name: "Alignements de Kerlescan",
   category: "Alignement Menhir",
   latitude: "47.60373",
   longitude: "-3.05048"
@@ -343,13 +343,13 @@ geant_du_manio_description_1.photo.attach(io:File.open('db/fixtures/megaliths/ge
 
 geant_du_manio_description_2 = geant_du_manio.descriptions.build(
   position: 2,
-  content: "Il constitue le plus grand menhir du site des alignements de Carnac."
+  content: "Il constitue le plus grand menhir de Carnac."
 )
 geant_du_manio_description_2.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_2.jpg'), filename: 'geant_du_manio_2.jpg', content_type: 'image/jpg')
 
 geant_du_manio_description_3 = geant_du_manio.descriptions.build(
   position: 3,
-  content: "A quelques mètres se trouvent le quadrilatère du Manio."
+  content: "A quelques mètres, au Nord, se trouvent le quadrilatère du Manio."
 )
 geant_du_manio_description_3.photo.attach(io:File.open('db/fixtures/megaliths/geant_du_manio/geant_du_manio_3.jpg'), filename: 'geant_du_manio_3.jpg', content_type: 'image/jpg')
 
