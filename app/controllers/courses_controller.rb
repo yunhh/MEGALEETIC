@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
-    @megaliths = Megalith.geocoded
+    @megaliths = @course.megaliths.geocoded
 
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"

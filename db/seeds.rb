@@ -487,18 +487,18 @@ puts "Creating Monteneuf Megaliths... (fake)"
 
 puts "Creating Monteneuf 1 (fake)..."
 
-# tumulus_saint_michel = Megalith.new(
-#   name: "Mégalithe de Monteneuf 1",
-#   category: "Menhir",
-#   latitude: "47.88221",
-#   longitude: "-2.18440"
-# )
+monteneuf_megalith_1= Megalith.new(
+  name: "Mégalithe de Monteneuf 1",
+  category: "Menhir",
+  latitude: "47.88221",
+  longitude: "-2.18440"
+)
 
-# tumulus_saint_michel_description_1 = tumulus_saint_michel.descriptions.build(
-#   position: 1,
-#   content: "Retrouvez prochainement les mégalithique de Monteneuf."
-# )
-# tumulus_saint_michel_description_1.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel.jpg'), filename: 'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+  position: 1,
+  content: "Retrouvez prochainement les mégalithique de Monteneuf."
+)
+monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
 
 puts "Monteneuf 1 created (fake)!"
 
@@ -608,7 +608,7 @@ carnac_step_5 = Step.new(
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
   access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
-  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être les secrets de la naissance de cette brillante civilisation."
 )
 carnac_step_5.save!
 
@@ -619,7 +619,7 @@ puts "Creating Monteneuf Steps..."
 monteneuf_step_1 = Step.new(
   position: 1,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
@@ -627,7 +627,7 @@ monteneuf_step_1.save!
 monteneuf_step_2 = Step.new(
   position: 2,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_2.save!
@@ -635,7 +635,7 @@ monteneuf_step_2.save!
 monteneuf_step_3 = Step.new(
   position: 3,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_3.save!
@@ -643,7 +643,7 @@ monteneuf_step_3.save!
 monteneuf_step_4 = Step.new(
   position: 4,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_4.save!
@@ -651,7 +651,7 @@ monteneuf_step_4.save!
 monteneuf_step_5 = Step.new(
   position: 5,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_5.save!
