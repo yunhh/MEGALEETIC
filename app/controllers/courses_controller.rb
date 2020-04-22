@@ -11,7 +11,7 @@ class CoursesController < ApplicationController
       @user_search = @user_position
       @courses = Course.order(rating: :desc).near(@user_position, 30)
 
-    
+
 
     end
     @markers = @courses.map do |course|
@@ -37,8 +37,8 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
-    @megaliths = @course.megaliths.geocoded
-    
+    @megaliths = Megalith.geocoded
+
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"
       icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
