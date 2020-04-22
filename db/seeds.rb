@@ -416,13 +416,13 @@ enceinte_du_menec = Megalith.new(
 
 enceinte_du_menec_1 = enceinte_du_menec.descriptions.build(
   position: 1,
-  content: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètres (conservant plus de 1 000 menhirs)."
+  content: "Cet espace est situé à l'une des extrêmité des plus grandes files de menhirs organisées sur le même plan que Kerlescan mais sur près d'un kilomètre (conservant plus de 1 000 menhirs)."
 )
 enceinte_du_menec_1.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_1.jpg'), filename: 'enceinte_du_menec_1.jpg', content_type: 'image/jpg')
 
 enceinte_du_menec_2 = enceinte_du_menec.descriptions.build(
   position: 2,
-  content: "On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village s'est installé au milieu de ce cromlech."
+  content: "On peut voir les menhirs acollés derrière la crêperie et s'apercevoir que le village médiéval s'est installé au milieu de ce cromlech."
 )
 enceinte_du_menec_2.photo.attach(io:File.open('db/fixtures/megaliths/enceinte_du_menec/enceinte_du_menec_2.jpg'), filename: 'enceinte_du_menec_2.jpg', content_type: 'image/jpg')
 
@@ -556,7 +556,8 @@ carnac_step_2 = Step.new(
   distance_in_kilometers: 0.5,
   duration_in_minutes: 30,
   access_description: "Le sentier vers le Géant du Manio démarre à partir du parking suité en contrebas du centre équestre Les menhirs",
-  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+  explanations: "L’essentiel des découvertes est constitué en matériaux peu fragiles : outils et objets de parure en pierre, poterie et bien sûr mégalithes ! Les ossements se décomposent en raison du sol acide.
+La plupart des fouilles archéologiques conduites à Carnac remontent à un siècle. Les techniques modernes nous apporteront de nombreuses informations. Actuellement seules les opérations de sauvetage sont conduites. Il n’existe pas de programme de recherche autre que d’inventorier et d’étudier ce qui est visible. "
 )
 carnac_step_2.save!
 
@@ -573,7 +574,7 @@ carnac_step_3 = Step.new(
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
   access_description: "Poursuivez le sentier en direction des alignements du Manio. Une fois arrivé à la route, prenez à gauche sur 250 mètres jusqu'à l'allée qui vous mènera à Kercado. Distance 1km ",
-  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+  explanations: "La plupart des menhirs de Carnac provienne de carrière de pierre proche. Ici, c’est le nombre de mégalithes qui impressionnent avec quelques blocs imposants. Plus de 3300 existent encore ! Dans d’autres endroits, les Néolithiques n’hésitaient pas à aller chercher des blocs monumentaux à plusieurs kilomètres. C’est le cas pour le grand menhir brisé de Locmariquer (280 tonnes – 21 mètres de hauteur)."
 )
 carnac_step_3.save!
 
@@ -590,7 +591,7 @@ carnac_step_4 = Step.new(
   distance_in_kilometers: 3,
   duration_in_minutes: 45,
   access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres",
-  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+  explanations: "Si l’esclavage est une hypothèse réaliste, la construction de cette civilisation s’appuie tout d’abord sur l’appropriation de larges territoires. Les mégalithes sont d’abord construits là où les tribus vivent. La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
 )
 carnac_step_4.save!
 
