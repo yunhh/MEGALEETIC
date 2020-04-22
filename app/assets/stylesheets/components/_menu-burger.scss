@@ -232,3 +232,45 @@ h1{
   left: 0;
   opacity: 1;
 }
+
+.toggle-btn_user_show{
+  height: 30px;
+  width: 30px;
+  position: relative;
+  float: right;
+  margin-right: 20px;
+  margin-top: -45px;
+  cursor: pointer;
+}
+
+.toggle-btn_user_show span{
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: 20px;
+  left: 0;
+  opacity: 1;
+}
+
+.toggle-btn_user_show span:before{
+  content: "";
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: -10px;
+  left: 0;
+  opacity: 1;
+}
+
+.toggle-btn_user_show span:after{
+  content: "";
+  height: 2px;
+  background-color: rgb(170, 170, 170);
+  width: 100%;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  opacity: 1;
+}

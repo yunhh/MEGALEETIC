@@ -8,8 +8,8 @@
   <div class="my-nav">
     <%= cl_image_tag current_user.photo.key, class:'avatar'%>
     <%= link_to "Les parcours", courses_path %>
-    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
     <%= link_to "Mes parcours", user_courses_path %>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
     <a href="">Envoyer nous vos retours</a>
   </div>
 
@@ -36,7 +36,7 @@
     <div class= "mieux-note">
       <% @courses_ongoing.each do |user_course| %>
           <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
-            <p class="card-course-etape-index"><%= user_course.course.steps.count %> étapes</p>
+            <p class="card-course-etape-index"><%= user_course.user_steps.select { |step| step.done }.count%> / <%= user_course.course.steps.count %> étapes</p>
             <div class="card-course-main">
               <p class="card-course-name-index pt-5"><%= user_course.course.name %></p>
             </div>
