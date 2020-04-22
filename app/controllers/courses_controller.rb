@@ -3,11 +3,11 @@ class CoursesController < ApplicationController
     @user_position = [47.598, -3.113]
     if params[:query].present?
       @user_search = Geocoder.search(params[:query]).first.coordinates
-      @courses = Course.near(params[:query], 10)
+      @courses = Course.near(params[:query], 30)
     else
 
       @user_search = @user_position
-      @courses = Course.near(@user_position, 10)
+      @courses = Course.near(@user_position, 30)
     end
     # @courses = Course.all
     # @courses = Course.geocoded

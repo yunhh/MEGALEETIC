@@ -476,8 +476,6 @@ tumulus_saint_michel_4 = tumulus_saint_michel.descriptions.build(
 )
 tumulus_saint_michel_4.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel_4.jpg'), filename: 'tumulus_saint_michel_4.jpg', content_type: 'image/jpg')
 
-enceinte_du_menec.save!
-
 tumulus_saint_michel.save!
 
 puts "Tumulus Saint-Michel created!"
@@ -489,19 +487,18 @@ puts "Creating Monteneuf Megaliths... (fake)"
 
 puts "Creating Monteneuf 1 (fake)..."
 
-monteneuf_megalith_1 = Megalith.new(
-  name: "Mégalithe de Monteneuf 1",
-  address: "Monteneuf",
-  category: "Menhir",
-  latitude: "47.88221",
-  longitude: "-2.18440"
-)
+# monteneuf_megalith_1 = Megalith.new(
+#   name: "Mégalithe de Monteneuf 1",
+#   category: "Menhir",
+#   latitude: "47.88221",
+#   longitude: "-2.18440"
+# )
 
-monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
-  position: 1,
-  content: "Retrouvez prochainement les mégalithique de Monteneuf."
-)
-monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
+# monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+#   position: 1,
+#   content: "Retrouvez prochainement les mégalithique de Monteneuf."
+# )
+# monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
 
 puts "Monteneuf 1 created (fake)!"
 
