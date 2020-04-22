@@ -4,12 +4,12 @@ class CoursesController < ApplicationController
     if params[:query].present?
       @user_search = Geocoder.search(params[:query]).first.coordinates
 
-      @courses = Course.order(rating: :desc).near(params[:query], 30)
+      @courses = Course.order(rating: :desc).near(params[:query], 50)
 
     else
 
       @user_search = @user_position
-      @courses = Course.order(rating: :desc).near(@user_position, 30)
+      @courses = Course.order(rating: :desc).near(@user_position, 50)
 
 
 
@@ -37,7 +37,7 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
-    @megaliths = Megalith.geocoded
+    @megaliths = @course.megaliths.geocoded
 
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"

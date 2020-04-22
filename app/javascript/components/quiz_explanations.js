@@ -12,6 +12,9 @@ const quizExplanations = () => {
   const rightAnswerField = document.querySelector('.right-answer');
   const radioButtons = document.querySelectorAll('.radio_buttons')
 
+  const selectAnswer = document.querySelectorAll(".answer")
+  // console.log(selectAnswer);
+
   if (btn){
     btn.addEventListener('click', (event) => {
       event.preventDefault();
@@ -21,6 +24,7 @@ const quizExplanations = () => {
       sbmt.classList.remove("hidden");
 
       const rightAnswer = rightAnswerField.dataset.answer;
+      console.log(rightAnswer);
 
       let userAnswer = "";
       radioButtons.forEach((button) => {
@@ -32,8 +36,12 @@ const quizExplanations = () => {
       if (rightAnswer === userAnswer){
         rightAnswerField.insertAdjacentHTML("beforeend", "Félicitations c'est la bonne réponse !");
       } else {
-        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas la bonne réponse était ${rightAnswer}...`);
+        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas, la bonne réponse était : ${rightAnswer}...`);
       }
+
+
+     s
+
 
 
     });
