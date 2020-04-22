@@ -580,7 +580,7 @@ carnac_step_3.save!
 
 carnac_step_4 = Step.new(
   position: 4,
-  question: "Parmi les hypothèses suivantes, laquelle est la moins réaliste ?",
+  question: "Parmi les hypothèses suivantes, laquelle vous semble fausse ?",
   answer_1: "Des esclaves ont bâti les mégalithes",
   answer_2: "Les mégalithes marquaient le territoire",
   answer_3: "Les Hommes se rassemblaient autour des menhirs",
@@ -591,7 +591,7 @@ carnac_step_4 = Step.new(
   distance_in_kilometers: 3,
   duration_in_minutes: 45,
   access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres",
-  explanations: "Si l’esclavage est une hypothèse réaliste, la construction de cette civilisation s’appuie tout d’abord sur l’appropriation de larges territoires. Les mégalithes sont d’abord construits là où les tribus vivent. La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
+  explanations: "La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
 )
 carnac_step_4.save!
 
