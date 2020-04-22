@@ -581,7 +581,7 @@ carnac_step_3.save!
 carnac_step_4 = Step.new(
   position: 4,
   question: "Parmi les hypothèses suivantes, laquelle vous semble fausse ?",
-  answer_1: "Des esclaves ont bâti les mégalithes",
+  answer_1: "Des extra-terrestres ont bâti les mégalithes",
   answer_2: "Les mégalithes marquaient le territoire",
   answer_3: "Les Hommes se rassemblaient autour des menhirs",
   answer_4: "Cette civilisation était dirigée par des chefs",
