@@ -3,19 +3,16 @@ class CoursesController < ApplicationController
     @user_position = [47.598, -3.113]
     if params[:query].present?
       @user_search = Geocoder.search(params[:query]).first.coordinates
-      @courses = Course.near(params[:query], 10)
+      @courses = Course.order(rating: :desc).near(params[:query], 10)
+
     else
 
       @user_search = @user_position
-      @courses = Course.near(@user_position, 10)
+      @courses = Course.order(rating: :desc).near(@user_position, 10)
+
     end
-    # @courses = Course.all
-    # @courses = Course.geocoded
-
     @markers = @courses.map do |course|
-
       icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
-
       {
         lat: course.latitude,
         lng: course.longitude,
@@ -29,7 +26,7 @@ class CoursesController < ApplicationController
       ])}
     @markers << {lat: @user_search.first, lng: @user_search.last}
 
-    @top_courses = Course.all
+    @top_courses = Course.all.order(rating: :desc)
 
   end
 
@@ -37,8 +34,9 @@ class CoursesController < ApplicationController
 
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
-
     @megaliths = Megalith.geocoded
+
+
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"
       icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
@@ -62,7 +60,7 @@ class CoursesController < ApplicationController
 
   end
 
-  def blank_stars
-    5 - rating.to_i
-  end
+
+
+
 end

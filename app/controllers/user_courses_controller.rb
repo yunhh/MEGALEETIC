@@ -9,4 +9,12 @@ class UserCoursesController < ApplicationController
     @user_course = current_user.user_courses.find(params[:id])
 
   end
+
+  def create
+    @user_courses = UserCourse.new()
+    @user_courses.user = current_user
+    @user_courses.course = @course
+    @user_courses.done = false
+
+    if @user_courses
 end
