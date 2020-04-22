@@ -1,5 +1,7 @@
-<div class="global">
-  <h1 class= "title_user_index">Mes parcours</h1>
+<div class="global parcours">
+  <div class="border">
+    <h1 class= "title_user_index mt-1">Mes parcours</h1>
+
 
   <div class="toggle-btn_user_index" >
         <span></span>
@@ -11,36 +13,72 @@
     <%= link_to "Mes parcours", user_courses_path %>
     <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
     <a href="">Envoyer nous vos retours</a>
+
+   
+
   </div>
 
-  <div class= "populaire">
-    <p><strong>Terminés</strong></p>
+
+  <div class= "populaire premier">
+    <p class="etat">Terminés</p>
     <div class= "mieux-note">
       <% @courses_done.each do |user_course| %>
-            <div  class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
-              <p class="card-course-etape-index"><%= user_course.course.steps.count %> étapes</p>
-              <div class="button-quiz">
-                <%= link_to "Voir Le Quiz", user_courses_path, class:"Quiz"%>
-              </div>
-              <div class="card-course-main">
-                <p class="card-course-name-index pt-5"><%= user_course.course.name %></p>
-              </div>
+        <div class="card-category-index mt-1" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
+          <p class="card-course-etape ml-2"><%= user_course.course.steps.count %> étapes</p>
+          <div class="card-course-main">
+            <p class="card-course-name mr-2 pt-5"><%= user_course.course.name %></p>
+            <div class="card-course-rating">
+              <p><% user_course.course.rating.to_i.times do %>
+                 <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - user_course.course.rating.to_i).times do %>
+                 <i class="far fa-star"></i>
+                <% end %>
+              </p>
             </div>
+            <div class="button-quiz">
+              <%= link_to "Voir Le Quiz", user_courses_path, class:"Quiz"%>
+            </div>
+          </div>
+          <div class="d-flex justify-content-between">
+            <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (user_course.course.duration_in_minutes.round(0) / 60) %>h<%= (user_course.course.duration_in_minutes.round(0) % 60) %></p>
+            <p class="card-course-duration mr-1"><i class="fas fa-walking mb-2"></i><br><%= user_course.course.distance_in_kilometers %> km</p>
+          </div>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>
 
 
   <div class= "populaire">
-    <p><strong>En cours</strong></p>
+    <p class="etat">En cours</p>
     <div class= "mieux-note">
       <% @courses_ongoing.each do |user_course| %>
-          <div class="card-category-index" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
-            <p class="card-course-etape-index"><%= user_course.user_steps.select { |step| step.done }.count%> / <%= user_course.course.steps.count %> étapes</p>
-            <div class="card-course-main">
-              <p class="card-course-name-index pt-5"><%= user_course.course.name %></p>
+
+         
+
+        <div class="card-category-index mt-1" style="background-image: linear-gradient(rgba(0,0,0,0.75), rgba(0,0,0,0.7)), url(<%= cl_image_path user_course.course.photo.key %>)">
+          <p class="card-course-etape ml-2"><%= user_course.course.steps.count %> étapes</p>
+          <div class="card-course-main">
+            <p class="card-course-name mr-2 pt-5"><%= user_course.course.name %></p>
+            <div class="card-course-rating">
+              <p><% user_course.course.rating.to_i.times do %>
+                 <i class="fas fa-star"></i>
+                <% end %>
+                <% (5 - user_course.course.rating.to_i).times do %>
+                 <i class="far fa-star"></i>
+                <% end %>
+              </p>
+
             </div>
+            <p class="card-course-description"><%= user_course.course.description%></p>
           </div>
+          <div class="d-flex justify-content-between">
+            <p class="card-course-duration ml-2"><i class="far fa-clock mb-2"></i><br><%= (user_course.course.duration_in_minutes.round(0) / 60) %>h<%= (user_course.course.duration_in_minutes.round(0) % 60) %></p>
+            <p class="card-course-duration mr-1"><i class="fas fa-walking mb-2"></i><br><%= user_course.course.distance_in_kilometers %> km</p>
+          </div>
+        </div>
       <% end %>
     </div>
   </div>

@@ -11,6 +11,7 @@ const quizExplanations = () => {
   const sbmt = document.getElementById('submit-quiz');
   const rightAnswerField = document.querySelector('.right-answer');
   const radioButtons = document.querySelectorAll('.radio_buttons')
+
   if (btn){
     btn.addEventListener('click', (event) => {
       event.preventDefault();
@@ -34,8 +35,10 @@ const quizExplanations = () => {
         rightAnswerField.insertAdjacentHTML("beforeend", `Hélas la bonne réponse était ${rightAnswer}...`);
       }
 
+
     });
   }
+
 }
 
 
