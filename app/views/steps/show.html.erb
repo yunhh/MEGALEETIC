@@ -24,7 +24,7 @@
 
       <div>
         <%= submit_tag "", class:'button-eye-step' %>
-        <img class="eye-step-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png">
+        <!-- <img class="eye-step-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"> -->
       </div>
     </div>
 
@@ -42,12 +42,36 @@
       </div>
     </div>
     <% end %>
-    <div class="slide-quiz step-name-slide" id="slide-quiz">
+    <div class="slide-quiz step-name-slide " id="slide-quiz">
+      <!-- <ul>
+        <div class="quiz">
+          <div class="content-answer">
+            <div class="answer">
+              <%= @step.answer_1 %>
+            </div>
+          </div>
+          <div class="content-answer">
+            <div class="answer">
+              <%= @step.answer_2 %>
+            </div>
+          </div>
+          <div class="content-answer">
+            <div class="answer">
+              <%= @step.answer_3 %>
+            </div>
+          </div>
+          <div class="content-answer">
+            <div class="answer">
+              <%= @step.answer_4 %>
+            </div>
+        </div>
+      </ul> -->
+
       <h4 class="ask" > <%= @step.question%> </h4>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-      <button class=" btn-primary buttonquizz" id="toggle-answer"> Voir la réponse </button>
+      <button class=" buttonquizz" id="toggle-answer"> Voir la réponse </button>
     </div>
-  </div>
+  </div>>
   <div class="hidden" id="explanations">
     <p>  </p>
     <p>  </p>

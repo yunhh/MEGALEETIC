@@ -26,12 +26,12 @@ function animateSlide() {
     activeSlide.classList.add("animation-content");
   }
   // console.log(activeSlide);
-   console.log("appel")
+   // console.log("appel")
   if (circle4.classList.contains("dot-active")){
-    console.log("active")
+    // console.log("active")
     eyeBtn.style.display = "none";
   } else {
-    console.log("not active")
+    // console.log("not active")
     eyeBtn.style.display = "block";
   }
 }

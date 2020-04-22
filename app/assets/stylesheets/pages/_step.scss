@@ -1,3 +1,30 @@
+.eye-step-btn{
+  background-size: 30px;
+}
+
+.button-eye-step{
+  width:24px;
+  height:24px;
+  background-image: url("http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png");
+}
+
+.content-answer{
+  height:64px;
+  background: #F96D6C;
+  border-radius: 5px;
+  margin: 32px 32px 19px 0;
+  cursor: pointer;
+}
+
+.answer{
+  padding: 8px 16px;
+  // padding: 20 0px;
+}
+
+.quiz{
+   margin-top: 160px;
+}
+
 .step-container {
   width:100vw;
   height:100vh;
@@ -206,7 +233,7 @@
   padding: 0 20px;
 }
 .collection_radio_buttons{
-  margin-top: 28px;
+  // margin-top: 28px;
   font-family: 'Sorts Mill Goudy', serif;
   color: white !important;
   font-size: 20px;
@@ -244,7 +271,7 @@
   top:0;
   left:0;
   background-size: cover;
-  z-index:998;
+  z-index:990;
   width:100vw;
   height:100vh;
   p {
