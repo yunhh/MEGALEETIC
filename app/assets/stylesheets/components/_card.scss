@@ -31,6 +31,7 @@ body,html{
   margin: 0 15px;
   text-shadow: 0px 2px 4px rgba(0,0,0,0.5);
   box-shadow: 0px 4px 20px rgba(0,0,0,.4);
+  margin-bottom: 20px;
 }
 
 .card-course-index{
@@ -98,8 +99,12 @@ body,html{
 
 .card-course-rating {
   color: #F9AE1E;
-  margin: -8px auto;
+  margin: -23px auto;
+  &.show {
+    margin: -8px auto;
+  }
 }
+
 
 .card-course-duration{
   color: white;
@@ -142,6 +147,7 @@ body,html{
 }
 .test{
   position: relative;
+  z-index: 0;
 
 }
 .recherche {
@@ -150,11 +156,10 @@ body,html{
   position:relative;
   bottom: 50px;
 }
-.search{
-   margin-top:15px;
-  width: 210px;
+.search {
+  margin: 0 auto;
+  width: 70%;
   border-radius: 50px;
-  margin-left: 80px;
   padding-top: 2px;
   padding-bottom: 2px;
   padding-left: 10px;
@@ -164,6 +169,11 @@ body,html{
   position:relative;
 }
 
+.search_form {
+  position:relative;
+  margin-top: - 50px;
+}
+
 .button-map{
   background-color: #F96D6C;
   border:black;
@@ -171,17 +181,17 @@ body,html{
   height:30px;
   border-radius:50%;
   position: absolute;
-  top:-31px;
-  right: 85px;
+  top: 4px;
+  right: 62px;
 }
 
-.eye-map-btn{
+.fa-search{
   width: 22px;
   height:22px;
   position:absolute;
-  top: -28px;
-  left:3px;
-  margin-left: 261px;
+  top: -27px;
+  right: 62px;
+  color: white;
 }
 
 .logo_user_index{
