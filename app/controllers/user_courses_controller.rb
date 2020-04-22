@@ -9,4 +9,8 @@ class UserCoursesController < ApplicationController
     @user_course = current_user.user_courses.find(params[:id])
 
   end
+
+
+
+
 end
