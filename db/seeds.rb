@@ -483,26 +483,26 @@ puts "Tumulus Saint-Michel created!"
 puts "Carnac Megaliths created!"
 
 
-# puts "Creating Monteneuf Megaliths... (fake)"
+puts "Creating Monteneuf Megaliths... (fake)"
 
-# puts "Creating Monteneuf 1 (fake)..."
+puts "Creating Monteneuf 1 (fake)..."
 
-# monteneuf_megalith_1 = Megalith.new(
+# tumulus_saint_michel = Megalith.new(
 #   name: "Mégalithe de Monteneuf 1",
 #   category: "Menhir",
 #   latitude: "47.88221",
 #   longitude: "-2.18440"
 # )
 
-# monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+# tumulus_saint_michel_description_1 = tumulus_saint_michel.descriptions.build(
 #   position: 1,
 #   content: "Retrouvez prochainement les mégalithique de Monteneuf."
 # )
-# monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
+# tumulus_saint_michel_description_1.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel.jpg'), filename: 'tumulus_saint_michel.jpg', content_type: 'image/jpg')
 
-# puts "Monteneuf 1 created (fake)!"
+puts "Monteneuf 1 created (fake)!"
 
-# puts "Monteneuf Megaliths created! (fake)"
+puts "Monteneuf Megaliths created! (fake)"
 
 # puts "Creating Saint-Just Megaliths... Coming soon !"
 
@@ -656,7 +656,6 @@ monteneuf_step_5 = Step.new(
 monteneuf_step_5.save!
 
 puts "Monteneuf Steps created!"
-          
 
 puts "Creating Fake Steps..."
 
@@ -724,6 +723,13 @@ puts "Fake Steps created!"
 puts "Creating UserCourses..."
 
 # puts "Creating Pierref : new user..."
+
+# pierref_carnac = UserCourse.new(
+#   course: carnac_course,
+#   user: pierref,
+#   done: false
+# )
+# pierref_carnac.save!
 
 # pierref_monteneuf = UserCourse.new(
 #   course: monteneuf_course,
@@ -940,7 +946,6 @@ pierreg_carnac_step_5 = UserStep.new(
 )
 pierreg_carnac_step_5.save!
 
-
 pierreg_monteneuf_step_1 = UserStep.new(
   step: monteneuf_step_1,
   user_course: pierreg_monteneuf,
@@ -1004,4 +1009,3 @@ puts "UserSteps created!"
 
 
 puts "Finished!"
-
