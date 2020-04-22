@@ -38,7 +38,7 @@ class CoursesController < ApplicationController
     @course = Course.find(params[:id])
     @steps = @course.steps.order(position: :asc)
 
-    @megaliths = Megalith.geocoded
+    @megaliths = @course.megaliths.geocoded
     @markers = @megaliths.map do |megalith|
       if megalith.category == "Menhir"
       icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
