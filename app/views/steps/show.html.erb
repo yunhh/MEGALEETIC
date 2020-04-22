@@ -69,7 +69,7 @@
 
       <h4 class="ask" > <%= @step.question%> </h4>
         <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-      <button class=" buttonquizz" id="toggle-answer"> Voir la réponse </button>
+      <button class=" buttonquizz" id="toggle-answer"> Soumettre la réponse </button>
     </div>
   </div>>
   <div class="hidden" id="explanations">
@@ -81,7 +81,7 @@
     </div>
 
     <p> <%= @step.explanations %> </p>
-      <%= f.submit "Validez votre étape", class: "buttonquizz hidden no-deco", id: "submit-quiz" %>
+      <%= f.submit "Passer à l'étape suivante", class: "buttonquizz hidden no-deco", id: "submit-quiz" %>
   </div>
   <% end %>
 </div>
