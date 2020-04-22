@@ -3,12 +3,15 @@ class CoursesController < ApplicationController
     @user_position = [47.598, -3.113]
     if params[:query].present?
       @user_search = Geocoder.search(params[:query]).first.coordinates
-      @courses = Course.order(rating: :desc).near(params[:query], 10)
+
+      @courses = Course.order(rating: :desc).near(params[:query], 30)
 
     else
 
       @user_search = @user_position
-      @courses = Course.order(rating: :desc).near(@user_position, 10)
+      @courses = Course.order(rating: :desc).near(@user_position, 30)
+
+    
 
     end
     @markers = @courses.map do |course|

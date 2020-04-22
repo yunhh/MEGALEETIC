@@ -20,12 +20,21 @@
       <div class="circle" id="circle-2"></div>
       <div class="circle" id="circle-3"></div>
       <div class="circle" id="circle-4"></div>
-    </div>
   </div>
 
+      <div>
+        <%= submit_tag "", class:'button-eye-step' %>
+        <img class="eye-step-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png">
+      </div>
+    </div>
 
   <%= simple_form_for @user_step do |f| %>
   <div class="siema">
+
+    <% @descriptions.sort_by{ |description| description.position }.each do |description| %>
+        <img src="<%= cl_image_path description.photo.key %>" alt="" class="display-img">
+    <% end %>
+
     <% @descriptions.sort_by{ |description| description.position }.each do |description| %>
     <div class="slide" id="slide-<%= description.position %>" style="background-image: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)), url(<%= cl_image_path description.photo.key %>);">
       <div class="content">
