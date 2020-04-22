@@ -1,6 +1,7 @@
 class Course < ApplicationRecord
   has_many :steps
   has_many :user_courses
+  has_many :megaliths, through: :steps
 
   has_one_attached :photo
 
