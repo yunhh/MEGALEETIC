@@ -67,7 +67,7 @@ class CoursesController < ApplicationController
       end
     end
 
-
+    @user_steps = @user_course.user_steps.includes(:step).order("steps.position asc")
 
   end
 

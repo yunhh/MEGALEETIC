@@ -58,25 +58,24 @@
 </div>
 
 <div class="cards-step ">
-  <% @steps.each_with_index do |step, index| %>
+  <% @user_steps.each_with_index do |user_step, index| %>
   <div class="link-between-step"></div>
-   <p class="etape-number pt-2"> étape <%= step.position %> </p>
-    <%= link_to course_step_path(@course, step), class: 'no-deco' do %>
+   <p class="etape-number pt-2"> étape <%= user_step.step.position %> </p>
+    <%= link_to course_step_path(@course, user_step.step), class: 'no-deco' do %>
 
       <div class="card-step active" data-image="<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>" id="cardstep-<%= index %>" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= cl_image_path @course.photo.key, height: 300, width: 400, crop: :fill %>)">
-        <p> <%= step.megalith.name %> </p>
+        <p> <%= user_step.step.megalith.name %> </p>
         <div class="infos pt-1">
-          <p><%= step.duration_in_minutes %> min</p>
-          <p><%= step.distance_in_kilometers %> km</p>
+          <p><%= user_step.step.duration_in_minutes %> min</p>
+          <p><%= user_step.step.distance_in_kilometers %> km</p>
         </div>
-       <p><% if  %> </p>
+      <% if user_step.done %>
         <div class="bandeau-show">
           <img src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587560955/Bandeau2_vm6cic.png" alt="">
         </div>
+      <% end %>
       </div>
     <% end %>
-    </div>
   <% end %>
-
 </div>
 
