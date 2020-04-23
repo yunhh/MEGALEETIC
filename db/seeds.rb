@@ -32,6 +32,7 @@ puts "Users created!"
 
 puts "Creating Courses..."
 
+# marker OK
 carnac_course = Course.new(
   address: "Le Manio 56340 Carnac",
   name: "Les mystères de Carnac",
@@ -44,48 +45,52 @@ carnac_course = Course.new(
 carnac_course.photo.attach(io:File.open('db/fixtures/courses/carnac_course.jpg'), filename: 'carnac_course.jpg', content_type: 'image/jpg')
 carnac_course.save!
 
+# marker OK
 carnac_course_2 = Course.new(
   address: "Keriaval 56340 Carnac",
   latitude: "47.6155",
   longitude: "-3.085734",
   name: "Les gravures de Mane Kerioned",
   mobility_access: false ,
-  duration_in_minutes: 45,
-  distance_in_kilometers: 0.2,
+  duration_in_minutes: 145,
+  distance_in_kilometers: 7,
   rating: 4,
   description: "Découvrez les monuments de Mane Kerioned."
 )
 carnac_course_2.photo.attach(io:File.open('db/fixtures/courses/carnac_course_2.jpg'), filename: 'carnac_course_2.jpg', content_type: 'image/jpg')
 carnac_course_2.save!
 
+# marker OK
 carnac_course_3 = Course.new(
   address: "Rue de Kerentrech 5340 Plouharnel",
   latitude: "47.60876",
   longitude: "-3.133230",
   name: "Les alignements de Sainte-Barbe",
   mobility_access: false ,
-  duration_in_minutes: 35,
-  distance_in_kilometers: 1.2,
+  duration_in_minutes: 135,
+  distance_in_kilometers: 12,
   rating: 3,
   description: "Découvrez les alignements de Sainte-Barbe."
 )
 carnac_course_3.photo.attach(io:File.open('db/fixtures/courses/carnac_course_3.jpg'), filename: 'carnac_course_3.jpg', content_type: 'image/jpg')
 carnac_course_3.save!
 
+# marker ?
 carnac_course_4 = Course.new(
   address: "13, Rue Eric Tabarly 5340 Plouharnel",
   latitude: "47.615329",
   longitude: "-3.083248",
   name: "Les alignements de Keriaval",
   mobility_access: true ,
-  duration_in_minutes: 30,
-  distance_in_kilometers: 0.8,
+  duration_in_minutes: 130,
+  distance_in_kilometers: 8,
   rating: 3,
   description: "Découvrez les alignements de Keriaval."
 )
 carnac_course_4.photo.attach(io:File.open('db/fixtures/courses/carnac_course_4.jpg'), filename: 'carnac_course_4.jpg', content_type: 'image/jpg')
 carnac_course_4.save!
 
+# marker OK
 carnac_course_5 = Course.new(
   address: "Belz",
   name: "Les mégalithes de Belz",
@@ -98,18 +103,20 @@ carnac_course_5 = Course.new(
 carnac_course_5.photo.attach(io:File.open('db/fixtures/courses/carnac_course_5.jpg'), filename: 'carnac_course_5.jpg', content_type: 'image/jpg')
 carnac_course_5.save!
 
+# marker OK
 carnac_course_6 = Course.new(
   address: "Crac'h",
   name: "Les mégalithes de Crac'h",
   mobility_access: false ,
-  duration_in_minutes: 245,
-  distance_in_kilometers: 12,
+  duration_in_minutes: 225,
+  distance_in_kilometers: 10,
   rating: 3,
   description: "Découvrez les mégalithes de Crac'h."
 )
 carnac_course_6.photo.attach(io:File.open('db/fixtures/courses/carnac_course_6.jpg'), filename: 'carnac_course_6.jpg', content_type: 'image/jpg')
 carnac_course_6.save!
 
+# marker OK
 carnac_course_7 = Course.new(
   address: "La Trinité sur Mer",
   name: "Les mégalithes de la Trinité sur Mer",
@@ -122,18 +129,20 @@ carnac_course_7 = Course.new(
 carnac_course_7.photo.attach(io:File.open('db/fixtures/courses/carnac_course_7.jpg'), filename: 'carnac_course_7.jpg', content_type: 'image/jpg')
 carnac_course_7.save!
 
+# marker OK
 carnac_course_8 = Course.new(
   address: "Le Bono",
   name: "Les mégalithes du Bono",
   mobility_access: true ,
-  duration_in_minutes: 225,
-  distance_in_kilometers: 8,
+  duration_in_minutes: 205,
+  distance_in_kilometers: 7,
   rating: 3,
   description: "Découvrez les mégalithes du Bono."
 )
 carnac_course_8.photo.attach(io:File.open('db/fixtures/courses/carnac_course_8.jpg'), filename: 'carnac_course_8.jpg', content_type: 'image/jpg')
 carnac_course_8.save!
 
+# marker OK
 carnac_course_9 = Course.new(
   address: "Larmor-Baden",
   name: "Gavrinis ou la chapelle Sixtine du Néolithique",
@@ -146,6 +155,7 @@ carnac_course_9 = Course.new(
 carnac_course_9.photo.attach(io:File.open('db/fixtures/courses/carnac_course_9.jpg'), filename: 'carnac_course_9.jpg', content_type: 'image/jpg')
 carnac_course_9.save!
 
+# marker OK
 carnac_course_10 = Course.new(
   address: "Arzon",
   name: "La presqu'île de Rhuys",
@@ -158,6 +168,7 @@ carnac_course_10 = Course.new(
 carnac_course_10.photo.attach(io:File.open('db/fixtures/courses/carnac_course_10.jpg'), filename: 'carnac_course_10.jpg', content_type: 'image/jpg')
 carnac_course_10.save!
 
+# marker OK
 carnac_course_11 = Course.new(
   address: "Saint-Pierre-Quiberon",
   name: "La presqu'île de Quiberon",
@@ -170,30 +181,33 @@ carnac_course_11 = Course.new(
 carnac_course_11.photo.attach(io:File.open('db/fixtures/courses/carnac_course_11.jpg'), filename: 'carnac_course_11.jpg', content_type: 'image/jpg')
 carnac_course_11.save!
 
+# marker OK
 carnac_course_12 = Course.new(
   address: "Rue Jean-Pierre Calloch 5340 Plouharnel",
   name: "Voyage à Rondossec",
   mobility_access: false ,
-  duration_in_minutes: 35,
-  distance_in_kilometers: 1.2,
+  duration_in_minutes: 85,
+  distance_in_kilometers: 12,
   rating: 3,
   description: "Découvrez le tumulus de Rondossec et ses environs."
 )
 carnac_course_12.photo.attach(io:File.open('db/fixtures/courses/carnac_course_12.jpg'), filename: 'carnac_course_12.jpg', content_type: 'image/jpg')
 carnac_course_12.save!
 
+# marker OK
 carnac_course_13 = Course.new(
   address: "34 Crucuny 5340 Carnac",
   name: "Dolmens à Carnac - partie I",
   mobility_access: false ,
-  duration_in_minutes: 45,
-  distance_in_kilometers: 2.5,
+  duration_in_minutes: 65,
+  distance_in_kilometers: 5,
   rating: 3,
   description: "Découvrez quelques uns des plus beaux dolmens de Carnac."
 )
 carnac_course_13.photo.attach(io:File.open('db/fixtures/courses/carnac_course_13.jpg'), filename: 'carnac_course_13.jpg', content_type: 'image/jpg')
 carnac_course_13.save!
 
+# marker OK
 carnac_course_14 = Course.new(
   address: "88 Route du Moustoir 56340 Carnac",
    name: "Dolmens à Carnac - partie II",
@@ -206,24 +220,26 @@ carnac_course_14 = Course.new(
 carnac_course_14.photo.attach(io:File.open('db/fixtures/courses/carnac_course_14.jpg'), filename: 'carnac_course_14.jpg', content_type: 'image/jpg')
 carnac_course_14.save!
 
+# marker OK
 carnac_course_15 = Course.new(
   address: "Crucuno 56340 Erdeven",
   name: "Dolmens à Erdeven - partie II",
   mobility_access: false ,
   duration_in_minutes: 55,
-  distance_in_kilometers: 3.5,
+  distance_in_kilometers: 7.5,
   rating: 4,
   description: "Découvrez quelques uns des plus beaux dolmens de Erdeven."
 )
 carnac_course_15.photo.attach(io:File.open('db/fixtures/courses/carnac_course_15.jpg'), filename: 'carnac_course_15.jpg', content_type: 'image/jpg')
 carnac_course_15.save!
 
+# marker ? (bourg Erdeven)
 carnac_course_16 = Course.new(
  address: "Varquès 56340 Erdeven",
   name: "Dolmens à Erdeven - partie II",
   mobility_access: false ,
   duration_in_minutes: 55,
-  distance_in_kilometers: 3.5,
+  distance_in_kilometers: 6.5,
   rating: 4,
   description: "Découvrez quelques uns des plus beaux dolmens de Erdeven."
 )
@@ -233,18 +249,20 @@ carnac_course_16.save!
 
 
 
+# marker OK
 monteneuf_course = Course.new(
-  address: "Monteneuf",
+  address: "Place Saint-Nicodème, Monteneuf",
   name: "Monteneuf Landes & Mégalithes",
   mobility_access: true ,
-  duration_in_minutes: 165,
-  distance_in_kilometers: 1,
+  duration_in_minutes: 125,
+  distance_in_kilometers: 4,
   rating: 5,
   description: "Marchez au milieu des menhirs pourpres et revivez comme nos ancêtres."
 )
 monteneuf_course.photo.attach(io:File.open('db/fixtures/courses/monteneuf_course.jpg'), filename: 'monteneuf_course.jpg', content_type: 'image/jpg')
 monteneuf_course.save!
 
+# marker OK
 saint_just_course = Course.new(
   address: "10 Allée des Cerisiers, Saint-Just",
   name: "Saint-Just : espace naturel mégalithique",
@@ -257,11 +275,12 @@ saint_just_course = Course.new(
 saint_just_course.photo.attach(io:File.open('db/fixtures/courses/saint_just_course.jpg'), filename: 'saint_just_course.jpg', content_type: 'image/jpg')
 saint_just_course.save!
 
+# marker OK
 locmariaquer_course = Course.new(
   address: "Locmariaquer",
   name: "Locmariaquer Les grands travaux mégalithiques",
   mobility_access: true ,
-  duration_in_minutes: 165,
+  duration_in_minutes: 105,
   distance_in_kilometers: 3,
   rating: 3,
   description: "Sur la trace des exploits des bâtisseurs de mégalithes."
@@ -269,12 +288,13 @@ locmariaquer_course = Course.new(
 locmariaquer_course.photo.attach(io:File.open('db/fixtures/courses/locmariaquer_course.jpg'), filename: 'locmariaquer_course.jpg', content_type: 'image/jpg')
 locmariaquer_course.save!
 
+# marker OK
 erdeven_course = Course.new(
   address: "Erdeven",
   name: "Les Géants d'Erdeven",
   mobility_access: true ,
-  duration_in_minutes: 165,
-  distance_in_kilometers: 1,
+  duration_in_minutes: 65,
+  distance_in_kilometers: 4,
   rating: 3,
   description: "Découvrez les vestiges d'un alignement de menhirs similaire à Carnac."
 )
@@ -487,18 +507,18 @@ puts "Creating Monteneuf Megaliths... (fake)"
 
 puts "Creating Monteneuf 1 (fake)..."
 
-# tumulus_saint_michel = Megalith.new(
-#   name: "Mégalithe de Monteneuf 1",
-#   category: "Menhir",
-#   latitude: "47.88221",
-#   longitude: "-2.18440"
-# )
+monteneuf_megalith_1= Megalith.new(
+  name: "Mégalithe de Monteneuf 1",
+  category: "Menhir",
+  latitude: "47.88221",
+  longitude: "-2.18440"
+)
 
-# tumulus_saint_michel_description_1 = tumulus_saint_michel.descriptions.build(
-#   position: 1,
-#   content: "Retrouvez prochainement les mégalithique de Monteneuf."
-# )
-# tumulus_saint_michel_description_1.photo.attach(io:File.open('db/fixtures/megaliths/tumulus_saint_michel/tumulus_saint_michel.jpg'), filename: 'tumulus_saint_michel.jpg', content_type: 'image/jpg')
+monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+  position: 1,
+  content: "Retrouvez prochainement les mégalithique de Monteneuf."
+)
+monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
 
 puts "Monteneuf 1 created (fake)!"
 
@@ -580,8 +600,8 @@ carnac_step_3.save!
 
 carnac_step_4 = Step.new(
   position: 4,
-  question: "Parmi les hypothèses suivantes, laquelle est la moins réaliste ?",
-  answer_1: "Des esclaves ont bâti les mégalithes",
+  question: "Parmi les hypothèses suivantes, laquelle vous semble fausse ?",
+  answer_1: "Des extra-terrestres ont bâti les mégalithes",
   answer_2: "Les mégalithes marquaient le territoire",
   answer_3: "Les Hommes se rassemblaient autour des menhirs",
   answer_4: "Cette civilisation était dirigée par des chefs",
@@ -591,7 +611,7 @@ carnac_step_4 = Step.new(
   distance_in_kilometers: 3,
   duration_in_minutes: 45,
   access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres",
-  explanations: "Si l’esclavage est une hypothèse réaliste, la construction de cette civilisation s’appuie tout d’abord sur l’appropriation de larges territoires. Les mégalithes sont d’abord construits là où les tribus vivent. La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
+  explanations: "La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
 )
 carnac_step_4.save!
 
@@ -608,7 +628,7 @@ carnac_step_5 = Step.new(
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
   access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
-  explanations: "Si le Néolitique est la dernière période appartenant à la Préhistoire, c'est aussi celle où apparaissent les premières civilisations. Le phénomène mégalithique correspond aux premières architectures monumentales de l'histoire de l'humanité. Les plus vieux tumulus ont été construits 2 000 ans avant les premières pyramides !"
+  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être les secrets de la naissance de cette brillante civilisation."
 )
 carnac_step_5.save!
 
@@ -619,7 +639,7 @@ puts "Creating Monteneuf Steps..."
 monteneuf_step_1 = Step.new(
   position: 1,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
@@ -627,7 +647,7 @@ monteneuf_step_1.save!
 monteneuf_step_2 = Step.new(
   position: 2,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_2.save!
@@ -635,7 +655,7 @@ monteneuf_step_2.save!
 monteneuf_step_3 = Step.new(
   position: 3,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_3.save!
@@ -643,7 +663,7 @@ monteneuf_step_3.save!
 monteneuf_step_4 = Step.new(
   position: 4,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_4.save!
@@ -651,7 +671,7 @@ monteneuf_step_4.save!
 monteneuf_step_5 = Step.new(
   position: 5,
   course: monteneuf_course,
-  megalith: tumulus_saint_michel,
+  megalith: monteneuf_megalith_1,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_5.save!
@@ -715,6 +735,292 @@ erdeven_step_3 = Step.new(
 erdeven_step_3.save!
 
 
+carnac_2_step_1 = Step.new(
+  course: carnac_course_2,
+  megalith:tumulus_saint_michel
+)
+carnac_2_step_1.save!
+
+carnac_2_step_2 = Step.new(
+  course: carnac_course_2,
+  megalith:tumulus_saint_michel
+)
+carnac_2_step_2.save!
+
+carnac_2_step_3 = Step.new(
+  course: carnac_course_2,
+  megalith:tumulus_saint_michel
+)
+carnac_2_step_3.save!
+
+carnac_2_step_4 = Step.new(
+  course: carnac_course_2,
+  megalith:tumulus_saint_michel
+)
+carnac_2_step_4.save!
+
+
+
+
+carnac_3_step_1 = Step.new(
+  course: carnac_course_3,
+  megalith:tumulus_saint_michel
+)
+carnac_3_step_1.save!
+
+carnac_3_step_2 = Step.new(
+  course: carnac_course_3,
+  megalith:tumulus_saint_michel
+)
+carnac_3_step_2.save!
+
+carnac_3_step_3 = Step.new(
+  course: carnac_course_3,
+  megalith:tumulus_saint_michel
+)
+carnac_3_step_3.save!
+
+
+carnac_4_step_1 = Step.new(
+  course: carnac_course_4,
+  megalith:tumulus_saint_michel
+)
+carnac_4_step_1.save!
+
+carnac_4_step_2 = Step.new(
+  course: carnac_course_4,
+  megalith:tumulus_saint_michel
+)
+carnac_4_step_2.save!
+
+carnac_4_step_3 = Step.new(
+  course: carnac_course_4,
+  megalith:tumulus_saint_michel
+)
+carnac_4_step_3.save!
+
+carnac_4_step_4 = Step.new(
+  course: carnac_course_4,
+  megalith:tumulus_saint_michel
+)
+carnac_4_step_4.save!
+
+
+carnac_5_step_1 = Step.new(
+  course: carnac_course_5,
+  megalith:tumulus_saint_michel
+)
+carnac_5_step_1.save!
+
+carnac_5_step_2 = Step.new(
+  course: carnac_course_5,
+  megalith:tumulus_saint_michel
+)
+carnac_5_step_2.save!
+
+carnac_6_step_1 = Step.new(
+  course: carnac_course_6,
+  megalith:tumulus_saint_michel
+)
+carnac_6_step_1.save!
+
+carnac_6_step_2 = Step.new(
+  course: carnac_course_6,
+  megalith:tumulus_saint_michel
+)
+carnac_6_step_2.save!
+
+
+
+carnac_7_step_1 = Step.new(
+  course: carnac_course_7,
+  megalith:tumulus_saint_michel
+)
+carnac_7_step_1.save!
+
+carnac_7_step_2 = Step.new(
+  course: carnac_course_7,
+  megalith:tumulus_saint_michel
+)
+carnac_7_step_2.save!
+
+carnac_7_step_3 = Step.new(
+  course: carnac_course_7,
+  megalith:tumulus_saint_michel
+)
+carnac_7_step_3.save!
+
+carnac_7_step_4 = Step.new(
+  course: carnac_course_7,
+  megalith:tumulus_saint_michel
+)
+carnac_7_step_4.save!
+
+
+
+
+carnac_8_step_1 = Step.new(
+  course: carnac_course_8,
+  megalith:tumulus_saint_michel
+)
+carnac_8_step_1.save!
+
+carnac_8_step_2 = Step.new(
+  course: carnac_course_8,
+  megalith:tumulus_saint_michel
+)
+carnac_8_step_2.save!
+
+carnac_8_step_3 = Step.new(
+  course: carnac_course_8,
+  megalith:tumulus_saint_michel
+)
+carnac_8_step_3.save!
+
+
+carnac_9_step_1 = Step.new(
+  course: carnac_course_9,
+  megalith:tumulus_saint_michel
+)
+carnac_9_step_1.save!
+
+carnac_9_step_2 = Step.new(
+  course: carnac_course_9,
+  megalith:tumulus_saint_michel
+)
+carnac_9_step_2.save!
+
+carnac_9_step_3 = Step.new(
+  course: carnac_course_9,
+  megalith:tumulus_saint_michel
+)
+carnac_9_step_3.save!
+
+carnac_9_step_4 = Step.new(
+  course: carnac_course_9,
+  megalith:tumulus_saint_michel
+)
+carnac_9_step_4.save!
+
+
+carnac_10_step_1 = Step.new(
+  course: carnac_course_10,
+  megalith:tumulus_saint_michel
+)
+carnac_10_step_1.save!
+
+carnac_10_step_2 = Step.new(
+  course: carnac_course_10,
+  megalith:tumulus_saint_michel
+)
+carnac_10_step_2.save!
+
+carnac_11_step_1 = Step.new(
+  course: carnac_course_11,
+  megalith:tumulus_saint_michel
+)
+carnac_11_step_1.save!
+
+carnac_11_step_2 = Step.new(
+  course: carnac_course_11,
+  megalith:tumulus_saint_michel
+)
+carnac_11_step_2.save!
+
+
+
+carnac_12_step_1 = Step.new(
+  course: carnac_course_12,
+  megalith:tumulus_saint_michel
+)
+carnac_12_step_1.save!
+
+carnac_12_step_2 = Step.new(
+  course: carnac_course_12,
+  megalith:tumulus_saint_michel
+)
+carnac_12_step_2.save!
+
+carnac_12_step_3 = Step.new(
+  course: carnac_course_12,
+  megalith:tumulus_saint_michel
+)
+carnac_12_step_3.save!
+
+
+carnac_13_step_1 = Step.new(
+  course: carnac_course_13,
+  megalith:tumulus_saint_michel
+)
+carnac_13_step_1.save!
+
+carnac_13_step_2 = Step.new(
+  course: carnac_course_13,
+  megalith:tumulus_saint_michel
+)
+carnac_13_step_2.save!
+
+carnac_13_step_3 = Step.new(
+  course: carnac_course_13,
+  megalith:tumulus_saint_michel
+)
+carnac_13_step_3.save!
+
+carnac_13_step_4 = Step.new(
+  course: carnac_course_13,
+  megalith:tumulus_saint_michel
+)
+carnac_13_step_4.save!
+
+
+carnac_14_step_1 = Step.new(
+  course: carnac_course_14,
+  megalith:tumulus_saint_michel
+)
+carnac_14_step_1.save!
+
+carnac_14_step_2 = Step.new(
+  course: carnac_course_14,
+  megalith:tumulus_saint_michel
+)
+carnac_14_step_2.save!
+
+carnac_15_step_1 = Step.new(
+  course: carnac_course_15,
+  megalith:tumulus_saint_michel
+)
+carnac_15_step_1.save!
+
+carnac_15_step_2 = Step.new(
+  course: carnac_course_15,
+  megalith:tumulus_saint_michel
+)
+carnac_15_step_2.save!
+
+
+carnac_16_step_1 = Step.new(
+  course: carnac_course_16,
+  megalith:tumulus_saint_michel
+)
+carnac_16_step_1.save!
+
+carnac_16_step_2 = Step.new(
+  course: carnac_course_16,
+  megalith:tumulus_saint_michel
+)
+carnac_16_step_2.save!
+
+carnac_16_step_3 = Step.new(
+  course: carnac_course_16,
+  megalith:tumulus_saint_michel
+)
+carnac_16_step_3.save!
+
+carnac_16_step_4 = Step.new(
+  course: carnac_course_16,
+  megalith:tumulus_saint_michel
+)
+carnac_16_step_4.save!
 
 
 puts "Fake Steps created!"

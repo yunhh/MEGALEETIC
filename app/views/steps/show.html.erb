@@ -13,7 +13,7 @@
       </div>
     </div>
     </div>
-    <div class="controls">
+    <div class="controls" id="controls">
       <!-- à faire : pour chaque slide insérer un dot -->
       <div class="circle" id="circle-0"></div>
       <div class="circle" id="circle-1"></div>
@@ -24,7 +24,7 @@
 
       <div>
         <%= submit_tag "", class:'button-eye-step' %>
-        <img class="eye-step-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png">
+        <!-- <img class="eye-step-btn"src= "http://download.seaicons.com/icons/custom-icon-design/mono-general-4/24/eye-icon.png"> -->
       </div>
     </div>
 
@@ -42,12 +42,32 @@
       </div>
     </div>
     <% end %>
-    <div class="slide-quiz step-name-slide" id="slide-quiz">
-      <h4 class="ask" > <%= @step.question%> </h4>
-        <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
-      <button class=" btn-primary buttonquizz" id="toggle-answer"> Voir la réponse </button>
+    <div class="slide-quiz step-name-slide " id="slide-quiz">
+
+     <h4 class="ask" ><%= @step.question%></h4>
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_1.parameterize}", @step.answer_1, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_1, id: "quiz-answer-#{@step.answer_1.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_2.parameterize}", @step.answer_2, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_2, id: "quiz-answer-#{@step.answer_2.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_3.parameterize}", @step.answer_3, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_3, id: "quiz-answer-#{@step.answer_3.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_4.parameterize}", @step.answer_4, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_4, id: "quiz-answer-#{@step.answer_4.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+      <button class=" buttonquizz button-quiz" id="toggle-answer"> Soumettre la réponse </button>
     </div>
-  </div>
+  </div>>
   <div class="hidden" id="explanations">
     <p>  </p>
     <p>  </p>
@@ -57,7 +77,7 @@
     </div>
 
     <p> <%= @step.explanations %> </p>
-      <%= f.submit "Validez votre étape", class: "buttonquizz hidden no-deco", id: "submit-quiz" %>
+      <%= f.submit "Passer à l'étape suivante", class: "buttonquizz hidden no-deco button-quiz", id: "submit-quiz" %>
   </div>
   <% end %>
 </div>

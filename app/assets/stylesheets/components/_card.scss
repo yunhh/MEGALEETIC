@@ -3,13 +3,12 @@ body,html{
 
 }
 
-.mieux-note {
-  margin-left: 15px;
-
-  &::-webkit-scrollbar {
-    display: none;
-  }
-}
+// .mieux-note {
+//   margin-left: 15px;
+//   &::-webkit-scrollbar {
+//     display: none;
+//   }
+// }
 
 .global{
   h1{
@@ -138,6 +137,7 @@ body,html{
 
 .populaire { margin-top: 24px; }
 
+
 .next-to-you{
   h2{
     margin-left: 30px;
@@ -234,3 +234,4 @@ body,html{
   text-transform: uppercase;
   padding-right: 25px;
 }
+

@@ -1,33 +1,25 @@
-<h1> <%= user_course.course.name %></h1>
+<div class="wrapper_quiz">
 
- <div class="toggle-btn_user_index" >
-        <span></span>
+<p class= "step-name_quiz"> <%= @user_course.course.name %></p>
+
+    <%= render 'shared/menu_burger' %>
+
+  <div class= "answer_wrapper ">
+    <% @user_course.user_steps.each do |user_step| %>
+      <div class= "text-center mx-auto w-90 pt-5"><p class="user_step_question"><%= user_step.step.question%></p>
+        <%if user_step.quiz_answer == user_step.step["answer_#{user_step.step.correct_answer}".to_sym]%>
+          <p class= "baseline_answer">Bravo ! Vous avez répondu</p>
+          <span class= "correct_answer"><i class="fas fa-check mr-2"></i><%= user_step.step["answer_#{user_step.step.correct_answer}".to_sym] %></span>
+          <p class= "border-quiz"></p>
+        <%else%>
+          <p class= "baseline_answer wrong_answer">Dommage ! Vous avez répondu</p>
+          <span class= "user_answer"><i class="fas fa-times mr-2"></i><%= user_step.quiz_answer %></span>
+          <p class= "baseline_answer pt-3">La réponse était</p>
+          <span class= "correct_answer"><%= user_step.step["answer_#{user_step.step.correct_answer}".to_sym] %></span>
+          <p class= "border-quiz"></p>
+        <%end%>
+      </div>
+    <%end%>
   </div>
-  <img class="logo_user_index" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
-  <div class="my-nav">
-    <%= cl_image_tag current_user.photo.key, class:'avatar'%>
-    <%= link_to "Les parcours", courses_path %>
-    <%= link_to "Mes parcours", user_courses_path %>
-    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
-    <a href="">Envoyez nous vos retours</a>
-  </div>
+</div>
 
-  <p><%= @step.question%></p>
-
-  <%= :quiz_answer%>
-  <%= @step["answer_#{@step.correct_answer}"]%>
-
-  <p><%= @step.question%></p>
-
-    <%= :quiz_answer%>
-    <%= @step["answer_#{@step.correct_answer}"]%>
-
-  <p><%= @step.question%></p>
-
-    <%= :quiz_answer%>
-    <%= @step["answer_#{@step.correct_answer}"]%>
-
-  <p><%= @step.question%></p>
-
-    <%= :quiz_answer%>
-    <%= @step["answer_#{@step.correct_answer}"]%>

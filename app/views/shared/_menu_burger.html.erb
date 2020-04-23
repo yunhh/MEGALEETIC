@@ -1,0 +1,16 @@
+
+  <div class="toggle-btn" >
+      <span></span>
+  </div>
+  <img class="logo" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
+<div class="my-nav">
+    <%= cl_image_tag current_user.photo.key, class:'avatar'%>
+    <%= link_to "Les parcours", courses_path %>
+    <div class="burger-border"></div>
+    <%= link_to "Mes parcours", user_courses_path %>
+    <div class="burger-border"></div>
+    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
+    <div class="burger-border"></div>
+    <a href="">Envoyer nous vos retours</a>
+    <div class="burger-border"></div>
+  </div>

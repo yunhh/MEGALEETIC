@@ -23,7 +23,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // ----------------------------------------------------
 import {burgerMenu} from "../components/menu_burger_index";
 import {burgerMenu_index} from "../components/menu_burger_index"
-
+import {burgerMenu_show} from "../components/menu_burger_index"
 
 import {animateHome} from "../components/animate_home";
 import {activeReviews} from "../components/active_reviews";
@@ -46,6 +46,7 @@ import { initMapboxIndex } from '../plugins/init_mapbox_index';
 document.addEventListener('turbolinks:load', () => {
   burgerMenu();
   burgerMenu_index();
+  burgerMenu_show();
   initMapbox();
   initMapboxIndex();
   quizExplanations();
