@@ -2,25 +2,16 @@
 
 
 
-body {
-  background-color: #111;
-  background-image: radial-gradient(#333, #111);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: #fff;
-  text-align: center;
-  width: 100vw;
-  font-weight: 700;
-  overflow: hidden;
-  font-family: 'Montserrat', sans-serif;
-}
+
 
 #fly-in {
   font-size: 32px;
   margin: 5vh auto;
   height: 20vh;
   text-transform: uppercase;
+  font-weight: 700;
+  overflow: hidden;
+  font-family: 'Montserrat', sans-serif;
 }
 
 #fly-in span {
