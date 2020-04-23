@@ -12,7 +12,8 @@ const quizExplanations = () => {
   const rightAnswerField = document.querySelector('.right-answer');
   const radioButtons = document.querySelectorAll('.js-quiz-answer-radio');
   const radioWrappers = document.querySelectorAll('.js-quiz-answer-wrapper');
-
+  const circle = document.getElementById('controls');
+  console.log(circle);
   // const selectAnswer = document.querySelectorAll(".answer")
   // console.log(selectAnswer);
 
@@ -37,6 +38,8 @@ const quizExplanations = () => {
       btn.style.display = "none";
 
       sbmt.classList.remove("hidden");
+
+      circle.classList.add("hidden");
 
       const rightAnswer = rightAnswerField.dataset.answer;
       // console.log(rightAnswer);
