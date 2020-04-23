@@ -19,11 +19,13 @@
         <%if user_step.quiz_answer == user_step.step["answer_#{user_step.step.correct_answer}".to_sym]%>
           <p class= "baseline_answer">Bravo ! Vous avez répondu</p>
           <span class= "correct_answer"><i class="fas fa-check mr-2"></i><%= user_step.step["answer_#{user_step.step.correct_answer}".to_sym] %></span>
+          <p class= "border-quiz"></p>
         <%else%>
           <p class= "baseline_answer wrong_answer">Dommage ! Vous avez répondu</p>
           <span class= "user_answer"><i class="fas fa-times mr-2"></i><%= user_step.quiz_answer %></span>
           <p class= "baseline_answer pt-3">La réponse était</p>
           <span class= "correct_answer"><%= user_step.step["answer_#{user_step.step.correct_answer}".to_sym] %></span>
+          <p class= "border-quiz"></p>
         <%end%>
       </div>
     <%end%>
