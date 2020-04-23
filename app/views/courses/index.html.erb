@@ -1,17 +1,7 @@
 <div class="global">
   <h2 class= "title-index">Découvrez des <br>megalithes près de<br> chez vous</h2>
 
-  <div class="toggle-btn" >
-      <span></span>
-  </div>
-  <img class="logo" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
-<div class="my-nav">
-    <%= cl_image_tag current_user.photo.key, class:'avatar'%>
-    <%= link_to "Les parcours", courses_path %>
-    <%= link_to "Mes parcours", user_courses_path %>
-    <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
-    <a href="">Envoyer nous vos retours</a>
-  </div>
+ <%= render 'shared/menu_burger' %>
 
   <div class="test">
     <div id="map-index"
