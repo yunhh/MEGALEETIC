@@ -638,14 +638,27 @@ puts "Creating Monteneuf Steps..."
 
 monteneuf_step_1 = Step.new(
   position: 1,
+  question: "Que veut dire Néolithique ?",
+  answer_1: "L'Âge de la pierre polie",
+  answer_2: "L'Âge de la pierre taillée",
+  answer_3: "L'Âge de la pierre poutine",
+  answer_4: "L'Âge de la galaxie",
+  correct_answer: 1,
   course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
 
+
 monteneuf_step_2 = Step.new(
   position: 2,
+  question: "Au Néolithique, les Hommes vivent dans :",
+  answer_1: "des grottes.",
+  answer_2: "des cabanes.",
+  answer_3: "les arbres",
+  answer_4: "des maisons en bois et terre.",
+  correct_answer: 4,
   course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
@@ -654,7 +667,13 @@ monteneuf_step_2.save!
 
 monteneuf_step_3 = Step.new(
   position: 3,
-  course: monteneuf_course,
+  question: "Au Néolithique, les Hommes pratiquent :",
+  answer_1: "uniquement la chasse.",
+  answer_2: "uniquement la pêche.",
+  answer_3: "uniquement la cueillette.",
+  answer_4: "aussi l'agriculture et l'élevage.",
+  correct_answer: 4,
+    course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
@@ -662,6 +681,12 @@ monteneuf_step_3.save!
 
 monteneuf_step_4 = Step.new(
   position: 4,
+  question: "Le Néolithique, c'est aussi l'invention :",
+  answer_1: "du métal.",
+  answer_2: "de la poterie.",
+  answer_3: "de l'écriture.",
+  answer_4: "des armes à feu.",
+  correct_answer: 2,
   course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
@@ -670,6 +695,12 @@ monteneuf_step_4.save!
 
 monteneuf_step_5 = Step.new(
   position: 5,
+  question: "Les tribus vivant à Carnac, faisait du commerce dans :",
+  answer_1: "toute la vallée.",
+  answer_2: "toute la région.",
+  answer_3: "toute la France.",
+  answer_4: "toute l'Europe.",
+  correct_answer: 4,
   course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
@@ -1172,6 +1203,7 @@ mathieu_carnac_step_5.save!
 mathieu_monteneuf_step_1 = UserStep.new(
   step: monteneuf_step_1,
   user_course: mathieu_monteneuf,
+  quiz_answer: "L'Âge de la pierre poutine",
   done: true
 )
 mathieu_monteneuf_step_1.save!
@@ -1179,6 +1211,7 @@ mathieu_monteneuf_step_1.save!
 mathieu_monteneuf_step_2 = UserStep.new(
   step: monteneuf_step_2,
   user_course: mathieu_monteneuf,
+  quiz_answer: "des maisons en bois et terre.",
   done: true
 )
 mathieu_monteneuf_step_2.save!
@@ -1186,6 +1219,7 @@ mathieu_monteneuf_step_2.save!
 mathieu_monteneuf_step_3 = UserStep.new(
   step: monteneuf_step_3,
   user_course: mathieu_monteneuf,
+  quiz_answer: "aussi l'agriculture et l'élevage.",
   done: true
 )
 mathieu_monteneuf_step_3.save!
@@ -1193,12 +1227,14 @@ mathieu_monteneuf_step_3.save!
 mathieu_monteneuf_step_4 = UserStep.new(
   step: monteneuf_step_4,
   user_course: mathieu_monteneuf,
+  quiz_answer: "de la poterie.",
   done: true
 )
 mathieu_monteneuf_step_4.save!
 
 mathieu_monteneuf_step_5 = UserStep.new(
   step: monteneuf_step_5,
+  quiz_answer: "toute la région.",
   user_course: mathieu_monteneuf,
   done: true
 )
