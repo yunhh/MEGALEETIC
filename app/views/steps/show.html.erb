@@ -43,32 +43,28 @@
     </div>
     <% end %>
     <div class="slide-quiz step-name-slide " id="slide-quiz">
-      <!-- <ul>
-        <div class="quiz">
-          <div class="content-answer">
-            <div class="answer">
-              <%= @step.answer_1 %>
-            </div>
-          </div>
-          <div class="content-answer">
-            <div class="answer">
-              <%= @step.answer_2 %>
-            </div>
-          </div>
-          <div class="content-answer">
-            <div class="answer">
-              <%= @step.answer_3 %>
-            </div>
-          </div>
-          <div class="content-answer">
-            <div class="answer">
-              <%= @step.answer_4 %>
-            </div>
-        </div>
-      </ul> -->
 
-      <h4 class="ask" > <%= @step.question%> </h4>
-        <%= f.input :quiz_answer,label: "", as: :radio_buttons, collection: [@step.answer_1, @step.answer_2, @step.answer_3, @step.answer_4] %>
+     <h4 class="ask" ><%= @step.question%></h4>
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_1.parameterize}", @step.answer_1, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_1, id: "quiz-answer-#{@step.answer_1.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_2.parameterize}", @step.answer_2, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_2, id: "quiz-answer-#{@step.answer_2.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_3.parameterize}", @step.answer_3, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_3, id: "quiz-answer-#{@step.answer_3.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
+        <div class="content-answer js-quiz-answer-wrapper">
+          <%= label_tag "quiz-answer-#{@step.answer_4.parameterize}", @step.answer_4, class: 'answer js-quiz-label' %>
+          <%= f.radio_button :quiz_answer, @step.answer_4, id: "quiz-answer-#{@step.answer_4.parameterize}", class: 'js-quiz-answer-radio d-none' %>
+        </div>
+
       <button class=" buttonquizz" id="toggle-answer"> Soumettre la réponse </button>
     </div>
   </div>>
