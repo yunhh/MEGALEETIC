@@ -23,7 +23,9 @@ const initMapbox = () => {
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
     const map = new mapboxgl.Map({
       container: 'map',
-      style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop'
+      // style: 'mapbox://styles/naheul/ck941k2321cst1itb2avakcop'
+      // style: 'mapbox://styles/mapbox/streets-v10'
+      style: 'mapbox://styles/naheul/ck9ctiu1l07ow1iu9gb6yuu09'
     });
     const markers = JSON.parse(mapElement.dataset.markers);
     markers.forEach((marker) => {
@@ -35,12 +37,18 @@ const initMapbox = () => {
       element.style.height = '25px';
 
       new mapboxgl.Marker(element)
-        .setLngLat([marker.lng, marker.lat])
-        .addTo(map);
-      new mapboxgl.Marker()
-        .setLngLat([-3.05158, 47.60349])
-        .addTo(map);
-  });
+            .setLngLat([marker.lng, marker.lat])
+            .addTo(map);
+    });
+
+    new mapboxgl.Marker()
+          .setLngLat([-3.05158, 47.60349])
+          .addTo(map);
+
+    const parkingMarker = { lng: -3.05158, lat: 47.60349 }
+
+    fitMapToMarkers(map, marker);
+    // fitMapToMarker(map, parkingMarker);
 
   // ---------------------------------------------------------------------------
 
@@ -118,8 +126,6 @@ const initMapbox = () => {
     });
   });
   // ---------------------------------------------------------------------------
-
-  fitMapToMarkers(map, markers);
 
   window.addEventListener('scroll', function(e) {
     let yPos = window.scrollY;
