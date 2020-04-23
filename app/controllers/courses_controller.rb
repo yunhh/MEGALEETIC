@@ -15,7 +15,9 @@ class CoursesController < ApplicationController
 
     end
     @markers = @courses.map do |course|
-      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587038185/menhirs_zuyjob.png'
+      # icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587632398/icon_index_z15o45.png'
+      icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587633475/icon_index3_n2tf4t.png'
+      # icon = 'https://res.cloudinary.com/dc9pm7uj8/image/upload/v1587632398/icon_index2_johcz0.png'
       {
         lat: course.latitude,
         lng: course.longitude,
