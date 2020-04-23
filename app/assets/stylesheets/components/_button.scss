@@ -32,3 +32,22 @@
     margin-bottom: 16px;
   }
 }
+
+.parcours .card-category-index {
+  position: relative;
+  & .text {
+    z-index: 2;
+  }
+}
+
+
+.bandeau {
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+.parc {
+  z-index: 900;
+}

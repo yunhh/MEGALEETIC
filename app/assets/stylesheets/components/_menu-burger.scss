@@ -56,7 +56,7 @@
   font-family: 'Red Hat Text', sans-serif;
   text-align: center;
   display: block;
-  padding-top: 40px;
+  padding-top: 30px;
   text-decoration: none;
   font-weight: 500;
   font-size: 18px;
@@ -83,7 +83,7 @@
   position: relative;
   float: left;
   margin-left: 15px;
-  margin-top: -70px;
+  margin-top: -64px;
   opacity: 0.8;
   width: 30px;
   height: auto;
@@ -247,7 +247,7 @@ h1{
   position: relative;
   float: right;
   margin-right: 20px;
-  margin-top: -45px;
+  margin-top: -55px;
   cursor: pointer;
 }
 
@@ -281,4 +281,11 @@ h1{
   top: 10px;
   left: 0;
   opacity: 1;
+}
+.burger-border{
+  width: 250px;
+  border: 1px solid #fa8a89;
+  margin-top: 30px;
+  opacity: 0.5;
+
 }
