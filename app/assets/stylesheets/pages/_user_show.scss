@@ -50,13 +50,17 @@
   font-size: 20px;
   line-height: 35px;
   text-align: center;
-  letter-spacing: -0.015em;
+  //letter-spacing: -0.015em;
   color: white;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .user_answer{
   color: red;
   text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .correct_answer{
@@ -66,9 +70,19 @@
   letter-spacing: -0.015em;
   text-transform: capitalize;
   color: #1ABA50;
+  margin-left: 20px;
+  margin-right: 20px;
 }
 
 .logo_user_show{
   margin-left: 20px;
-  margin-top: -70px;
+  margin-top: -90px;
+}
+
+.border-quiz{
+  border: 1px solid grey;
+  margin-top: 25px;
+  margin-left: 20px;
+  margin-right: 20px;
+  opacity: 0.5;
 }
