@@ -54,7 +54,7 @@ const quizExplanations = () => {
       if (rightAnswer === userAnswer){
         rightAnswerField.insertAdjacentHTML("beforeend", "Félicitations c'est la bonne réponse !");
       } else {
-        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas, la bonne réponse était : ${rightAnswer}...`);
+        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas, la bonne réponse était :<br /> ${rightAnswer}...`);
       }
 
 
