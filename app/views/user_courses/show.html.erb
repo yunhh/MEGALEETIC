@@ -2,17 +2,8 @@
 
 <p class= "step-name_quiz"> <%= @user_course.course.name %></p>
 
-    <div class="toggle-btn_user_show" >
-      <span></span>
-    </div>
-    <img class="logo_user_show" src="https://res.cloudinary.com/ds35idgfw/image/upload/v1587384560/logo2_kuav00.png" alt="">
-    <div class="my-nav">
-      <%= cl_image_tag current_user.photo.key, class:'avatar'%>
-      <%= link_to "Les parcours", courses_path %>
-      <%= link_to "Mes parcours", user_courses_path %>
-      <%= link_to "Se déconnecter", destroy_user_session_path, method: :delete%>
-      <a href="">Envoyez nous vos retours</a>
-    </div>
+    <%= render 'shared/menu_burger' %>
+
   <div class= "answer_wrapper ">
     <% @user_course.user_steps.each do |user_step| %>
       <div class= "text-center mx-auto w-90 pt-5"><p class="user_step_question"><%= user_step.step.question%></p>
