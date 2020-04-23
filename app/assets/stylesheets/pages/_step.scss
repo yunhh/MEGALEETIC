@@ -9,20 +9,27 @@
 }
 
 .content-answer{
-  height:64px;
-  background: #F96D6C;
-  border-radius: 5px;
-  margin: 32px 32px 19px 0;
+  height:48px;
+  width:300px;
+  border: 1px solid rgba(255,255,255,0.6);
+  border-radius: 25px;
+  margin: 4px 10px 10px 10px;
   cursor: pointer;
 
   &.selected {
     // reponse selectionnee
-    background-color: yellow;
+    border-color: #E4A124;
+    color: #E4A124;
   }
 }
 
+.content-answer .selected:before{
+
+}
+
 .answer{
-  padding: 8px 16px;
+
+  padding: 8px 8px;
   // padding: 20 0px;
 }
 
@@ -95,7 +102,7 @@
   font-size: 16px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  padding-top:20px;
+  padding-top: 5px;
   padding-bottom:60px;
   position: relative;
   animation: textLoad .5s;
@@ -121,13 +128,15 @@
   line-height:1.4;
   margin:0 auto;
 }
+
+
 .step-name:after {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
   display: block;
   height: 2px;
-  top:72px;
+  top:42px;
   left: 0%;
   position: absolute;
   background: #E4A124;
@@ -212,6 +221,7 @@
 }
 
 .slide-quiz {
+  background-color:black;
   text-color: black;
   display: flex;
   flex-direction: column;
@@ -223,18 +233,17 @@
   background-position: center;
   background-origin: center;
   background-size: cover;
-  background: linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8));
 }
 
 
 .ask{
   display:top;
-  font-family: 'Red Hat Text';
-  margin-top: 160px;
+  font-family: 'Sorts Mill Goudy';
+  margin-top: 120px;
   margin-bottom: 24px;
-  text-transform: uppercase;
   text-align: center;
-  font-size:16px;
+  font-size:24px;
+  line-height:1.4;
   padding: 0 20px;
 }
 .collection_radio_buttons{
@@ -247,7 +256,7 @@
   border-radius:50px;
   background-color: #F96D6C;
   border:none;
-  margin-top: 32px;
+  margin-top: 16px;
   z-index:999;
 
   &.no-deco, &.no-deco:hover, &.no-deco:focus, &.no-deco:active {
@@ -270,7 +279,7 @@
 }
 
 #explanations{
-  background-color: #E4A124;
+  background-color: black;
 
   position: fixed;
   top:0;
@@ -281,28 +290,14 @@
   height:100vh;
   p {
     font-family: 'Sorts Mill Goudy', serif;
-    padding-top:28px;
+    padding-top:8px;
     margin: 28px;
-    color:black;
+    color:white;
     // font-size:16px;
   }
 }
 
-#explanations:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  top:135px;
-  left: 0%;
-  position: absolute;
-  background: black;
-  animation: underline .5s;
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  animation-fill-mode: forwards;
-  animation-delay:1s;
-}
+
 
 @keyframes textLoad {
   0% {

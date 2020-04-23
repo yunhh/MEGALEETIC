@@ -12,7 +12,8 @@ const quizExplanations = () => {
   const rightAnswerField = document.querySelector('.right-answer');
   const radioButtons = document.querySelectorAll('.js-quiz-answer-radio');
   const radioWrappers = document.querySelectorAll('.js-quiz-answer-wrapper');
-
+  const circle = document.getElementById('controls');
+  console.log(circle);
   // const selectAnswer = document.querySelectorAll(".answer")
   // console.log(selectAnswer);
 
@@ -38,6 +39,8 @@ const quizExplanations = () => {
 
       sbmt.classList.remove("hidden");
 
+      circle.classList.add("hidden");
+
       const rightAnswer = rightAnswerField.dataset.answer;
       // console.log(rightAnswer);
 
@@ -51,7 +54,7 @@ const quizExplanations = () => {
       if (rightAnswer === userAnswer){
         rightAnswerField.insertAdjacentHTML("beforeend", "Félicitations c'est la bonne réponse !");
       } else {
-        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas, la bonne réponse était : ${rightAnswer}...`);
+        rightAnswerField.insertAdjacentHTML("beforeend", `Hélas, la bonne réponse était :<br /> ${rightAnswer}...`);
       }
 
 

@@ -13,7 +13,7 @@
       </div>
     </div>
     </div>
-    <div class="controls">
+    <div class="controls" id="controls">
       <!-- à faire : pour chaque slide insérer un dot -->
       <div class="circle" id="circle-0"></div>
       <div class="circle" id="circle-1"></div>
@@ -65,7 +65,7 @@
           <%= f.radio_button :quiz_answer, @step.answer_4, id: "quiz-answer-#{@step.answer_4.parameterize}", class: 'js-quiz-answer-radio d-none' %>
         </div>
 
-      <button class=" buttonquizz" id="toggle-answer"> Soumettre la réponse </button>
+      <button class=" buttonquizz button-quiz" id="toggle-answer"> Soumettre la réponse </button>
     </div>
   </div>>
   <div class="hidden" id="explanations">
@@ -77,7 +77,7 @@
     </div>
 
     <p> <%= @step.explanations %> </p>
-      <%= f.submit "Passer à l'étape suivante", class: "buttonquizz hidden no-deco", id: "submit-quiz" %>
+      <%= f.submit "Passer à l'étape suivante", class: "buttonquizz hidden no-deco button-quiz", id: "submit-quiz" %>
   </div>
   <% end %>
 </div>
