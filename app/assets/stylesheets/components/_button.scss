@@ -21,8 +21,14 @@
   & .border {
     border-bottom: solid white;
   }
+  & .card-category-index .card-course-name {
+      margin-top: 30px
+    }
   & .premier {
     margin-top: 10px;
+    & .card-course-main {
+      margin-top: -57px;
+    }
   }
   & .etat {
     font-family: 'Red Hat Text', sans-serif;
@@ -36,7 +42,7 @@
 .parcours .card-category-index {
   position: relative;
   & .text {
-    z-index: 2;
+    margin-top: 26px;
   }
 }
 
