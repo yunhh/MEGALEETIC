@@ -54,9 +54,11 @@ document.addEventListener('turbolinks:load', () => {
   activeReviews();
 
   // scrollCardSHow();
-
-  new Siema({
-    onInit:animateSlide,
-    onChange:animateSlide
-  });
+  const circle4 = document.getElementById('circle-4');
+  if (circle4) {
+    new Siema({
+      onInit:animateSlide,
+      onChange:animateSlide
+    });
+  };
 });
