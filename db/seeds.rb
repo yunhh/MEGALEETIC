@@ -638,11 +638,18 @@ puts "Creating Monteneuf Steps..."
 
 monteneuf_step_1 = Step.new(
   position: 1,
+  question: "A quelle époque, les mégalithes ont-ils été créés ?",
+  answer_1: "L'époque gauloise",
+  answer_2: "Le Néolithique",
+  answer_3: "L'Antiquité",
+  answer_4: "L'ère mégalithique",
+  correct_answer: 2,
   course: monteneuf_course,
   megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
+
 
 monteneuf_step_2 = Step.new(
   position: 2,
@@ -1172,6 +1179,7 @@ mathieu_carnac_step_5.save!
 mathieu_monteneuf_step_1 = UserStep.new(
   step: monteneuf_step_1,
   user_course: mathieu_monteneuf,
+  quiz_answer: "Le Néolithique",
   done: true
 )
 mathieu_monteneuf_step_1.save!
