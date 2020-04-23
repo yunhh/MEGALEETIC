@@ -628,7 +628,7 @@ carnac_step_5 = Step.new(
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
   access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
-  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être les secrets de la naissance de cette brillante civilisation."
+  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être le secret de la naissance de cette brillante civilisation."
 )
 carnac_step_5.save!
 
@@ -1158,7 +1158,7 @@ mathieu_carnac_step_4 = UserStep.new(
   step: carnac_step_4,
   user_course: mathieu_carnac,
   quiz_answer: "Des extra-terrestres ont bâti les mégalithes",
-  done: false
+  done: true
 )
 mathieu_carnac_step_4.save!
 
