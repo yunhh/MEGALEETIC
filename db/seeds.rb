@@ -18,9 +18,9 @@ pierref.photo.attach(io:File.open('db/fixtures/users/pierre.jpg'), filename: 'pi
 pierref.save!
 
 #average user
-lomig = User.new(email: "lomig@mail.com", password: "azerty")
-lomig.photo.attach(io:File.open('db/fixtures/users/lomig.jpg'), filename: 'lomig.jpg', content_type: 'image/jpg')
-lomig.save!
+mathieu = User.new(email: "mathieu@mail.com", password: "azerty")
+mathieu.photo.attach(io:File.open('db/fixtures/users/mathieu.jpg'), filename: 'mathieu.jpg', content_type: 'image/jpg')
+mathieu.save!
 
 #old user
 pierreg = User.new(email: "pierreg@mail.com", password: "azerty")
@@ -503,26 +503,26 @@ puts "Tumulus Saint-Michel created!"
 puts "Carnac Megaliths created!"
 
 
-puts "Creating Monteneuf Megaliths... (fake)"
+# puts "Creating Monteneuf Megaliths... (fake)"
 
-puts "Creating Monteneuf 1 (fake)..."
+# puts "Creating Monteneuf 1 (fake)..."
 
-monteneuf_megalith_1= Megalith.new(
-  name: "Mégalithe de Monteneuf 1",
-  category: "Menhir",
-  latitude: "47.88221",
-  longitude: "-2.18440"
-)
+# monteneuf_megalith_1= Megalith.new(
+#   name: "Mégalithe de Monteneuf 1",
+#   category: "Menhir",
+#   latitude: "47.88221",
+#   longitude: "-2.18440"
+# )
 
-monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
-  position: 1,
-  content: "Retrouvez prochainement les mégalithique de Monteneuf."
-)
-monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
+# monteneuf_megalith_1_description_1 = monteneuf_megalith_1.descriptions.build(
+#   position: 1,
+#   content: "Retrouvez prochainement les mégalithique de Monteneuf."
+# )
+# monteneuf_megalith_1_description_1.photo.attach(io:File.open('db/fixtures/megaliths/monteneuf_megalith_1/monteneuf_megalith_1.jpg'), filename: 'monteneuf_megalith_1.jpg', content_type: 'image/jpg')
 
-puts "Monteneuf 1 created (fake)!"
+# puts "Monteneuf 1 created (fake)!"
 
-puts "Monteneuf Megaliths created! (fake)"
+# puts "Monteneuf Megaliths created! (fake)"
 
 # puts "Creating Saint-Just Megaliths... Coming soon !"
 
@@ -628,7 +628,7 @@ carnac_step_5 = Step.new(
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
   access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
-  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être les secrets de la naissance de cette brillante civilisation."
+  explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être le secret de la naissance de cette brillante civilisation."
 )
 carnac_step_5.save!
 
@@ -639,7 +639,7 @@ puts "Creating Monteneuf Steps..."
 monteneuf_step_1 = Step.new(
   position: 1,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_1.save!
@@ -647,7 +647,7 @@ monteneuf_step_1.save!
 monteneuf_step_2 = Step.new(
   position: 2,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_2.save!
@@ -655,7 +655,7 @@ monteneuf_step_2.save!
 monteneuf_step_3 = Step.new(
   position: 3,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_3.save!
@@ -663,7 +663,7 @@ monteneuf_step_3.save!
 monteneuf_step_4 = Step.new(
   position: 4,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_4.save!
@@ -671,7 +671,7 @@ monteneuf_step_4.save!
 monteneuf_step_5 = Step.new(
   position: 5,
   course: monteneuf_course,
-  megalith: monteneuf_megalith_1,
+  megalith: tumulus_saint_michel,
   access_description: "Découvrez très prochainement les mégalithes de Monteneuf."
 )
 monteneuf_step_5.save!
@@ -1059,21 +1059,21 @@ puts "Creating UserCourses..."
 # )
 # pierref_erdeven.save!
 
-puts "Creating Lomig : average user..."
+puts "Creating Mathieu : average user..."
 
-lomig_carnac = UserCourse.new(
+mathieu_carnac = UserCourse.new(
   course: carnac_course,
-  user: lomig,
+  user: mathieu,
   done: false
 )
-lomig_carnac.save!
+mathieu_carnac.save!
 
-lomig_erdeven = UserCourse.new(
-  course: erdeven_course,
-  user: lomig,
+mathieu_monteneuf = UserCourse.new(
+  course: monteneuf_course,
+  user: mathieu,
   done: true
 )
-lomig_erdeven.save!
+mathieu_monteneuf.save!
 
 # lomig_monteneuf = UserCourse.new(
 #   course: monteneuf_course,
@@ -1128,66 +1128,82 @@ puts "Creating UserSteps..."
 
 puts "PierreF No UserStep"
 
-puts "Lomig UserStep - Erdeven complete - Carnac in progress"
+puts "Mathieu UserStep - Monteneuf complete - Carnac 4/5 steps"
 
-lomig_carnac_step_1 = UserStep.new(
+mathieu_carnac_step_1 = UserStep.new(
   step: carnac_step_1,
-  user_course: lomig_carnac,
-  quiz_answer: "L'Antiquité",
+  user_course: mathieu_carnac,
+  quiz_answer: "L'ère mégalithique",
   done: true
 )
-lomig_carnac_step_1.save!
+mathieu_carnac_step_1.save!
 
-lomig_carnac_step_2 = UserStep.new(
+mathieu_carnac_step_2 = UserStep.new(
   step: carnac_step_2,
-  user_course: lomig_carnac,
+  user_course: mathieu_carnac,
   quiz_answer: "Les ossements",
   done: true
 )
-lomig_carnac_step_2.save!
+mathieu_carnac_step_2.save!
 
-lomig_carnac_step_3 = UserStep.new(
+mathieu_carnac_step_3 = UserStep.new(
   step: carnac_step_3,
-  user_course: lomig_carnac,
+  user_course: mathieu_carnac,
   quiz_answer: "L'extraction",
   done: true
 )
-lomig_carnac_step_3.save!
+mathieu_carnac_step_3.save!
 
-lomig_carnac_step_4 = UserStep.new(
+mathieu_carnac_step_4 = UserStep.new(
   step: carnac_step_4,
-  user_course: lomig_carnac,
-  done: false
+  user_course: mathieu_carnac,
+  quiz_answer: "Des extra-terrestres ont bâti les mégalithes",
+  done: true
 )
-lomig_carnac_step_4.save!
+mathieu_carnac_step_4.save!
 
-lomig_carnac_step_5 = UserStep.new(
+mathieu_carnac_step_5 = UserStep.new(
   step: carnac_step_5,
-  user_course: lomig_carnac,
+  user_course: mathieu_carnac,
   done: false
 )
-lomig_carnac_step_5.save!
+mathieu_carnac_step_5.save!
 
-lomig_erdeven_step_1 = UserStep.new(
-  step: erdeven_step_1,
-  user_course: lomig_erdeven,
+mathieu_monteneuf_step_1 = UserStep.new(
+  step: monteneuf_step_1,
+  user_course: mathieu_monteneuf,
   done: true
 )
-lomig_erdeven_step_1.save!
+mathieu_monteneuf_step_1.save!
 
-lomig_erdeven_step_2 = UserStep.new(
-  step: erdeven_step_2,
-  user_course: lomig_erdeven,
+mathieu_monteneuf_step_2 = UserStep.new(
+  step: monteneuf_step_2,
+  user_course: mathieu_monteneuf,
   done: true
 )
-lomig_erdeven_step_2.save!
+mathieu_monteneuf_step_2.save!
 
-lomig_erdeven_step_3 = UserStep.new(
-  step: erdeven_step_3,
-  user_course: lomig_erdeven,
+mathieu_monteneuf_step_3 = UserStep.new(
+  step: monteneuf_step_3,
+  user_course: mathieu_monteneuf,
   done: true
 )
-lomig_erdeven_step_3.save!
+mathieu_monteneuf_step_3.save!
+
+mathieu_monteneuf_step_4 = UserStep.new(
+  step: monteneuf_step_4,
+  user_course: mathieu_monteneuf,
+  done: true
+)
+mathieu_monteneuf_step_4.save!
+
+mathieu_monteneuf_step_5 = UserStep.new(
+  step: monteneuf_step_5,
+  user_course: mathieu_monteneuf,
+  done: true
+)
+mathieu_monteneuf_step_5.save!
+
 
 puts "PierreG UserStep - Erdeven Carnac Saint-Just Monteneuf complete"
 
