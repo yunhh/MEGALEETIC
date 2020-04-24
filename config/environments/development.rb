@@ -52,7 +52,7 @@ Rails.application.configure do
   config.assets.debug = false
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = true
+  config.assets.quiet = false
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
@@ -62,5 +62,6 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
  config.hosts << ENV['NGROK_HOST'] if ENV['NGROK_HOST'].present?
+ config.hosts << /.+\.ngrok\.io/
 
 end

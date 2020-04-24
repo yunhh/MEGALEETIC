@@ -148,6 +148,7 @@ const initMapbox = () => {
     description2.style.display = "none";
     description3.style.display = "none";
     description4.style.display = "none";
+    console.log(yPos)
 
     if (yPos >= 0 && yPos <= 54 ) {
         fitMapToMarkers(map, markers);
@@ -211,7 +212,7 @@ const initMapbox = () => {
         cardstep4.style.backgroundImage = `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('${cardstep4.dataset.image}')`;
     }
 
-    if (yPos >= 1149 && yPos <= 1265) {
+    if (yPos >= 1149 && yPos <= 1405) {
 
       contentshow.style.display = "none";
       description3.style.display = "none";
