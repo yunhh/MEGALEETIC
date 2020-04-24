@@ -69,6 +69,8 @@
 
 .my-nav .avatar {
   width: 90px;
+  height: 90px;
+  object-fit: cover;
 }
 
 .my-nav.open {
