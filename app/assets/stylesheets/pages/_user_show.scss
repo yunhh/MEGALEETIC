@@ -13,7 +13,7 @@
   color: #1ABA50;
 }
 
-.step-name_quiz{
+.step-name_quiz_user{
   font-family: 'Red Hat Text';
   font-weight: 700;
   font-size: 15px;
@@ -21,10 +21,11 @@
   text-transform: uppercase;
   color: white;
   text-align: center;
+  margin: 0px 40px;
   padding-top: 40px;
 }
 
-.step-name_quiz:after{
+.step-name_quiz_user:after{
     bottom: 50px;
     content: "";
     display: block;
@@ -35,7 +36,7 @@
     background: #E4A124;
     width: 200px;
     text-align: center;
-    margin-left: 90px;
+    margin-left: 25px;
     margin-top: 10px;
 }
 

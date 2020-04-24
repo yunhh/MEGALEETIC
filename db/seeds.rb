@@ -19,7 +19,7 @@ pierref.save!
 
 #average user
 mathieu = User.new(email: "mathieu@mail.com", password: "azerty")
-mathieu.photo.attach(io:File.open('db/fixtures/users/mathieu.jpg'), filename: 'mathieu.jpg', content_type: 'image/jpg')
+mathieu.photo.attach(io:File.open('db/fixtures/users/mathieu.png'), filename: 'mathieu.jpg', content_type: 'image/jpg')
 mathieu.save!
 
 #old user
@@ -610,7 +610,7 @@ carnac_step_4 = Step.new(
   megalith: enceinte_du_menec,
   distance_in_kilometers: 3,
   duration_in_minutes: 45,
-  access_description: "Retournez sur la route principale, prenez à droite jusqu'au parking où votre véhicule se trouve. Distance 800 mètres",
+  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
   explanations: "La rareté (jade, variscite…) et l’origine lointaine (Espagne, Italie...) des objets découverts dans les tombes attestent de l’existence d’une société hiérarchisée en contact avec d’autres tribus en Europe. Enfin, les techniques pour bâtir les mégalithes nécessitent d’avoir des architectes et des ouvriers spécialisés."
 )
 carnac_step_4.save!
@@ -627,7 +627,7 @@ carnac_step_5 = Step.new(
   megalith: tumulus_saint_michel,
   distance_in_kilometers: 1.5,
   duration_in_minutes: 30,
-  access_description: "Prenez la direction du bourg de Carnac. Longez les alignements sur 3 kilomètres. Stationnez-vous sur le parking de la maison des mégalithes. A pied, dirigez vous vers le village du Ménec (suivez les plus grands menhirs)",
+  access_description: "Revenez sur votre chemin jusqu'au rond-point avec le portrait de Zacharie Le Rouzic. Tournez à droite. Vous voyez déjà le tumulus à l'horizon.",
   explanations: "Les pratiques agricoles existent déjà dans toute l’Europe à cette époque.  En Centre-Bretagne, un atelier va produire plus d’un million de haches en pierre polie distribuées dans le grand Ouest de la France. L’hypothèse de la production de sel et la maîtrise de la navigation pourraient être le secret de la naissance de cette brillante civilisation."
 )
 carnac_step_5.save!
