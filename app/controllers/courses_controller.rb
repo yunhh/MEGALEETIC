@@ -25,8 +25,8 @@ class CoursesController < ApplicationController
     end
 
     @markers << {lat: @user_position.first, lng: @user_position.last, image_url: helpers.cl_image_path(current_user.photo.key, :transformation=>[
-      {:width=>400, :height=>400, :radius=>"max", :crop=>"pad", :fetch_format=>:png},
-      {:width=>200, :crop=>"scale"}
+      {:width=>400, :height=>400, :radius=>"max", :crop=>"fill", :fetch_format=>:png},
+      {:width=>400, :crop=>"scale"}
       ])}
     @markers << {lat: @user_search.first, lng: @user_search.last}
 
