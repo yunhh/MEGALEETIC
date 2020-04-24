@@ -4,6 +4,7 @@ function animateSlide() {
   // console.log('this',this);
   // console.log('current', this.currentSlide);
   const circle4 = document.getElementById('circle-4');
+  const circles = document.getElementById('controls');
   const eyeBtn = document.querySelector('.button-eye-step');
 
   let el = this.currentSlide;
@@ -29,6 +30,7 @@ function animateSlide() {
    // console.log("appel")
   if (circle4.classList.contains("dot-active")){
     // console.log("active")
+    circles.style.display = "none";
     eyeBtn.style.display = "none";
   } else {
     // console.log("not active")
