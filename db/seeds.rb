@@ -252,7 +252,7 @@ carnac_course_16.save!
 # marker OK
 monteneuf_course = Course.new(
   address: "Place Saint-Nicodème, Monteneuf",
-  name: "Monteneuf Landes & Mégalithes",
+  name: "Monteneuf <br> Landes & Mégalithes",
   mobility_access: true ,
   duration_in_minutes: 125,
   distance_in_kilometers: 4,
