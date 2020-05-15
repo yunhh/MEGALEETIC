@@ -80,4 +80,6 @@ test:
 #
 production:
   <<: *default
-  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>
+  database: MEGALEETIC_production
+  username: MEGALEETIC
+  password: <%= ENV['MEGALEETIC_DATABASE_PASSWORD'] %>

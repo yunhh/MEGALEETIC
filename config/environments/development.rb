@@ -1,5 +1,4 @@
 Rails.application.configure do
-  config.action_mailer.default_url_options = { host: "http://localhost:3000" }
   # Settings specified here will take precedence over those in config/application.rb.
 
   # In the development environment your application's code is reloaded on
@@ -30,7 +29,7 @@ Rails.application.configure do
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
-  config.active_storage.service = :cloudinary
+  config.active_storage.service = :local
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
@@ -52,7 +51,7 @@ Rails.application.configure do
   config.assets.debug = false
 
   # Suppress logger output for asset requests.
-  config.assets.quiet = false
+  config.assets.quiet = true
 
   # Raises error for missing translations.
   # config.action_view.raise_on_missing_translations = true
@@ -60,8 +59,4 @@ Rails.application.configure do
   # Use an evented file watcher to asynchronously detect changes in source code,
   # routes, locales, etc. This feature depends on the listen gem.
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
-
- config.hosts << ENV['NGROK_HOST'] if ENV['NGROK_HOST'].present?
- config.hosts << /.+\.ngrok\.io/
-
 end
